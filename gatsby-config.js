@@ -8,7 +8,7 @@ const spaceID = process.env.CONTENTFUL_SPACE;
 module.exports = {
   siteMetadata: {
     title: "RAI Website",
-    description: "Responsible AI Institute website",
+    description: "Responsible AI Institute Website",
     author: "Colin Phillips",
     siteUrl: "https://rai-website.herokuapp.com/",
   },

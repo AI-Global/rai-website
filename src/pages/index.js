@@ -1,16 +1,13 @@
-/* Entry Point of the Application */
-import React from "react"
-import Navbar from "../components/navbar";
-import Layout from "../components/layout"
+import React from "react";
+import Layout from "../components/Layout";
 
 // markup
 const IndexPage = () => {
   return (
-    <Layout>
-    <Navbar></Navbar>
-    <p>Hello there</p>
+    <Layout title="Home">
+      
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
