@@ -23,8 +23,8 @@ const LinksContainer = styled.div`
 
   @media screen and (max-width: 1030px) {
     img {
-      width: 214.11px;
-      height: 48px;
+      width: 215.11px;
+      height: 49px;
     }
   }
 
@@ -58,7 +58,7 @@ const Links = styled.div`
     }
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1000px) {
     flex-direction: column;
     align-items: flex-end;
     min-width: 40%;
@@ -69,6 +69,7 @@ const Links = styled.div`
 
     a:nth-of-type(5) {
       text-decoration: none;
+      font-weight: bold;
     }
 
     img {
@@ -133,7 +134,7 @@ function Footer() {
           rel="noopener noreferrer"
           icon
         >
-          <StaticImage src="../images/icons/twitter.png" />
+          <StaticImage src="../images/icons/twitter.png" alt="twitter" />
         </Link>
         <Link
           href="https://www.linkedin.com/company/ai-global?trk=public_profile_experience-item_result-card_image-click"
@@ -141,7 +142,7 @@ function Footer() {
           rel="noopener noreferrer"
           icon
         >
-          <StaticImage src="../images/icons/linkedin.png" />
+          <StaticImage src="../images/icons/linkedin.png" alt="linkedin" />
         </Link>
         <Link
           href="https://facebook.com"
@@ -149,7 +150,7 @@ function Footer() {
           rel="noopener noreferrer"
           icon
         >
-          <StaticImage src="../images/icons/facebook.png" />
+          <StaticImage src="../images/icons/facebook.png" alt="facebook" />
         </Link>
         <Link
           href="https://www.instagram.com/responsibleaiglobal/"
@@ -157,7 +158,7 @@ function Footer() {
           rel="noopener noreferrer"
           icon
         >
-          <StaticImage src="../images/icons/instagram.png" />
+          <StaticImage src="../images/icons/instagram.png" alt="instagram" />
         </Link>
       </Icons>
     </FooterContainer>

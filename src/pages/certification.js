@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import Navbar from "../components/Navbar";
 import { StaticImage } from "gatsby-plugin-image";
 // import {Headline1, Headline2, Headline3, Headline4, Headline5, LargeBody, MediumBody, SmallBody, Heading1, Heading2} from '../components/Text'
+
 // markup
 // import {Headline1, SmallBody} from "../components/Text"
 import styled from "styled-components";
@@ -78,7 +79,6 @@ function VerticalLineText(props) {
 function Certification() {
   return (
     <Layout title="Certification">
-      <Navbar />
       <Content>
         <Row>
           <Column>
@@ -115,6 +115,7 @@ function Certification() {
             alt="RAI logo"
           />
         </CertificationRow>
+
 
         <Row>
           <Column>

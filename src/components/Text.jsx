@@ -14,6 +14,12 @@ export const Headline1 = styled.h1`
   letter-spacing: -0.03em;
   margin: 0px 0px 20px 0px;
   color: ${(props) => (props.dark ? blanco : carbon)};
+
+  @media screen and (max-width: 800px) {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.02em;
+  }
 `;
 export const Headline2 = styled.h1`
   font-family: Libre Caslon Text;
@@ -24,6 +30,8 @@ export const Headline2 = styled.h1`
   letter-spacing: -0.03em;
   margin: 0px 0px 20px 0px;
   color: ${(props) => (props.dark ? blanco : carbon)};
+
+  
 `;
 export const Headline3 = styled.h1`
   font-family: Libre Caslon Text;
@@ -72,6 +80,11 @@ export const MediumBody = styled.p`
   line-height: 28px;
   margin: 0px 0px 12px 0px;
   color: ${(props) => (props.dark ? blanco : carbon)};
+
+  @media screen and (max-width: 800px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
 `;
 export const SmallBody = styled.p`
   font-style: normal;

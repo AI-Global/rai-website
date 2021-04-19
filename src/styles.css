@@ -71,3 +71,8 @@ textarea {
   line-height: 1.15; 
   margin: 0; 
 }
+
+.gatsby-image-wrapper img{
+  right: 0 !important;
+  left: auto;
+}

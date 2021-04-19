@@ -32,7 +32,18 @@ module.exports = {
     },
     "gatsby-plugin-sharp",
     "gatsby-plugin-offline",
-    "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {},
+        failOnError: true,
+        base64Width: 20,
+        forceBase64Format: `png`,
+        useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
+        stripMetadata: true,
+        defaultQuality: 100,
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

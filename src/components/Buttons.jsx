@@ -22,8 +22,14 @@ export const PrimaryBtn = styled.button`
   width: fit-content;
   margin-bottom: 12px;
 
-  &:hover, :active {
+  &:hover,
+  :active {
     background: ${(props) => (props.dark ? stone : ghost)};
+  }
+
+  @media screen and (max-width: 800px) {
+    font-size: 16px;
+    line-height: 24px;
   }
 `;
 

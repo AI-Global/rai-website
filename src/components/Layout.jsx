@@ -6,11 +6,19 @@ import Footer from "./Footer";
 import "../styles.css";
 
 const Content = styled.div`
-  margin: 20px 100px 0px 100px;
+  margin: 117px 100px 0px 100px;
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 80vh;
+  min-height: 400vh;
+
+  @media screen and (max-width: 800px) {
+    margin-top: 75px;
+  }
+
+  @media screen and (max-width: 585px) {
+    margin: 35px 35px 45px 35px;
+  }
 `;
 
 function Layout({ children, title }) {
