@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
+import Navbar from "../components/Navbar";
 import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 import { Headline1, Headline2, Headline3, MediumBody, LargeBody, SmallBody, Heading1 } from "../components/Text";
