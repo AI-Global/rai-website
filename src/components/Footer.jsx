@@ -118,7 +118,7 @@ function Footer() {
           />
         </a>
         <Links>
-          <Link href="/rail">RAIL Certification</Link>
+          <Link href="/certification">RAIL Certification</Link>
           <Link href="/tools">Tools</Link>
           <Link href="/news">News</Link>
           <Link href="/about">About RAI</Link>

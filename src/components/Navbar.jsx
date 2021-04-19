@@ -265,7 +265,7 @@ function Navbar() {
         </a>
         <Navigation>
           <Option animate>
-            <Link href="/rail">RAIL Certification</Link>
+            <Link href="/certification">RAIL Certification</Link>
             <Line />
             <Dropdown>
               <a href="/">Why RAIL</a>
