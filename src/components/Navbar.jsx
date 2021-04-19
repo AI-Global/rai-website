@@ -276,7 +276,7 @@ function Navbar() {
             </Dropdown>
           </Option>
           <Option animate>
-            <Link href="/rail">Tools</Link>
+            <Link href="/tools">Tools</Link>
             <Line />
             <Dropdown>
               <a href="/">Why RAIL</a>
