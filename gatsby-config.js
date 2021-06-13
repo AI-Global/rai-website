@@ -71,6 +71,8 @@ if (process.env.CONTENTFUL_TOKEN && process.env.CONTENTFUL_SPACE) {
     options: {
       accessToken: process.env.CONTENTFUL_TOKEN,
       spaceId: process.env.CONTENTFUL_SPACE,
+      environment:
+        process.env.NODE_ENV === "development" ? "development" : "master",
     },
   });
 } else {
