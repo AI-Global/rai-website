@@ -48,7 +48,7 @@ export function MembershipLevel({
             title={customLinkTitle ?? (link?.title as string)}
             url={link?.url as string}
             id={
-              link?.url === "#"
+              link?.url === "#kindful-donation-button"
                 ? "kindful-donate-btn-d1727a32-6c93-4808-a281-897960739db5"
                 : undefined
             }
