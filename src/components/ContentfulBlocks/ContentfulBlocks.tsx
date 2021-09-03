@@ -10,6 +10,7 @@ import {
   ListOfPeopleFragmentFragment,
   MembersBlockFragmentFragment,
   ListOfCardsFragmentFragment,
+  TestimonialSliderFragmentFragment,
 } from "@/graphql/graphql-types";
 import { CallToAction } from "@/blocks/CallToAction";
 import { Content } from "@/blocks/Content";
@@ -23,6 +24,7 @@ import { graphql } from "gatsby";
 import { ListOfPeople } from "@/blocks/ListOfPeople";
 import { Members } from "@/blocks/Members";
 import { ListOfCards } from "@/blocks/ListOfCards";
+import { TestimonialSlider } from "@/blocks/TestimonialSlider";
 import styles from "./ContentfulBlocks.module.css";
 
 type BlockType = Maybe<
@@ -35,6 +37,7 @@ type BlockType = Maybe<
   | ListOfPeopleFragmentFragment
   | MembersBlockFragmentFragment
   | ListOfCardsFragmentFragment
+  | TestimonialSliderFragmentFragment
 >;
 
 interface BlockProps {
@@ -86,6 +89,8 @@ export function ContentfulBlocks({ blocks }: BlockProps) {
             return <Members {...block} key={block.id} />;
           case "ContentfulBlockListOfCards":
             return <ListOfCards {...block} key={block.id} />;
+          case "ContentfulBlockTestimonialSlider":
+            return <TestimonialSlider {...block} key={block.id} />;
           default:
             return (
               <div className={styles.spacer}>
@@ -145,6 +150,9 @@ export const ContentfulBlocksFragment = graphql`
       }
       ... on ContentfulBlockListOfCards {
         ...ListOfCardsFragment
+      }
+      ... on ContentfulBlockTestimonialSlider {
+        ...TestimonialSliderFragment
       }
     }
   }

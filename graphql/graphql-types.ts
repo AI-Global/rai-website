@@ -800,7 +800,7 @@ export type ContentfulBlockCallToActionContentFilterInput = {
   raw?: Maybe<StringQueryOperatorInput>;
 };
 
-export type ContentfulBlockCallToActionContentfulBlockContentContentfulBlockContentListContentfulBlockImageBandContentfulBlockJumbotronContentfulBlockListOfCardsContentfulBlockListOfPeopleContentfulBlockMembersContentfulBlockResourceListUnion = ContentfulBlockCallToAction | ContentfulBlockContent | ContentfulBlockContentList | ContentfulBlockImageBand | ContentfulBlockJumbotron | ContentfulBlockListOfCards | ContentfulBlockListOfPeople | ContentfulBlockMembers | ContentfulBlockResourceList;
+export type ContentfulBlockCallToActionContentfulBlockContentContentfulBlockContentListContentfulBlockImageBandContentfulBlockJumbotronContentfulBlockListOfCardsContentfulBlockListOfPeopleContentfulBlockMembersContentfulBlockResourceListContentfulBlockTestimonialSliderUnion = ContentfulBlockCallToAction | ContentfulBlockContent | ContentfulBlockContentList | ContentfulBlockImageBand | ContentfulBlockJumbotron | ContentfulBlockListOfCards | ContentfulBlockListOfPeople | ContentfulBlockMembers | ContentfulBlockResourceList | ContentfulBlockTestimonialSlider;
 
 export type ContentfulBlockCallToActionEdge = {
   __typename?: 'ContentfulBlockCallToActionEdge';
@@ -6630,6 +6630,616 @@ export type ContentfulBlockResourceListSysFilterInput = {
   contentType?: Maybe<ContentfulBlockResourceListSysContentTypeFilterInput>;
 };
 
+export type ContentfulBlockTestimonialSlider = ContentfulReference & ContentfulEntry & Node & {
+  __typename?: 'ContentfulBlockTestimonialSlider';
+  contentful_id: Scalars['String'];
+  id: Scalars['ID'];
+  node_locale: Scalars['String'];
+  title?: Maybe<Scalars['String']>;
+  subtitle?: Maybe<Scalars['String']>;
+  content?: Maybe<ContentfulBlockTestimonialSliderContent>;
+  slides?: Maybe<Array<Maybe<ContentfulTestimonial>>>;
+  page?: Maybe<Array<Maybe<ContentfulPage>>>;
+  spaceId?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['Date']>;
+  updatedAt?: Maybe<Scalars['Date']>;
+  sys?: Maybe<ContentfulBlockTestimonialSliderSys>;
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
+
+
+export type ContentfulBlockTestimonialSliderCreatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+
+export type ContentfulBlockTestimonialSliderUpdatedAtArgs = {
+  formatString?: Maybe<Scalars['String']>;
+  fromNow?: Maybe<Scalars['Boolean']>;
+  difference?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulBlockTestimonialSliderConnection = {
+  __typename?: 'ContentfulBlockTestimonialSliderConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<ContentfulBlockTestimonialSliderEdge>;
+  nodes: Array<ContentfulBlockTestimonialSlider>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<ContentfulBlockTestimonialSliderGroupConnection>;
+};
+
+
+export type ContentfulBlockTestimonialSliderConnectionDistinctArgs = {
+  field: ContentfulBlockTestimonialSliderFieldsEnum;
+};
+
+
+export type ContentfulBlockTestimonialSliderConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: ContentfulBlockTestimonialSliderFieldsEnum;
+};
+
+export type ContentfulBlockTestimonialSliderContent = {
+  __typename?: 'ContentfulBlockTestimonialSliderContent';
+  raw?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulBlockTestimonialSliderContentFilterInput = {
+  raw?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulBlockTestimonialSliderEdge = {
+  __typename?: 'ContentfulBlockTestimonialSliderEdge';
+  next?: Maybe<ContentfulBlockTestimonialSlider>;
+  node: ContentfulBlockTestimonialSlider;
+  previous?: Maybe<ContentfulBlockTestimonialSlider>;
+};
+
+export enum ContentfulBlockTestimonialSliderFieldsEnum {
+  contentful_id = 'contentful_id',
+  id = 'id',
+  node_locale = 'node_locale',
+  title = 'title',
+  subtitle = 'subtitle',
+  content___raw = 'content___raw',
+  slides = 'slides',
+  slides___contentful_id = 'slides___contentful_id',
+  slides___id = 'slides___id',
+  slides___node_locale = 'slides___node_locale',
+  slides___title = 'slides___title',
+  slides___position = 'slides___position',
+  slides___content___raw = 'slides___content___raw',
+  slides___image___contentful_id = 'slides___image___contentful_id',
+  slides___image___id = 'slides___image___id',
+  slides___image___spaceId = 'slides___image___spaceId',
+  slides___image___createdAt = 'slides___image___createdAt',
+  slides___image___updatedAt = 'slides___image___updatedAt',
+  slides___image___file___url = 'slides___image___file___url',
+  slides___image___file___fileName = 'slides___image___file___fileName',
+  slides___image___file___contentType = 'slides___image___file___contentType',
+  slides___image___title = 'slides___image___title',
+  slides___image___description = 'slides___image___description',
+  slides___image___node_locale = 'slides___image___node_locale',
+  slides___image___sys___type = 'slides___image___sys___type',
+  slides___image___sys___revision = 'slides___image___sys___revision',
+  slides___image___fixed___base64 = 'slides___image___fixed___base64',
+  slides___image___fixed___tracedSVG = 'slides___image___fixed___tracedSVG',
+  slides___image___fixed___aspectRatio = 'slides___image___fixed___aspectRatio',
+  slides___image___fixed___width = 'slides___image___fixed___width',
+  slides___image___fixed___height = 'slides___image___fixed___height',
+  slides___image___fixed___src = 'slides___image___fixed___src',
+  slides___image___fixed___srcSet = 'slides___image___fixed___srcSet',
+  slides___image___fixed___srcWebp = 'slides___image___fixed___srcWebp',
+  slides___image___fixed___srcSetWebp = 'slides___image___fixed___srcSetWebp',
+  slides___image___fluid___base64 = 'slides___image___fluid___base64',
+  slides___image___fluid___tracedSVG = 'slides___image___fluid___tracedSVG',
+  slides___image___fluid___aspectRatio = 'slides___image___fluid___aspectRatio',
+  slides___image___fluid___src = 'slides___image___fluid___src',
+  slides___image___fluid___srcSet = 'slides___image___fluid___srcSet',
+  slides___image___fluid___srcWebp = 'slides___image___fluid___srcWebp',
+  slides___image___fluid___srcSetWebp = 'slides___image___fluid___srcSetWebp',
+  slides___image___fluid___sizes = 'slides___image___fluid___sizes',
+  slides___image___gatsbyImageData = 'slides___image___gatsbyImageData',
+  slides___image___resize___base64 = 'slides___image___resize___base64',
+  slides___image___resize___tracedSVG = 'slides___image___resize___tracedSVG',
+  slides___image___resize___src = 'slides___image___resize___src',
+  slides___image___resize___width = 'slides___image___resize___width',
+  slides___image___resize___height = 'slides___image___resize___height',
+  slides___image___resize___aspectRatio = 'slides___image___resize___aspectRatio',
+  slides___image___parent___id = 'slides___image___parent___id',
+  slides___image___parent___children = 'slides___image___parent___children',
+  slides___image___children = 'slides___image___children',
+  slides___image___children___id = 'slides___image___children___id',
+  slides___image___children___children = 'slides___image___children___children',
+  slides___image___internal___content = 'slides___image___internal___content',
+  slides___image___internal___contentDigest = 'slides___image___internal___contentDigest',
+  slides___image___internal___description = 'slides___image___internal___description',
+  slides___image___internal___fieldOwners = 'slides___image___internal___fieldOwners',
+  slides___image___internal___ignoreType = 'slides___image___internal___ignoreType',
+  slides___image___internal___mediaType = 'slides___image___internal___mediaType',
+  slides___image___internal___owner = 'slides___image___internal___owner',
+  slides___image___internal___type = 'slides___image___internal___type',
+  slides___block__testimonial_slider = 'slides___block__testimonial_slider',
+  slides___block__testimonial_slider___contentful_id = 'slides___block__testimonial_slider___contentful_id',
+  slides___block__testimonial_slider___id = 'slides___block__testimonial_slider___id',
+  slides___block__testimonial_slider___node_locale = 'slides___block__testimonial_slider___node_locale',
+  slides___block__testimonial_slider___title = 'slides___block__testimonial_slider___title',
+  slides___block__testimonial_slider___subtitle = 'slides___block__testimonial_slider___subtitle',
+  slides___block__testimonial_slider___content___raw = 'slides___block__testimonial_slider___content___raw',
+  slides___block__testimonial_slider___slides = 'slides___block__testimonial_slider___slides',
+  slides___block__testimonial_slider___slides___contentful_id = 'slides___block__testimonial_slider___slides___contentful_id',
+  slides___block__testimonial_slider___slides___id = 'slides___block__testimonial_slider___slides___id',
+  slides___block__testimonial_slider___slides___node_locale = 'slides___block__testimonial_slider___slides___node_locale',
+  slides___block__testimonial_slider___slides___title = 'slides___block__testimonial_slider___slides___title',
+  slides___block__testimonial_slider___slides___position = 'slides___block__testimonial_slider___slides___position',
+  slides___block__testimonial_slider___slides___block__testimonial_slider = 'slides___block__testimonial_slider___slides___block__testimonial_slider',
+  slides___block__testimonial_slider___slides___spaceId = 'slides___block__testimonial_slider___slides___spaceId',
+  slides___block__testimonial_slider___slides___createdAt = 'slides___block__testimonial_slider___slides___createdAt',
+  slides___block__testimonial_slider___slides___updatedAt = 'slides___block__testimonial_slider___slides___updatedAt',
+  slides___block__testimonial_slider___slides___children = 'slides___block__testimonial_slider___slides___children',
+  slides___block__testimonial_slider___page = 'slides___block__testimonial_slider___page',
+  slides___block__testimonial_slider___page___contentful_id = 'slides___block__testimonial_slider___page___contentful_id',
+  slides___block__testimonial_slider___page___id = 'slides___block__testimonial_slider___page___id',
+  slides___block__testimonial_slider___page___node_locale = 'slides___block__testimonial_slider___page___node_locale',
+  slides___block__testimonial_slider___page___title = 'slides___block__testimonial_slider___page___title',
+  slides___block__testimonial_slider___page___slug = 'slides___block__testimonial_slider___page___slug',
+  slides___block__testimonial_slider___page___spaceId = 'slides___block__testimonial_slider___page___spaceId',
+  slides___block__testimonial_slider___page___createdAt = 'slides___block__testimonial_slider___page___createdAt',
+  slides___block__testimonial_slider___page___updatedAt = 'slides___block__testimonial_slider___page___updatedAt',
+  slides___block__testimonial_slider___page___block__content = 'slides___block__testimonial_slider___page___block__content',
+  slides___block__testimonial_slider___page___card = 'slides___block__testimonial_slider___page___card',
+  slides___block__testimonial_slider___page___subtitle = 'slides___block__testimonial_slider___page___subtitle',
+  slides___block__testimonial_slider___page___block__resource_list = 'slides___block__testimonial_slider___page___block__resource_list',
+  slides___block__testimonial_slider___page___seoTitle = 'slides___block__testimonial_slider___page___seoTitle',
+  slides___block__testimonial_slider___page___seoDescription = 'slides___block__testimonial_slider___page___seoDescription',
+  slides___block__testimonial_slider___page___children = 'slides___block__testimonial_slider___page___children',
+  slides___block__testimonial_slider___spaceId = 'slides___block__testimonial_slider___spaceId',
+  slides___block__testimonial_slider___createdAt = 'slides___block__testimonial_slider___createdAt',
+  slides___block__testimonial_slider___updatedAt = 'slides___block__testimonial_slider___updatedAt',
+  slides___block__testimonial_slider___sys___type = 'slides___block__testimonial_slider___sys___type',
+  slides___block__testimonial_slider___sys___revision = 'slides___block__testimonial_slider___sys___revision',
+  slides___block__testimonial_slider___parent___id = 'slides___block__testimonial_slider___parent___id',
+  slides___block__testimonial_slider___parent___children = 'slides___block__testimonial_slider___parent___children',
+  slides___block__testimonial_slider___children = 'slides___block__testimonial_slider___children',
+  slides___block__testimonial_slider___children___id = 'slides___block__testimonial_slider___children___id',
+  slides___block__testimonial_slider___children___children = 'slides___block__testimonial_slider___children___children',
+  slides___block__testimonial_slider___internal___content = 'slides___block__testimonial_slider___internal___content',
+  slides___block__testimonial_slider___internal___contentDigest = 'slides___block__testimonial_slider___internal___contentDigest',
+  slides___block__testimonial_slider___internal___description = 'slides___block__testimonial_slider___internal___description',
+  slides___block__testimonial_slider___internal___fieldOwners = 'slides___block__testimonial_slider___internal___fieldOwners',
+  slides___block__testimonial_slider___internal___ignoreType = 'slides___block__testimonial_slider___internal___ignoreType',
+  slides___block__testimonial_slider___internal___mediaType = 'slides___block__testimonial_slider___internal___mediaType',
+  slides___block__testimonial_slider___internal___owner = 'slides___block__testimonial_slider___internal___owner',
+  slides___block__testimonial_slider___internal___type = 'slides___block__testimonial_slider___internal___type',
+  slides___spaceId = 'slides___spaceId',
+  slides___createdAt = 'slides___createdAt',
+  slides___updatedAt = 'slides___updatedAt',
+  slides___sys___type = 'slides___sys___type',
+  slides___sys___revision = 'slides___sys___revision',
+  slides___parent___id = 'slides___parent___id',
+  slides___parent___parent___id = 'slides___parent___parent___id',
+  slides___parent___parent___children = 'slides___parent___parent___children',
+  slides___parent___children = 'slides___parent___children',
+  slides___parent___children___id = 'slides___parent___children___id',
+  slides___parent___children___children = 'slides___parent___children___children',
+  slides___parent___internal___content = 'slides___parent___internal___content',
+  slides___parent___internal___contentDigest = 'slides___parent___internal___contentDigest',
+  slides___parent___internal___description = 'slides___parent___internal___description',
+  slides___parent___internal___fieldOwners = 'slides___parent___internal___fieldOwners',
+  slides___parent___internal___ignoreType = 'slides___parent___internal___ignoreType',
+  slides___parent___internal___mediaType = 'slides___parent___internal___mediaType',
+  slides___parent___internal___owner = 'slides___parent___internal___owner',
+  slides___parent___internal___type = 'slides___parent___internal___type',
+  slides___children = 'slides___children',
+  slides___children___id = 'slides___children___id',
+  slides___children___parent___id = 'slides___children___parent___id',
+  slides___children___parent___children = 'slides___children___parent___children',
+  slides___children___children = 'slides___children___children',
+  slides___children___children___id = 'slides___children___children___id',
+  slides___children___children___children = 'slides___children___children___children',
+  slides___children___internal___content = 'slides___children___internal___content',
+  slides___children___internal___contentDigest = 'slides___children___internal___contentDigest',
+  slides___children___internal___description = 'slides___children___internal___description',
+  slides___children___internal___fieldOwners = 'slides___children___internal___fieldOwners',
+  slides___children___internal___ignoreType = 'slides___children___internal___ignoreType',
+  slides___children___internal___mediaType = 'slides___children___internal___mediaType',
+  slides___children___internal___owner = 'slides___children___internal___owner',
+  slides___children___internal___type = 'slides___children___internal___type',
+  slides___internal___content = 'slides___internal___content',
+  slides___internal___contentDigest = 'slides___internal___contentDigest',
+  slides___internal___description = 'slides___internal___description',
+  slides___internal___fieldOwners = 'slides___internal___fieldOwners',
+  slides___internal___ignoreType = 'slides___internal___ignoreType',
+  slides___internal___mediaType = 'slides___internal___mediaType',
+  slides___internal___owner = 'slides___internal___owner',
+  slides___internal___type = 'slides___internal___type',
+  page = 'page',
+  page___contentful_id = 'page___contentful_id',
+  page___id = 'page___id',
+  page___node_locale = 'page___node_locale',
+  page___title = 'page___title',
+  page___slug = 'page___slug',
+  page___spaceId = 'page___spaceId',
+  page___createdAt = 'page___createdAt',
+  page___updatedAt = 'page___updatedAt',
+  page___sys___type = 'page___sys___type',
+  page___sys___revision = 'page___sys___revision',
+  page___block__content = 'page___block__content',
+  page___block__content___contentful_id = 'page___block__content___contentful_id',
+  page___block__content___id = 'page___block__content___id',
+  page___block__content___node_locale = 'page___block__content___node_locale',
+  page___block__content___blockTitle = 'page___block__content___blockTitle',
+  page___block__content___variation = 'page___block__content___variation',
+  page___block__content___content___raw = 'page___block__content___content___raw',
+  page___block__content___image___contentful_id = 'page___block__content___image___contentful_id',
+  page___block__content___image___id = 'page___block__content___image___id',
+  page___block__content___image___spaceId = 'page___block__content___image___spaceId',
+  page___block__content___image___createdAt = 'page___block__content___image___createdAt',
+  page___block__content___image___updatedAt = 'page___block__content___image___updatedAt',
+  page___block__content___image___title = 'page___block__content___image___title',
+  page___block__content___image___description = 'page___block__content___image___description',
+  page___block__content___image___node_locale = 'page___block__content___image___node_locale',
+  page___block__content___image___gatsbyImageData = 'page___block__content___image___gatsbyImageData',
+  page___block__content___image___children = 'page___block__content___image___children',
+  page___block__content___page = 'page___block__content___page',
+  page___block__content___page___contentful_id = 'page___block__content___page___contentful_id',
+  page___block__content___page___id = 'page___block__content___page___id',
+  page___block__content___page___node_locale = 'page___block__content___page___node_locale',
+  page___block__content___page___title = 'page___block__content___page___title',
+  page___block__content___page___slug = 'page___block__content___page___slug',
+  page___block__content___page___spaceId = 'page___block__content___page___spaceId',
+  page___block__content___page___createdAt = 'page___block__content___page___createdAt',
+  page___block__content___page___updatedAt = 'page___block__content___page___updatedAt',
+  page___block__content___page___block__content = 'page___block__content___page___block__content',
+  page___block__content___page___card = 'page___block__content___page___card',
+  page___block__content___page___subtitle = 'page___block__content___page___subtitle',
+  page___block__content___page___block__resource_list = 'page___block__content___page___block__resource_list',
+  page___block__content___page___seoTitle = 'page___block__content___page___seoTitle',
+  page___block__content___page___seoDescription = 'page___block__content___page___seoDescription',
+  page___block__content___page___children = 'page___block__content___page___children',
+  page___block__content___spaceId = 'page___block__content___spaceId',
+  page___block__content___createdAt = 'page___block__content___createdAt',
+  page___block__content___updatedAt = 'page___block__content___updatedAt',
+  page___block__content___sys___type = 'page___block__content___sys___type',
+  page___block__content___sys___revision = 'page___block__content___sys___revision',
+  page___block__content___customButtonText = 'page___block__content___customButtonText',
+  page___block__content___parent___id = 'page___block__content___parent___id',
+  page___block__content___parent___children = 'page___block__content___parent___children',
+  page___block__content___children = 'page___block__content___children',
+  page___block__content___children___id = 'page___block__content___children___id',
+  page___block__content___children___children = 'page___block__content___children___children',
+  page___block__content___internal___content = 'page___block__content___internal___content',
+  page___block__content___internal___contentDigest = 'page___block__content___internal___contentDigest',
+  page___block__content___internal___description = 'page___block__content___internal___description',
+  page___block__content___internal___fieldOwners = 'page___block__content___internal___fieldOwners',
+  page___block__content___internal___ignoreType = 'page___block__content___internal___ignoreType',
+  page___block__content___internal___mediaType = 'page___block__content___internal___mediaType',
+  page___block__content___internal___owner = 'page___block__content___internal___owner',
+  page___block__content___internal___type = 'page___block__content___internal___type',
+  page___card = 'page___card',
+  page___card___contentful_id = 'page___card___contentful_id',
+  page___card___id = 'page___card___id',
+  page___card___node_locale = 'page___card___node_locale',
+  page___card___title = 'page___card___title',
+  page___card___content___raw = 'page___card___content___raw',
+  page___card___customLinkTitle = 'page___card___customLinkTitle',
+  page___card___icon = 'page___card___icon',
+  page___card___block__list_of_cards = 'page___card___block__list_of_cards',
+  page___card___block__list_of_cards___contentful_id = 'page___card___block__list_of_cards___contentful_id',
+  page___card___block__list_of_cards___id = 'page___card___block__list_of_cards___id',
+  page___card___block__list_of_cards___node_locale = 'page___card___block__list_of_cards___node_locale',
+  page___card___block__list_of_cards___title = 'page___card___block__list_of_cards___title',
+  page___card___block__list_of_cards___variation = 'page___card___block__list_of_cards___variation',
+  page___card___block__list_of_cards___page = 'page___card___block__list_of_cards___page',
+  page___card___block__list_of_cards___spaceId = 'page___card___block__list_of_cards___spaceId',
+  page___card___block__list_of_cards___createdAt = 'page___card___block__list_of_cards___createdAt',
+  page___card___block__list_of_cards___updatedAt = 'page___card___block__list_of_cards___updatedAt',
+  page___card___block__list_of_cards___children = 'page___card___block__list_of_cards___children',
+  page___card___spaceId = 'page___card___spaceId',
+  page___card___createdAt = 'page___card___createdAt',
+  page___card___updatedAt = 'page___card___updatedAt',
+  page___card___sys___type = 'page___card___sys___type',
+  page___card___sys___revision = 'page___card___sys___revision',
+  page___card___parent___id = 'page___card___parent___id',
+  page___card___parent___children = 'page___card___parent___children',
+  page___card___children = 'page___card___children',
+  page___card___children___id = 'page___card___children___id',
+  page___card___children___children = 'page___card___children___children',
+  page___card___internal___content = 'page___card___internal___content',
+  page___card___internal___contentDigest = 'page___card___internal___contentDigest',
+  page___card___internal___description = 'page___card___internal___description',
+  page___card___internal___fieldOwners = 'page___card___internal___fieldOwners',
+  page___card___internal___ignoreType = 'page___card___internal___ignoreType',
+  page___card___internal___mediaType = 'page___card___internal___mediaType',
+  page___card___internal___owner = 'page___card___internal___owner',
+  page___card___internal___type = 'page___card___internal___type',
+  page___subtitle = 'page___subtitle',
+  page___block__resource_list = 'page___block__resource_list',
+  page___block__resource_list___contentful_id = 'page___block__resource_list___contentful_id',
+  page___block__resource_list___id = 'page___block__resource_list___id',
+  page___block__resource_list___node_locale = 'page___block__resource_list___node_locale',
+  page___block__resource_list___title = 'page___block__resource_list___title',
+  page___block__resource_list___customHeadingLinkText = 'page___block__resource_list___customHeadingLinkText',
+  page___block__resource_list___headingLink___contentful_id = 'page___block__resource_list___headingLink___contentful_id',
+  page___block__resource_list___headingLink___id = 'page___block__resource_list___headingLink___id',
+  page___block__resource_list___headingLink___node_locale = 'page___block__resource_list___headingLink___node_locale',
+  page___block__resource_list___headingLink___title = 'page___block__resource_list___headingLink___title',
+  page___block__resource_list___headingLink___slug = 'page___block__resource_list___headingLink___slug',
+  page___block__resource_list___headingLink___spaceId = 'page___block__resource_list___headingLink___spaceId',
+  page___block__resource_list___headingLink___createdAt = 'page___block__resource_list___headingLink___createdAt',
+  page___block__resource_list___headingLink___updatedAt = 'page___block__resource_list___headingLink___updatedAt',
+  page___block__resource_list___headingLink___block__content = 'page___block__resource_list___headingLink___block__content',
+  page___block__resource_list___headingLink___card = 'page___block__resource_list___headingLink___card',
+  page___block__resource_list___headingLink___subtitle = 'page___block__resource_list___headingLink___subtitle',
+  page___block__resource_list___headingLink___block__resource_list = 'page___block__resource_list___headingLink___block__resource_list',
+  page___block__resource_list___headingLink___seoTitle = 'page___block__resource_list___headingLink___seoTitle',
+  page___block__resource_list___headingLink___seoDescription = 'page___block__resource_list___headingLink___seoDescription',
+  page___block__resource_list___headingLink___children = 'page___block__resource_list___headingLink___children',
+  page___block__resource_list___blog_post = 'page___block__resource_list___blog_post',
+  page___block__resource_list___blog_post___contentful_id = 'page___block__resource_list___blog_post___contentful_id',
+  page___block__resource_list___blog_post___id = 'page___block__resource_list___blog_post___id',
+  page___block__resource_list___blog_post___node_locale = 'page___block__resource_list___blog_post___node_locale',
+  page___block__resource_list___blog_post___title = 'page___block__resource_list___blog_post___title',
+  page___block__resource_list___blog_post___slug = 'page___block__resource_list___blog_post___slug',
+  page___block__resource_list___blog_post___category = 'page___block__resource_list___blog_post___category',
+  page___block__resource_list___blog_post___published = 'page___block__resource_list___blog_post___published',
+  page___block__resource_list___blog_post___seoTitle = 'page___block__resource_list___blog_post___seoTitle',
+  page___block__resource_list___blog_post___seoDescription = 'page___block__resource_list___blog_post___seoDescription',
+  page___block__resource_list___blog_post___spaceId = 'page___block__resource_list___blog_post___spaceId',
+  page___block__resource_list___blog_post___createdAt = 'page___block__resource_list___blog_post___createdAt',
+  page___block__resource_list___blog_post___updatedAt = 'page___block__resource_list___blog_post___updatedAt',
+  page___block__resource_list___blog_post___featured = 'page___block__resource_list___blog_post___featured',
+  page___block__resource_list___blog_post___block__resource_list = 'page___block__resource_list___blog_post___block__resource_list',
+  page___block__resource_list___blog_post___childrenContentfulBlogPostExcerptTextNode = 'page___block__resource_list___blog_post___childrenContentfulBlogPostExcerptTextNode',
+  page___block__resource_list___blog_post___children = 'page___block__resource_list___blog_post___children',
+  page___block__resource_list___page = 'page___block__resource_list___page',
+  page___block__resource_list___page___contentful_id = 'page___block__resource_list___page___contentful_id',
+  page___block__resource_list___page___id = 'page___block__resource_list___page___id',
+  page___block__resource_list___page___node_locale = 'page___block__resource_list___page___node_locale',
+  page___block__resource_list___page___title = 'page___block__resource_list___page___title',
+  page___block__resource_list___page___slug = 'page___block__resource_list___page___slug',
+  page___block__resource_list___page___spaceId = 'page___block__resource_list___page___spaceId',
+  page___block__resource_list___page___createdAt = 'page___block__resource_list___page___createdAt',
+  page___block__resource_list___page___updatedAt = 'page___block__resource_list___page___updatedAt',
+  page___block__resource_list___page___block__content = 'page___block__resource_list___page___block__content',
+  page___block__resource_list___page___card = 'page___block__resource_list___page___card',
+  page___block__resource_list___page___subtitle = 'page___block__resource_list___page___subtitle',
+  page___block__resource_list___page___block__resource_list = 'page___block__resource_list___page___block__resource_list',
+  page___block__resource_list___page___seoTitle = 'page___block__resource_list___page___seoTitle',
+  page___block__resource_list___page___seoDescription = 'page___block__resource_list___page___seoDescription',
+  page___block__resource_list___page___children = 'page___block__resource_list___page___children',
+  page___block__resource_list___spaceId = 'page___block__resource_list___spaceId',
+  page___block__resource_list___createdAt = 'page___block__resource_list___createdAt',
+  page___block__resource_list___updatedAt = 'page___block__resource_list___updatedAt',
+  page___block__resource_list___sys___type = 'page___block__resource_list___sys___type',
+  page___block__resource_list___sys___revision = 'page___block__resource_list___sys___revision',
+  page___block__resource_list___parent___id = 'page___block__resource_list___parent___id',
+  page___block__resource_list___parent___children = 'page___block__resource_list___parent___children',
+  page___block__resource_list___children = 'page___block__resource_list___children',
+  page___block__resource_list___children___id = 'page___block__resource_list___children___id',
+  page___block__resource_list___children___children = 'page___block__resource_list___children___children',
+  page___block__resource_list___internal___content = 'page___block__resource_list___internal___content',
+  page___block__resource_list___internal___contentDigest = 'page___block__resource_list___internal___contentDigest',
+  page___block__resource_list___internal___description = 'page___block__resource_list___internal___description',
+  page___block__resource_list___internal___fieldOwners = 'page___block__resource_list___internal___fieldOwners',
+  page___block__resource_list___internal___ignoreType = 'page___block__resource_list___internal___ignoreType',
+  page___block__resource_list___internal___mediaType = 'page___block__resource_list___internal___mediaType',
+  page___block__resource_list___internal___owner = 'page___block__resource_list___internal___owner',
+  page___block__resource_list___internal___type = 'page___block__resource_list___internal___type',
+  page___seoTitle = 'page___seoTitle',
+  page___seoDescription = 'page___seoDescription',
+  page___parent___id = 'page___parent___id',
+  page___parent___parent___id = 'page___parent___parent___id',
+  page___parent___parent___children = 'page___parent___parent___children',
+  page___parent___children = 'page___parent___children',
+  page___parent___children___id = 'page___parent___children___id',
+  page___parent___children___children = 'page___parent___children___children',
+  page___parent___internal___content = 'page___parent___internal___content',
+  page___parent___internal___contentDigest = 'page___parent___internal___contentDigest',
+  page___parent___internal___description = 'page___parent___internal___description',
+  page___parent___internal___fieldOwners = 'page___parent___internal___fieldOwners',
+  page___parent___internal___ignoreType = 'page___parent___internal___ignoreType',
+  page___parent___internal___mediaType = 'page___parent___internal___mediaType',
+  page___parent___internal___owner = 'page___parent___internal___owner',
+  page___parent___internal___type = 'page___parent___internal___type',
+  page___children = 'page___children',
+  page___children___id = 'page___children___id',
+  page___children___parent___id = 'page___children___parent___id',
+  page___children___parent___children = 'page___children___parent___children',
+  page___children___children = 'page___children___children',
+  page___children___children___id = 'page___children___children___id',
+  page___children___children___children = 'page___children___children___children',
+  page___children___internal___content = 'page___children___internal___content',
+  page___children___internal___contentDigest = 'page___children___internal___contentDigest',
+  page___children___internal___description = 'page___children___internal___description',
+  page___children___internal___fieldOwners = 'page___children___internal___fieldOwners',
+  page___children___internal___ignoreType = 'page___children___internal___ignoreType',
+  page___children___internal___mediaType = 'page___children___internal___mediaType',
+  page___children___internal___owner = 'page___children___internal___owner',
+  page___children___internal___type = 'page___children___internal___type',
+  page___internal___content = 'page___internal___content',
+  page___internal___contentDigest = 'page___internal___contentDigest',
+  page___internal___description = 'page___internal___description',
+  page___internal___fieldOwners = 'page___internal___fieldOwners',
+  page___internal___ignoreType = 'page___internal___ignoreType',
+  page___internal___mediaType = 'page___internal___mediaType',
+  page___internal___owner = 'page___internal___owner',
+  page___internal___type = 'page___internal___type',
+  spaceId = 'spaceId',
+  createdAt = 'createdAt',
+  updatedAt = 'updatedAt',
+  sys___type = 'sys___type',
+  sys___revision = 'sys___revision',
+  sys___contentType___sys___type = 'sys___contentType___sys___type',
+  sys___contentType___sys___linkType = 'sys___contentType___sys___linkType',
+  sys___contentType___sys___id = 'sys___contentType___sys___id',
+  parent___id = 'parent___id',
+  parent___parent___id = 'parent___parent___id',
+  parent___parent___parent___id = 'parent___parent___parent___id',
+  parent___parent___parent___children = 'parent___parent___parent___children',
+  parent___parent___children = 'parent___parent___children',
+  parent___parent___children___id = 'parent___parent___children___id',
+  parent___parent___children___children = 'parent___parent___children___children',
+  parent___parent___internal___content = 'parent___parent___internal___content',
+  parent___parent___internal___contentDigest = 'parent___parent___internal___contentDigest',
+  parent___parent___internal___description = 'parent___parent___internal___description',
+  parent___parent___internal___fieldOwners = 'parent___parent___internal___fieldOwners',
+  parent___parent___internal___ignoreType = 'parent___parent___internal___ignoreType',
+  parent___parent___internal___mediaType = 'parent___parent___internal___mediaType',
+  parent___parent___internal___owner = 'parent___parent___internal___owner',
+  parent___parent___internal___type = 'parent___parent___internal___type',
+  parent___children = 'parent___children',
+  parent___children___id = 'parent___children___id',
+  parent___children___parent___id = 'parent___children___parent___id',
+  parent___children___parent___children = 'parent___children___parent___children',
+  parent___children___children = 'parent___children___children',
+  parent___children___children___id = 'parent___children___children___id',
+  parent___children___children___children = 'parent___children___children___children',
+  parent___children___internal___content = 'parent___children___internal___content',
+  parent___children___internal___contentDigest = 'parent___children___internal___contentDigest',
+  parent___children___internal___description = 'parent___children___internal___description',
+  parent___children___internal___fieldOwners = 'parent___children___internal___fieldOwners',
+  parent___children___internal___ignoreType = 'parent___children___internal___ignoreType',
+  parent___children___internal___mediaType = 'parent___children___internal___mediaType',
+  parent___children___internal___owner = 'parent___children___internal___owner',
+  parent___children___internal___type = 'parent___children___internal___type',
+  parent___internal___content = 'parent___internal___content',
+  parent___internal___contentDigest = 'parent___internal___contentDigest',
+  parent___internal___description = 'parent___internal___description',
+  parent___internal___fieldOwners = 'parent___internal___fieldOwners',
+  parent___internal___ignoreType = 'parent___internal___ignoreType',
+  parent___internal___mediaType = 'parent___internal___mediaType',
+  parent___internal___owner = 'parent___internal___owner',
+  parent___internal___type = 'parent___internal___type',
+  children = 'children',
+  children___id = 'children___id',
+  children___parent___id = 'children___parent___id',
+  children___parent___parent___id = 'children___parent___parent___id',
+  children___parent___parent___children = 'children___parent___parent___children',
+  children___parent___children = 'children___parent___children',
+  children___parent___children___id = 'children___parent___children___id',
+  children___parent___children___children = 'children___parent___children___children',
+  children___parent___internal___content = 'children___parent___internal___content',
+  children___parent___internal___contentDigest = 'children___parent___internal___contentDigest',
+  children___parent___internal___description = 'children___parent___internal___description',
+  children___parent___internal___fieldOwners = 'children___parent___internal___fieldOwners',
+  children___parent___internal___ignoreType = 'children___parent___internal___ignoreType',
+  children___parent___internal___mediaType = 'children___parent___internal___mediaType',
+  children___parent___internal___owner = 'children___parent___internal___owner',
+  children___parent___internal___type = 'children___parent___internal___type',
+  children___children = 'children___children',
+  children___children___id = 'children___children___id',
+  children___children___parent___id = 'children___children___parent___id',
+  children___children___parent___children = 'children___children___parent___children',
+  children___children___children = 'children___children___children',
+  children___children___children___id = 'children___children___children___id',
+  children___children___children___children = 'children___children___children___children',
+  children___children___internal___content = 'children___children___internal___content',
+  children___children___internal___contentDigest = 'children___children___internal___contentDigest',
+  children___children___internal___description = 'children___children___internal___description',
+  children___children___internal___fieldOwners = 'children___children___internal___fieldOwners',
+  children___children___internal___ignoreType = 'children___children___internal___ignoreType',
+  children___children___internal___mediaType = 'children___children___internal___mediaType',
+  children___children___internal___owner = 'children___children___internal___owner',
+  children___children___internal___type = 'children___children___internal___type',
+  children___internal___content = 'children___internal___content',
+  children___internal___contentDigest = 'children___internal___contentDigest',
+  children___internal___description = 'children___internal___description',
+  children___internal___fieldOwners = 'children___internal___fieldOwners',
+  children___internal___ignoreType = 'children___internal___ignoreType',
+  children___internal___mediaType = 'children___internal___mediaType',
+  children___internal___owner = 'children___internal___owner',
+  children___internal___type = 'children___internal___type',
+  internal___content = 'internal___content',
+  internal___contentDigest = 'internal___contentDigest',
+  internal___description = 'internal___description',
+  internal___fieldOwners = 'internal___fieldOwners',
+  internal___ignoreType = 'internal___ignoreType',
+  internal___mediaType = 'internal___mediaType',
+  internal___owner = 'internal___owner',
+  internal___type = 'internal___type'
+}
+
+export type ContentfulBlockTestimonialSliderFilterInput = {
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  node_locale?: Maybe<StringQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  subtitle?: Maybe<StringQueryOperatorInput>;
+  content?: Maybe<ContentfulBlockTestimonialSliderContentFilterInput>;
+  slides?: Maybe<ContentfulTestimonialFilterListInput>;
+  page?: Maybe<ContentfulPageFilterListInput>;
+  spaceId?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulBlockTestimonialSliderSysFilterInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+};
+
+export type ContentfulBlockTestimonialSliderFilterListInput = {
+  elemMatch?: Maybe<ContentfulBlockTestimonialSliderFilterInput>;
+};
+
+export type ContentfulBlockTestimonialSliderGroupConnection = {
+  __typename?: 'ContentfulBlockTestimonialSliderGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<ContentfulBlockTestimonialSliderEdge>;
+  nodes: Array<ContentfulBlockTestimonialSlider>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulBlockTestimonialSliderSortInput = {
+  fields?: Maybe<Array<Maybe<ContentfulBlockTestimonialSliderFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type ContentfulBlockTestimonialSliderSys = {
+  __typename?: 'ContentfulBlockTestimonialSliderSys';
+  type?: Maybe<Scalars['String']>;
+  revision?: Maybe<Scalars['Int']>;
+  contentType?: Maybe<ContentfulBlockTestimonialSliderSysContentType>;
+};
+
+export type ContentfulBlockTestimonialSliderSysContentType = {
+  __typename?: 'ContentfulBlockTestimonialSliderSysContentType';
+  sys?: Maybe<ContentfulBlockTestimonialSliderSysContentTypeSys>;
+};
+
+export type ContentfulBlockTestimonialSliderSysContentTypeFilterInput = {
+  sys?: Maybe<ContentfulBlockTestimonialSliderSysContentTypeSysFilterInput>;
+};
+
+export type ContentfulBlockTestimonialSliderSysContentTypeSys = {
+  __typename?: 'ContentfulBlockTestimonialSliderSysContentTypeSys';
+  type?: Maybe<Scalars['String']>;
+  linkType?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulBlockTestimonialSliderSysContentTypeSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  linkType?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+};
+
+export type ContentfulBlockTestimonialSliderSysFilterInput = {
+  type?: Maybe<StringQueryOperatorInput>;
+  revision?: Maybe<IntQueryOperatorInput>;
+  contentType?: Maybe<ContentfulBlockTestimonialSliderSysContentTypeFilterInput>;
+};
+
 export type ContentfulBlogPost = ContentfulReference & ContentfulEntry & Node & {
   __typename?: 'ContentfulBlogPost';
   contentful_id: Scalars['String'];
@@ -10353,7 +10963,7 @@ export type ContentfulPage = ContentfulReference & ContentfulEntry & Node & {
   node_locale: Scalars['String'];
   title?: Maybe<Scalars['String']>;
   slug?: Maybe<Scalars['String']>;
-  blocks?: Maybe<Array<Maybe<ContentfulBlockCallToActionContentfulBlockContentContentfulBlockContentListContentfulBlockImageBandContentfulBlockJumbotronContentfulBlockListOfCardsContentfulBlockListOfPeopleContentfulBlockMembersContentfulBlockResourceListUnion>>>;
+  blocks?: Maybe<Array<Maybe<ContentfulBlockCallToActionContentfulBlockContentContentfulBlockContentListContentfulBlockImageBandContentfulBlockJumbotronContentfulBlockListOfCardsContentfulBlockListOfPeopleContentfulBlockMembersContentfulBlockResourceListContentfulBlockTestimonialSliderUnion>>>;
   spaceId?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
@@ -12981,6 +13591,7 @@ export type ContentfulTestimonial = ContentfulReference & ContentfulEntry & Node
   position?: Maybe<Scalars['String']>;
   content?: Maybe<ContentfulTestimonialContent>;
   image?: Maybe<ContentfulAsset>;
+  block__testimonial_slider?: Maybe<Array<Maybe<ContentfulBlockTestimonialSlider>>>;
   spaceId?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
@@ -13126,6 +13737,165 @@ export enum ContentfulTestimonialFieldsEnum {
   image___internal___mediaType = 'image___internal___mediaType',
   image___internal___owner = 'image___internal___owner',
   image___internal___type = 'image___internal___type',
+  block__testimonial_slider = 'block__testimonial_slider',
+  block__testimonial_slider___contentful_id = 'block__testimonial_slider___contentful_id',
+  block__testimonial_slider___id = 'block__testimonial_slider___id',
+  block__testimonial_slider___node_locale = 'block__testimonial_slider___node_locale',
+  block__testimonial_slider___title = 'block__testimonial_slider___title',
+  block__testimonial_slider___subtitle = 'block__testimonial_slider___subtitle',
+  block__testimonial_slider___content___raw = 'block__testimonial_slider___content___raw',
+  block__testimonial_slider___slides = 'block__testimonial_slider___slides',
+  block__testimonial_slider___slides___contentful_id = 'block__testimonial_slider___slides___contentful_id',
+  block__testimonial_slider___slides___id = 'block__testimonial_slider___slides___id',
+  block__testimonial_slider___slides___node_locale = 'block__testimonial_slider___slides___node_locale',
+  block__testimonial_slider___slides___title = 'block__testimonial_slider___slides___title',
+  block__testimonial_slider___slides___position = 'block__testimonial_slider___slides___position',
+  block__testimonial_slider___slides___content___raw = 'block__testimonial_slider___slides___content___raw',
+  block__testimonial_slider___slides___image___contentful_id = 'block__testimonial_slider___slides___image___contentful_id',
+  block__testimonial_slider___slides___image___id = 'block__testimonial_slider___slides___image___id',
+  block__testimonial_slider___slides___image___spaceId = 'block__testimonial_slider___slides___image___spaceId',
+  block__testimonial_slider___slides___image___createdAt = 'block__testimonial_slider___slides___image___createdAt',
+  block__testimonial_slider___slides___image___updatedAt = 'block__testimonial_slider___slides___image___updatedAt',
+  block__testimonial_slider___slides___image___title = 'block__testimonial_slider___slides___image___title',
+  block__testimonial_slider___slides___image___description = 'block__testimonial_slider___slides___image___description',
+  block__testimonial_slider___slides___image___node_locale = 'block__testimonial_slider___slides___image___node_locale',
+  block__testimonial_slider___slides___image___gatsbyImageData = 'block__testimonial_slider___slides___image___gatsbyImageData',
+  block__testimonial_slider___slides___image___children = 'block__testimonial_slider___slides___image___children',
+  block__testimonial_slider___slides___block__testimonial_slider = 'block__testimonial_slider___slides___block__testimonial_slider',
+  block__testimonial_slider___slides___block__testimonial_slider___contentful_id = 'block__testimonial_slider___slides___block__testimonial_slider___contentful_id',
+  block__testimonial_slider___slides___block__testimonial_slider___id = 'block__testimonial_slider___slides___block__testimonial_slider___id',
+  block__testimonial_slider___slides___block__testimonial_slider___node_locale = 'block__testimonial_slider___slides___block__testimonial_slider___node_locale',
+  block__testimonial_slider___slides___block__testimonial_slider___title = 'block__testimonial_slider___slides___block__testimonial_slider___title',
+  block__testimonial_slider___slides___block__testimonial_slider___subtitle = 'block__testimonial_slider___slides___block__testimonial_slider___subtitle',
+  block__testimonial_slider___slides___block__testimonial_slider___slides = 'block__testimonial_slider___slides___block__testimonial_slider___slides',
+  block__testimonial_slider___slides___block__testimonial_slider___page = 'block__testimonial_slider___slides___block__testimonial_slider___page',
+  block__testimonial_slider___slides___block__testimonial_slider___spaceId = 'block__testimonial_slider___slides___block__testimonial_slider___spaceId',
+  block__testimonial_slider___slides___block__testimonial_slider___createdAt = 'block__testimonial_slider___slides___block__testimonial_slider___createdAt',
+  block__testimonial_slider___slides___block__testimonial_slider___updatedAt = 'block__testimonial_slider___slides___block__testimonial_slider___updatedAt',
+  block__testimonial_slider___slides___block__testimonial_slider___children = 'block__testimonial_slider___slides___block__testimonial_slider___children',
+  block__testimonial_slider___slides___spaceId = 'block__testimonial_slider___slides___spaceId',
+  block__testimonial_slider___slides___createdAt = 'block__testimonial_slider___slides___createdAt',
+  block__testimonial_slider___slides___updatedAt = 'block__testimonial_slider___slides___updatedAt',
+  block__testimonial_slider___slides___sys___type = 'block__testimonial_slider___slides___sys___type',
+  block__testimonial_slider___slides___sys___revision = 'block__testimonial_slider___slides___sys___revision',
+  block__testimonial_slider___slides___parent___id = 'block__testimonial_slider___slides___parent___id',
+  block__testimonial_slider___slides___parent___children = 'block__testimonial_slider___slides___parent___children',
+  block__testimonial_slider___slides___children = 'block__testimonial_slider___slides___children',
+  block__testimonial_slider___slides___children___id = 'block__testimonial_slider___slides___children___id',
+  block__testimonial_slider___slides___children___children = 'block__testimonial_slider___slides___children___children',
+  block__testimonial_slider___slides___internal___content = 'block__testimonial_slider___slides___internal___content',
+  block__testimonial_slider___slides___internal___contentDigest = 'block__testimonial_slider___slides___internal___contentDigest',
+  block__testimonial_slider___slides___internal___description = 'block__testimonial_slider___slides___internal___description',
+  block__testimonial_slider___slides___internal___fieldOwners = 'block__testimonial_slider___slides___internal___fieldOwners',
+  block__testimonial_slider___slides___internal___ignoreType = 'block__testimonial_slider___slides___internal___ignoreType',
+  block__testimonial_slider___slides___internal___mediaType = 'block__testimonial_slider___slides___internal___mediaType',
+  block__testimonial_slider___slides___internal___owner = 'block__testimonial_slider___slides___internal___owner',
+  block__testimonial_slider___slides___internal___type = 'block__testimonial_slider___slides___internal___type',
+  block__testimonial_slider___page = 'block__testimonial_slider___page',
+  block__testimonial_slider___page___contentful_id = 'block__testimonial_slider___page___contentful_id',
+  block__testimonial_slider___page___id = 'block__testimonial_slider___page___id',
+  block__testimonial_slider___page___node_locale = 'block__testimonial_slider___page___node_locale',
+  block__testimonial_slider___page___title = 'block__testimonial_slider___page___title',
+  block__testimonial_slider___page___slug = 'block__testimonial_slider___page___slug',
+  block__testimonial_slider___page___spaceId = 'block__testimonial_slider___page___spaceId',
+  block__testimonial_slider___page___createdAt = 'block__testimonial_slider___page___createdAt',
+  block__testimonial_slider___page___updatedAt = 'block__testimonial_slider___page___updatedAt',
+  block__testimonial_slider___page___sys___type = 'block__testimonial_slider___page___sys___type',
+  block__testimonial_slider___page___sys___revision = 'block__testimonial_slider___page___sys___revision',
+  block__testimonial_slider___page___block__content = 'block__testimonial_slider___page___block__content',
+  block__testimonial_slider___page___block__content___contentful_id = 'block__testimonial_slider___page___block__content___contentful_id',
+  block__testimonial_slider___page___block__content___id = 'block__testimonial_slider___page___block__content___id',
+  block__testimonial_slider___page___block__content___node_locale = 'block__testimonial_slider___page___block__content___node_locale',
+  block__testimonial_slider___page___block__content___blockTitle = 'block__testimonial_slider___page___block__content___blockTitle',
+  block__testimonial_slider___page___block__content___variation = 'block__testimonial_slider___page___block__content___variation',
+  block__testimonial_slider___page___block__content___page = 'block__testimonial_slider___page___block__content___page',
+  block__testimonial_slider___page___block__content___spaceId = 'block__testimonial_slider___page___block__content___spaceId',
+  block__testimonial_slider___page___block__content___createdAt = 'block__testimonial_slider___page___block__content___createdAt',
+  block__testimonial_slider___page___block__content___updatedAt = 'block__testimonial_slider___page___block__content___updatedAt',
+  block__testimonial_slider___page___block__content___customButtonText = 'block__testimonial_slider___page___block__content___customButtonText',
+  block__testimonial_slider___page___block__content___children = 'block__testimonial_slider___page___block__content___children',
+  block__testimonial_slider___page___card = 'block__testimonial_slider___page___card',
+  block__testimonial_slider___page___card___contentful_id = 'block__testimonial_slider___page___card___contentful_id',
+  block__testimonial_slider___page___card___id = 'block__testimonial_slider___page___card___id',
+  block__testimonial_slider___page___card___node_locale = 'block__testimonial_slider___page___card___node_locale',
+  block__testimonial_slider___page___card___title = 'block__testimonial_slider___page___card___title',
+  block__testimonial_slider___page___card___customLinkTitle = 'block__testimonial_slider___page___card___customLinkTitle',
+  block__testimonial_slider___page___card___icon = 'block__testimonial_slider___page___card___icon',
+  block__testimonial_slider___page___card___block__list_of_cards = 'block__testimonial_slider___page___card___block__list_of_cards',
+  block__testimonial_slider___page___card___spaceId = 'block__testimonial_slider___page___card___spaceId',
+  block__testimonial_slider___page___card___createdAt = 'block__testimonial_slider___page___card___createdAt',
+  block__testimonial_slider___page___card___updatedAt = 'block__testimonial_slider___page___card___updatedAt',
+  block__testimonial_slider___page___card___children = 'block__testimonial_slider___page___card___children',
+  block__testimonial_slider___page___subtitle = 'block__testimonial_slider___page___subtitle',
+  block__testimonial_slider___page___block__resource_list = 'block__testimonial_slider___page___block__resource_list',
+  block__testimonial_slider___page___block__resource_list___contentful_id = 'block__testimonial_slider___page___block__resource_list___contentful_id',
+  block__testimonial_slider___page___block__resource_list___id = 'block__testimonial_slider___page___block__resource_list___id',
+  block__testimonial_slider___page___block__resource_list___node_locale = 'block__testimonial_slider___page___block__resource_list___node_locale',
+  block__testimonial_slider___page___block__resource_list___title = 'block__testimonial_slider___page___block__resource_list___title',
+  block__testimonial_slider___page___block__resource_list___customHeadingLinkText = 'block__testimonial_slider___page___block__resource_list___customHeadingLinkText',
+  block__testimonial_slider___page___block__resource_list___blog_post = 'block__testimonial_slider___page___block__resource_list___blog_post',
+  block__testimonial_slider___page___block__resource_list___page = 'block__testimonial_slider___page___block__resource_list___page',
+  block__testimonial_slider___page___block__resource_list___spaceId = 'block__testimonial_slider___page___block__resource_list___spaceId',
+  block__testimonial_slider___page___block__resource_list___createdAt = 'block__testimonial_slider___page___block__resource_list___createdAt',
+  block__testimonial_slider___page___block__resource_list___updatedAt = 'block__testimonial_slider___page___block__resource_list___updatedAt',
+  block__testimonial_slider___page___block__resource_list___children = 'block__testimonial_slider___page___block__resource_list___children',
+  block__testimonial_slider___page___seoTitle = 'block__testimonial_slider___page___seoTitle',
+  block__testimonial_slider___page___seoDescription = 'block__testimonial_slider___page___seoDescription',
+  block__testimonial_slider___page___parent___id = 'block__testimonial_slider___page___parent___id',
+  block__testimonial_slider___page___parent___children = 'block__testimonial_slider___page___parent___children',
+  block__testimonial_slider___page___children = 'block__testimonial_slider___page___children',
+  block__testimonial_slider___page___children___id = 'block__testimonial_slider___page___children___id',
+  block__testimonial_slider___page___children___children = 'block__testimonial_slider___page___children___children',
+  block__testimonial_slider___page___internal___content = 'block__testimonial_slider___page___internal___content',
+  block__testimonial_slider___page___internal___contentDigest = 'block__testimonial_slider___page___internal___contentDigest',
+  block__testimonial_slider___page___internal___description = 'block__testimonial_slider___page___internal___description',
+  block__testimonial_slider___page___internal___fieldOwners = 'block__testimonial_slider___page___internal___fieldOwners',
+  block__testimonial_slider___page___internal___ignoreType = 'block__testimonial_slider___page___internal___ignoreType',
+  block__testimonial_slider___page___internal___mediaType = 'block__testimonial_slider___page___internal___mediaType',
+  block__testimonial_slider___page___internal___owner = 'block__testimonial_slider___page___internal___owner',
+  block__testimonial_slider___page___internal___type = 'block__testimonial_slider___page___internal___type',
+  block__testimonial_slider___spaceId = 'block__testimonial_slider___spaceId',
+  block__testimonial_slider___createdAt = 'block__testimonial_slider___createdAt',
+  block__testimonial_slider___updatedAt = 'block__testimonial_slider___updatedAt',
+  block__testimonial_slider___sys___type = 'block__testimonial_slider___sys___type',
+  block__testimonial_slider___sys___revision = 'block__testimonial_slider___sys___revision',
+  block__testimonial_slider___parent___id = 'block__testimonial_slider___parent___id',
+  block__testimonial_slider___parent___parent___id = 'block__testimonial_slider___parent___parent___id',
+  block__testimonial_slider___parent___parent___children = 'block__testimonial_slider___parent___parent___children',
+  block__testimonial_slider___parent___children = 'block__testimonial_slider___parent___children',
+  block__testimonial_slider___parent___children___id = 'block__testimonial_slider___parent___children___id',
+  block__testimonial_slider___parent___children___children = 'block__testimonial_slider___parent___children___children',
+  block__testimonial_slider___parent___internal___content = 'block__testimonial_slider___parent___internal___content',
+  block__testimonial_slider___parent___internal___contentDigest = 'block__testimonial_slider___parent___internal___contentDigest',
+  block__testimonial_slider___parent___internal___description = 'block__testimonial_slider___parent___internal___description',
+  block__testimonial_slider___parent___internal___fieldOwners = 'block__testimonial_slider___parent___internal___fieldOwners',
+  block__testimonial_slider___parent___internal___ignoreType = 'block__testimonial_slider___parent___internal___ignoreType',
+  block__testimonial_slider___parent___internal___mediaType = 'block__testimonial_slider___parent___internal___mediaType',
+  block__testimonial_slider___parent___internal___owner = 'block__testimonial_slider___parent___internal___owner',
+  block__testimonial_slider___parent___internal___type = 'block__testimonial_slider___parent___internal___type',
+  block__testimonial_slider___children = 'block__testimonial_slider___children',
+  block__testimonial_slider___children___id = 'block__testimonial_slider___children___id',
+  block__testimonial_slider___children___parent___id = 'block__testimonial_slider___children___parent___id',
+  block__testimonial_slider___children___parent___children = 'block__testimonial_slider___children___parent___children',
+  block__testimonial_slider___children___children = 'block__testimonial_slider___children___children',
+  block__testimonial_slider___children___children___id = 'block__testimonial_slider___children___children___id',
+  block__testimonial_slider___children___children___children = 'block__testimonial_slider___children___children___children',
+  block__testimonial_slider___children___internal___content = 'block__testimonial_slider___children___internal___content',
+  block__testimonial_slider___children___internal___contentDigest = 'block__testimonial_slider___children___internal___contentDigest',
+  block__testimonial_slider___children___internal___description = 'block__testimonial_slider___children___internal___description',
+  block__testimonial_slider___children___internal___fieldOwners = 'block__testimonial_slider___children___internal___fieldOwners',
+  block__testimonial_slider___children___internal___ignoreType = 'block__testimonial_slider___children___internal___ignoreType',
+  block__testimonial_slider___children___internal___mediaType = 'block__testimonial_slider___children___internal___mediaType',
+  block__testimonial_slider___children___internal___owner = 'block__testimonial_slider___children___internal___owner',
+  block__testimonial_slider___children___internal___type = 'block__testimonial_slider___children___internal___type',
+  block__testimonial_slider___internal___content = 'block__testimonial_slider___internal___content',
+  block__testimonial_slider___internal___contentDigest = 'block__testimonial_slider___internal___contentDigest',
+  block__testimonial_slider___internal___description = 'block__testimonial_slider___internal___description',
+  block__testimonial_slider___internal___fieldOwners = 'block__testimonial_slider___internal___fieldOwners',
+  block__testimonial_slider___internal___ignoreType = 'block__testimonial_slider___internal___ignoreType',
+  block__testimonial_slider___internal___mediaType = 'block__testimonial_slider___internal___mediaType',
+  block__testimonial_slider___internal___owner = 'block__testimonial_slider___internal___owner',
+  block__testimonial_slider___internal___type = 'block__testimonial_slider___internal___type',
   spaceId = 'spaceId',
   createdAt = 'createdAt',
   updatedAt = 'updatedAt',
@@ -13229,6 +13999,7 @@ export type ContentfulTestimonialFilterInput = {
   position?: Maybe<StringQueryOperatorInput>;
   content?: Maybe<ContentfulTestimonialContentFilterInput>;
   image?: Maybe<ContentfulAssetFilterInput>;
+  block__testimonial_slider?: Maybe<ContentfulBlockTestimonialSliderFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
@@ -13236,6 +14007,10 @@ export type ContentfulTestimonialFilterInput = {
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
+};
+
+export type ContentfulTestimonialFilterListInput = {
+  elemMatch?: Maybe<ContentfulTestimonialFilterInput>;
 };
 
 export type ContentfulTestimonialGroupConnection = {
@@ -14687,6 +15462,8 @@ export type Query = {
   allContentfulMembershipLevels: ContentfulMembershipLevelsConnection;
   contentfulTestimonial?: Maybe<ContentfulTestimonial>;
   allContentfulTestimonial: ContentfulTestimonialConnection;
+  contentfulBlockTestimonialSlider?: Maybe<ContentfulBlockTestimonialSlider>;
+  allContentfulBlockTestimonialSlider: ContentfulBlockTestimonialSliderConnection;
   contentfulMembershipLevelsItemsJsonNode?: Maybe<ContentfulMembershipLevelsItemsJsonNode>;
   allContentfulMembershipLevelsItemsJsonNode: ContentfulMembershipLevelsItemsJsonNodeConnection;
   contentfulBlockJumbotronButtonJsonNode?: Maybe<ContentfulBlockJumbotronButtonJsonNode>;
@@ -15468,6 +16245,7 @@ export type QueryContentfulTestimonialArgs = {
   position?: Maybe<StringQueryOperatorInput>;
   content?: Maybe<ContentfulTestimonialContentFilterInput>;
   image?: Maybe<ContentfulAssetFilterInput>;
+  block__testimonial_slider?: Maybe<ContentfulBlockTestimonialSliderFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
@@ -15481,6 +16259,33 @@ export type QueryContentfulTestimonialArgs = {
 export type QueryAllContentfulTestimonialArgs = {
   filter?: Maybe<ContentfulTestimonialFilterInput>;
   sort?: Maybe<ContentfulTestimonialSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryContentfulBlockTestimonialSliderArgs = {
+  contentful_id?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  node_locale?: Maybe<StringQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  subtitle?: Maybe<StringQueryOperatorInput>;
+  content?: Maybe<ContentfulBlockTestimonialSliderContentFilterInput>;
+  slides?: Maybe<ContentfulTestimonialFilterListInput>;
+  page?: Maybe<ContentfulPageFilterListInput>;
+  spaceId?: Maybe<StringQueryOperatorInput>;
+  createdAt?: Maybe<DateQueryOperatorInput>;
+  updatedAt?: Maybe<DateQueryOperatorInput>;
+  sys?: Maybe<ContentfulBlockTestimonialSliderSysFilterInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+};
+
+
+export type QueryAllContentfulBlockTestimonialSliderArgs = {
+  filter?: Maybe<ContentfulBlockTestimonialSliderFilterInput>;
+  sort?: Maybe<ContentfulBlockTestimonialSliderSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -18242,6 +19047,18 @@ export type ResourceListFragmentFragment = (
   )>>> }
 );
 
+export type TestimonialSliderFragmentFragment = (
+  { __typename: 'ContentfulBlockTestimonialSlider' }
+  & Pick<ContentfulBlockTestimonialSlider, 'id' | 'title' | 'subtitle'>
+  & { content?: Maybe<(
+    { __typename?: 'ContentfulBlockTestimonialSliderContent' }
+    & Pick<ContentfulBlockTestimonialSliderContent, 'raw'>
+  )>, slides?: Maybe<Array<Maybe<(
+    { __typename?: 'ContentfulTestimonial' }
+    & TestimonialFragmentFragment
+  )>>> }
+);
+
 export type AvatarFragmentFragment = (
   { __typename?: 'ContentfulAsset' }
   & Pick<ContentfulAsset, 'gatsbyImageData'>
@@ -18308,6 +19125,20 @@ export type AllContentfulMembershipLevelsQuery = (
   ) }
 );
 
+export type AllContentfulTestimonialSlidersQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type AllContentfulTestimonialSlidersQuery = (
+  { __typename?: 'Query' }
+  & { result: (
+    { __typename?: 'ContentfulBlockTestimonialSliderConnection' }
+    & { nodes: Array<(
+      { __typename?: 'ContentfulBlockTestimonialSlider' }
+      & TestimonialSliderFragmentFragment
+    )> }
+  ) }
+);
+
 export type AllContentfulTestimonialsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -18351,6 +19182,9 @@ export type ContentfulBlocksFragmentFragment = (
   ) | (
     { __typename?: 'ContentfulBlockResourceList' }
     & ResourceListFragmentFragment
+  ) | (
+    { __typename?: 'ContentfulBlockTestimonialSlider' }
+    & TestimonialSliderFragmentFragment
   )>>> }
 );
 

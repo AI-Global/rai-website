@@ -78,6 +78,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
         "faq",
         "fellowship",
         "tools",
+        "membership",
       ];
 
       /**

@@ -27,3 +27,12 @@
 .button * {
   vertical-align: bottom;
 }
+
+:global .swiper-slide {
+  height: auto !important;
+  box-sizing: border-box;
+}
+
+:global .swiper-slide > *{
+  box-sizing: border-box;
+}

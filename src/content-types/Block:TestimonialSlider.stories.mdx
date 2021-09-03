@@ -1,0 +1,38 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
+import { TestimonialSlider } from "@/blocks/TestimonialSlider";
+import {
+  ContentType,
+  useAllContentfulTestimonialSliders,
+} from "@/components/ContentType";
+
+<Meta title="Content Types/Block: Testimonial Slider" />
+
+# Block: Testimonial Slider
+
+`TestimonialSlider` will use a `Slider` component to show a slideshow of `Testimonial`. The `Testimonial` is a content type in `Contentful`
+
+## Usage
+
+```tsx
+import { TestimonialSlider } from "@/blocks/TestimonialSlider";
+```
+
+## Fragment
+
+The `TestimonialSlider` component exposes a `GraphQL` fragment `TestimonialSliderFragment`.
+
+```graphql
+query MyContentfulQuery {
+  query
+  MyQuery {
+    ...TestimonialSliderFragment
+  }
+}
+```
+
+## Content usages
+
+<ContentType
+  query={useAllContentfulTestimonialSliders}
+  component={TestimonialSlider}
+/>

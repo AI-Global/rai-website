@@ -1,0 +1,7 @@
+.footer {
+  margin-top: var(--space--base);
+}
+
+.header {
+  margin-bottom: var(--space--base);
+}
