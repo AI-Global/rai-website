@@ -20,6 +20,10 @@ export interface ButtonProps {
    * Should the link open in a new window
    */
   readonly external?: boolean;
+  /**
+   * An id associated with the button
+   */
+  readonly id?: string;
 }
 
 export function Button({
@@ -27,10 +31,14 @@ export function Button({
   url,
   variation = "primary",
   external,
+  id,
 }: ButtonProps) {
-  const buttonClasses = classnames(styles.button, styles[variation]);
+  const buttonClasses = classnames(styles.button, styles[variation], {
+    [styles.kindful]: id?.includes("kindful"),
+  });
   const buttonProps = {
     className: buttonClasses,
+    id,
   };
 
   if (external) {

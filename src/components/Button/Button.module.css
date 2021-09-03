@@ -1,17 +1,23 @@
 .button {
+  --button--font-size: var(--font-size--base);
+  --button--padding: var(--space--small) var(--space--large);
+  --button--background: var(--color--carbon);
+  --button--color: var(--color--blanco);
+  --button--border-radius: 3px;
   appearance: none;
   display: inline-block;
-  background: var(--color--carbon);
-  color: var(--color--blanco);
-  padding: var(--space--small) var(--space--large);
   cursor: pointer;
   text-decoration: none;
   transition: background 300ms;
-  border-radius: 3px;
+  padding: var(--button--padding);
+  background: var(--button--background);
+  color: var(--button--color);
+  border-radius: var(--button--border-radius);
+  font-size: var(--button--font-size);
 }
 
 .button:hover {
-  background: var(--color--stone);
+  --button--background: var(--color--stone);
 }
 
 .button:focus {
@@ -20,25 +26,35 @@
 
 /* Primary Button */
 .primary {
-  background: var(--color--carbon);
+  --button--background: var(--color--carbon);
 }
 
 .primary:hover {
-  background: var(--color--stone);
+  --button--background: var(--color--stone);
 }
 
 /* Inverted Button */
 .inverted {
-  background: var(--color--blanco);
-  color: var(--color--carbon);
+  --button--background: var(--color--blanco);
+  --button--color: var(--color--carbon);
 }
 
 .inverted:hover {
-  background: var(--color--ghost);
+  --button--background: var(--color--ghost);
 }
 
 .inverted:focus {
   box-shadow: 0 0 var(--space--xsmall) rgba(var(--color--ghost--rgb), 0.25);
 }
 
-
+/**
+ * Kindful adds some inline styles. We want to remove
+ * those if its a kindful button
+ **/
+.kindful {
+  padding: var(--button--padding) !important;
+  background: var(--button--background) !important;
+  color: var(--button--color) !important;
+  border-radius: var(--button--border-radius) !important;
+  font-size: var(--button--font-size) !important;
+}
