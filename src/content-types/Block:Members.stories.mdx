@@ -1,0 +1,32 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Members } from "@/blocks/Members";
+import { ContentType, useAllContentfulMembers } from "@/components/ContentType";
+
+<Meta title="Content Types/Block: Members" />
+
+# Block: Members
+
+`Members` is used to display a group of members logos in a grid. It will allow for groups of `Members Group` content types in `Contentful`
+
+## Usage
+
+```tsx
+import { Members } from "@/blocks/Members";
+```
+
+## Fragment
+
+The `Members` component exposes a `GraphQL` fragment `MembersBlockFragment`.
+
+```graphql
+query MyContentfulQuery {
+  query
+  MyQuery {
+    ...MembersBlockFragment
+  }
+}
+```
+
+## Content usages
+
+<ContentType query={useAllContentfulMembers} component={Members} />
