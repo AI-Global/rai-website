@@ -21310,20 +21310,6 @@ export type JumbotronFragmentFragment = (
   )> }
 );
 
-export type AllJumbotronBlocksQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type AllJumbotronBlocksQuery = (
-  { __typename?: 'Query' }
-  & { allContentfulBlockJumbotron: (
-    { __typename?: 'ContentfulBlockJumbotronConnection' }
-    & { nodes: Array<(
-      { __typename?: 'ContentfulBlockJumbotron' }
-      & JumbotronFragmentFragment
-    )> }
-  ) }
-);
-
 export type ListOfCardsFragmentFragment = (
   { __typename: 'ContentfulBlockListOfCards' }
   & Pick<ContentfulBlockListOfCards, 'id' | 'title' | 'variation'>
@@ -21475,6 +21461,20 @@ export type AllContentfulCardsTestQuery = (
     & { nodes: Array<(
       { __typename?: 'ContentfulCard' }
       & CardFragmentFragment
+    )> }
+  ) }
+);
+
+export type AllContentfulJumbotronQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type AllContentfulJumbotronQuery = (
+  { __typename?: 'Query' }
+  & { result: (
+    { __typename?: 'ContentfulBlockJumbotronConnection' }
+    & { nodes: Array<(
+      { __typename?: 'ContentfulBlockJumbotron' }
+      & JumbotronFragmentFragment
     )> }
   ) }
 );

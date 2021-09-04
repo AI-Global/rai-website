@@ -23,13 +23,13 @@ export function ContentType({ query, component }: ContentTypeProps) {
     <div>
       {nodes?.map((node: any, index: number) => {
         return (
-          <div>
+          <div key={node?.title}>
             <div className={styles.meta}>
               <BlockQuote>
                 {node?.title && (
                   <div className={styles.title}>
                     <Emphasis variation="bold">Title: </Emphasis>
-                    {node.title}
+                    {node?.title}
                   </div>
                 )}
                 {node?.pageUsage && (

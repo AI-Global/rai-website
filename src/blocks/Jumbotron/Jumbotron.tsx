@@ -11,22 +11,16 @@ import { ContentfulButton } from "@/components/ContentfulButton";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./Jumbotron.module.css";
 
-interface JumbotronProps {
-  readonly data: JumbotronFragmentFragment;
-}
-
 export function Jumbotron({
-  data: {
-    title,
-    content,
-    button,
-    image,
-    imageAlignment,
-    imageOnLeft,
-    backgroundImage,
-    backgroundColor,
-  },
-}: JumbotronProps) {
+  title,
+  content,
+  button,
+  image,
+  backgroundImage,
+  backgroundColor,
+  imageAlignment,
+  imageOnLeft,
+}: JumbotronFragmentFragment) {
   const mainImage = getImage(image?.gatsbyImageData);
   const bgImage = getImage(backgroundImage?.gatsbyImageData);
 
@@ -50,7 +44,7 @@ export function Jumbotron({
         <div className={styles.container}>
           <div className={contentClass}>
             <Heading>{title}</Heading>
-            <RichText content={content as RichTextContent} />
+            {content && <RichText content={content as RichTextContent} />}
             {button?.action?.enabled && (
               <ContentfulButton action={button?.action} />
             )}

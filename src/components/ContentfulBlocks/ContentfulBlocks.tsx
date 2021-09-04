@@ -80,7 +80,7 @@ export function ContentfulBlocks({ blocks }: BlockProps) {
           case "ContentfulBlockJumbotron":
             return (
               <div className={styles.noSpace}>
-                <Jumbotron data={block} key={block.id} />
+                <Jumbotron {...block} key={block.id} />
               </div>
             );
           case "ContentfulBlockListOfPeople":

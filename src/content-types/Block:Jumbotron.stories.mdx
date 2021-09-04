@@ -1,0 +1,35 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
+import { Jumbotron } from "@/blocks/Jumbotron";
+import {
+  ContentType,
+  useAllContentfulJumbotron,
+} from "@/components/ContentType";
+
+<Meta title="Content Types/Block: Jumbotron" />
+
+# Block: Jumbotron
+
+`Jumbotron` is a hero display banner that highlights its content with an image and background image.
+
+## Usage
+
+```tsx
+import { Jumbotron } from "@/blocks/Jumbotron";
+```
+
+## Fragment
+
+The `Jumbotron` component exposes a `GraphQL` fragment `ListOfCardsFragment`.
+
+```graphql
+query MyContentfulQuery {
+  query
+  MyQuery {
+    ...JumbotronFragment
+  }
+}
+```
+
+## Content usages
+
+<ContentType query={useAllContentfulJumbotron} component={Jumbotron} />

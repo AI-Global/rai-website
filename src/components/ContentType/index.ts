@@ -5,3 +5,4 @@ export { useAllContentfulMembershipLevels } from "./useAllContentfulMembershipLe
 export { useAllTestimonials } from "./useAllTestimonials";
 export { useAllContentfulTestimonialSliders } from "./useAllContentfulTestimonialSliders";
 export { useAllContentfulMembers } from "./useAllContentfulMembers";
+export { useAllContentfulJumbotron } from "./useAllContentfulJumbotron";
