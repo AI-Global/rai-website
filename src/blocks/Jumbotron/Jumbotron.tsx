@@ -1,20 +1,21 @@
 import React from "react";
-import classnames from "classnames";
 import { graphql } from "gatsby";
+import { AnimatePresence, motion } from "framer-motion";
+import classnames from "classnames";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { JumbotronFragmentFragment } from "@/graphql/graphql-types";
 import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
 import { RichText, RichTextContent } from "@/components/RichText";
-import { ContentfulButton } from "@/components/ContentfulButton";
+import { Button } from "@/components/Button";
+import { JumbotronFragmentFragment } from "@/graphql/graphql-types";
 
-import { AnimatePresence, motion } from "framer-motion";
 import styles from "./Jumbotron.module.css";
 
 export function Jumbotron({
   title,
   content,
-  button,
+  link,
+  customButtonText,
   image,
   backgroundImage,
   backgroundColor,
@@ -45,8 +46,11 @@ export function Jumbotron({
           <div className={contentClass}>
             <Heading>{title}</Heading>
             {content && <RichText content={content as RichTextContent} />}
-            {button?.action?.enabled && (
-              <ContentfulButton action={button?.action} />
+            {link && (
+              <Button
+                title={customButtonText ?? (link.title as string)}
+                url={link.slug as string}
+              />
             )}
           </div>
 
@@ -84,15 +88,11 @@ export const JumbotronFragment = graphql`
     content {
       raw
     }
-    button {
-      action {
-        enabled
-        entrySlug
-        external
-        externalUrl
-        title
-      }
+    link {
+      title
+      slug
     }
+    customButtonText
     image {
       gatsbyImageData(placeholder: BLURRED)
       title
