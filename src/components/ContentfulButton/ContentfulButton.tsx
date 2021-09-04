@@ -22,6 +22,7 @@ export function ContentfulButton({ action }: ContentfulButtonProps) {
   }
 
   return (
+    // @ts-expect-error TODO: remove this component...
     <Button
       {...(action as ButtonProps)}
       url={url}

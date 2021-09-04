@@ -14,7 +14,7 @@ import styles from "./Jumbotron.module.css";
 export function Jumbotron({
   title,
   content,
-  link,
+  button,
   customButtonText,
   image,
   backgroundImage,
@@ -46,11 +46,8 @@ export function Jumbotron({
           <div className={contentClass}>
             <Heading>{title}</Heading>
             {content && <RichText content={content as RichTextContent} />}
-            {link && (
-              <Button
-                title={customButtonText ?? (link.title as string)}
-                url={link.slug as string}
-              />
+            {button && (
+              <Button {...button} title={customButtonText ?? button.title} />
             )}
           </div>
 
@@ -88,9 +85,8 @@ export const JumbotronFragment = graphql`
     content {
       raw
     }
-    link {
-      title
-      slug
+    button {
+      ...ButtonPageFragment
     }
     customButtonText
     image {

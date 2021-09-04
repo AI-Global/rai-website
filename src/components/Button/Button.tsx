@@ -1,10 +1,13 @@
 import React from "react";
 import classnames from "classnames";
-import { Link } from "gatsby";
+import { graphql, Link } from "gatsby";
+import { XOR } from "ts-xor";
+
+import { ButtonPageFragmentFragment } from "@/graphql/graphql-types";
 
 import styles from "./Button.module.css";
 
-export interface ButtonProps {
+interface BaseButtonProps {
   /**
    * The content of the Button. We use a title prop over
    * children as we want to limit the content of a button
@@ -26,8 +29,12 @@ export interface ButtonProps {
   readonly id?: string;
 }
 
+export type ButtonProps = XOR<BaseButtonProps, ButtonPageFragmentFragment>;
+
 export function Button({
+  __typename,
   title,
+  slug,
   url,
   variation = "primary",
   external,
@@ -36,32 +43,35 @@ export function Button({
   const buttonClasses = classnames(styles.button, styles[variation], {
     [styles.kindful]: id?.includes("kindful"),
   });
-  const buttonProps = {
+
+  const baseButtonProps = {
     className: buttonClasses,
     id,
   };
 
+  const externalButtonProps = {
+    ...baseButtonProps,
+    href: url,
+    target: "_blank",
+    rel: "noopener noreferrer",
+  };
+
+  const internalButtonProps = {
+    ...baseButtonProps,
+    to: __typename === "ContentfulPage" ? `/${slug}` : `${url}`,
+  };
+
   if (external) {
-    return (
-      /**
-       * Disabling props spreading as we want to share props
-       * betweeen both returns.
-       */
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      <a {...buttonProps} href={url} target="_blank" rel="noopener noreferrer">
-        {title}
-      </a>
-    );
+    return <a {...externalButtonProps}>{title}</a>;
   }
 
-  return (
-    /**
-     * Disabling props spreading as we want to share props
-     * betweeen both returns.
-     */
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    <Link {...buttonProps} to={url}>
-      {title}
-    </Link>
-  );
+  return <Link {...internalButtonProps}>{title}</Link>;
 }
+
+export const ButtonPageFragment = graphql`
+  fragment ButtonPageFragment on ContentfulPage {
+    __typename
+    title
+    slug
+  }
+`;
