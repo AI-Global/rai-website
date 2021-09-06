@@ -9,13 +9,15 @@ import { ContentfulButton } from "@/components/ContentfulButton";
 
 import styles from "./ContentList.module.css";
 
-interface ContentListProps {
-  readonly data: ContentListFragmentFragment;
-}
-
 export function ContentList({
-  data: { title, content, button, listTitle, list, listDescription, highlight },
-}: ContentListProps) {
+  title,
+  content,
+  button,
+  listTitle,
+  list,
+  listDescription,
+  highlight,
+}: ContentListFragmentFragment) {
   const wrapperClass = classnames(styles.wrapper, {
     [styles.full]: highlight === "Full",
     [styles.none]: highlight === "None",
@@ -68,9 +70,9 @@ export function ContentList({
 export const ContentListFragment = graphql`
   fragment ContentListFragment on ContentfulBlockContentList {
     __typename
+    title
     id
     highlight
-    title
     content {
       raw
     }

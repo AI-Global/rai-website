@@ -74,7 +74,7 @@ export function ContentfulBlocks({ blocks }: BlockProps) {
               </div>
             );
           case "ContentfulBlockContentList":
-            return <ContentList data={block} key={block.id} />;
+            return <ContentList {...block} key={block.id} />;
           case "ContentfulBlockImageBand":
             return <ImageBand data={block} key={block.id} />;
           case "ContentfulBlockJumbotron":

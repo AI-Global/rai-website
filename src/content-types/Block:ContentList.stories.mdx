@@ -1,0 +1,35 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
+import { ContentList } from "@/blocks/ContentList";
+import {
+  ContentType,
+  useAllContentfulContentList,
+} from "@/components/ContentType";
+
+<Meta title="Content Types/Block: Content List" />
+
+# Block: Content List
+
+`ContentList` allows an editor to display paragraph form content with a sublimentary list beside it.
+
+## Usage
+
+```tsx
+import { ContentList } from "@/blocks/ContentList";
+```
+
+## Fragment
+
+The `ContentList` component exposes a `GraphQL` fragment `ContentListFragment`.
+
+```graphql
+query MyContentfulQuery {
+  query
+  MyQuery {
+    ...ContentListFragment
+  }
+}
+```
+
+## Content usages
+
+<ContentType query={useAllContentfulContentList} component={ContentList} />

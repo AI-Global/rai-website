@@ -2273,6 +2273,57 @@ export enum ContentfulBlockContentListFieldsEnum {
   content___raw = 'content___raw',
   listTitle = 'listTitle',
   listDescription___raw = 'listDescription___raw',
+  listDescription___references = 'listDescription___references',
+  listDescription___references___contentful_id = 'listDescription___references___contentful_id',
+  listDescription___references___id = 'listDescription___references___id',
+  listDescription___references___spaceId = 'listDescription___references___spaceId',
+  listDescription___references___createdAt = 'listDescription___references___createdAt',
+  listDescription___references___updatedAt = 'listDescription___references___updatedAt',
+  listDescription___references___file___url = 'listDescription___references___file___url',
+  listDescription___references___file___fileName = 'listDescription___references___file___fileName',
+  listDescription___references___file___contentType = 'listDescription___references___file___contentType',
+  listDescription___references___title = 'listDescription___references___title',
+  listDescription___references___description = 'listDescription___references___description',
+  listDescription___references___node_locale = 'listDescription___references___node_locale',
+  listDescription___references___sys___type = 'listDescription___references___sys___type',
+  listDescription___references___sys___revision = 'listDescription___references___sys___revision',
+  listDescription___references___fixed___base64 = 'listDescription___references___fixed___base64',
+  listDescription___references___fixed___tracedSVG = 'listDescription___references___fixed___tracedSVG',
+  listDescription___references___fixed___aspectRatio = 'listDescription___references___fixed___aspectRatio',
+  listDescription___references___fixed___width = 'listDescription___references___fixed___width',
+  listDescription___references___fixed___height = 'listDescription___references___fixed___height',
+  listDescription___references___fixed___src = 'listDescription___references___fixed___src',
+  listDescription___references___fixed___srcSet = 'listDescription___references___fixed___srcSet',
+  listDescription___references___fixed___srcWebp = 'listDescription___references___fixed___srcWebp',
+  listDescription___references___fixed___srcSetWebp = 'listDescription___references___fixed___srcSetWebp',
+  listDescription___references___fluid___base64 = 'listDescription___references___fluid___base64',
+  listDescription___references___fluid___tracedSVG = 'listDescription___references___fluid___tracedSVG',
+  listDescription___references___fluid___aspectRatio = 'listDescription___references___fluid___aspectRatio',
+  listDescription___references___fluid___src = 'listDescription___references___fluid___src',
+  listDescription___references___fluid___srcSet = 'listDescription___references___fluid___srcSet',
+  listDescription___references___fluid___srcWebp = 'listDescription___references___fluid___srcWebp',
+  listDescription___references___fluid___srcSetWebp = 'listDescription___references___fluid___srcSetWebp',
+  listDescription___references___fluid___sizes = 'listDescription___references___fluid___sizes',
+  listDescription___references___gatsbyImageData = 'listDescription___references___gatsbyImageData',
+  listDescription___references___resize___base64 = 'listDescription___references___resize___base64',
+  listDescription___references___resize___tracedSVG = 'listDescription___references___resize___tracedSVG',
+  listDescription___references___resize___src = 'listDescription___references___resize___src',
+  listDescription___references___resize___width = 'listDescription___references___resize___width',
+  listDescription___references___resize___height = 'listDescription___references___resize___height',
+  listDescription___references___resize___aspectRatio = 'listDescription___references___resize___aspectRatio',
+  listDescription___references___parent___id = 'listDescription___references___parent___id',
+  listDescription___references___parent___children = 'listDescription___references___parent___children',
+  listDescription___references___children = 'listDescription___references___children',
+  listDescription___references___children___id = 'listDescription___references___children___id',
+  listDescription___references___children___children = 'listDescription___references___children___children',
+  listDescription___references___internal___content = 'listDescription___references___internal___content',
+  listDescription___references___internal___contentDigest = 'listDescription___references___internal___contentDigest',
+  listDescription___references___internal___description = 'listDescription___references___internal___description',
+  listDescription___references___internal___fieldOwners = 'listDescription___references___internal___fieldOwners',
+  listDescription___references___internal___ignoreType = 'listDescription___references___internal___ignoreType',
+  listDescription___references___internal___mediaType = 'listDescription___references___internal___mediaType',
+  listDescription___references___internal___owner = 'listDescription___references___internal___owner',
+  listDescription___references___internal___type = 'listDescription___references___internal___type',
   page = 'page',
   page___contentful_id = 'page___contentful_id',
   page___id = 'page___id',
@@ -3048,10 +3099,12 @@ export type ContentfulBlockContentListGroupConnection = {
 export type ContentfulBlockContentListListDescription = {
   __typename?: 'ContentfulBlockContentListListDescription';
   raw?: Maybe<Scalars['String']>;
+  references?: Maybe<Array<Maybe<ContentfulAsset>>>;
 };
 
 export type ContentfulBlockContentListListDescriptionFilterInput = {
   raw?: Maybe<StringQueryOperatorInput>;
+  references?: Maybe<ContentfulAssetFilterListInput>;
 };
 
 export type ContentfulBlockContentListSortInput = {
@@ -23070,7 +23123,7 @@ export type AllContentBlockContentQuery = (
 
 export type ContentListFragmentFragment = (
   { __typename: 'ContentfulBlockContentList' }
-  & Pick<ContentfulBlockContentList, 'id' | 'highlight' | 'title' | 'listTitle'>
+  & Pick<ContentfulBlockContentList, 'title' | 'id' | 'highlight' | 'listTitle'>
   & { content?: Maybe<(
     { __typename?: 'ContentfulBlockContentListContent' }
     & Pick<ContentfulBlockContentListContent, 'raw'>
@@ -23087,24 +23140,6 @@ export type ContentListFragmentFragment = (
     { __typename?: 'contentfulBlockContentListListJsonNode' }
     & Pick<ContentfulBlockContentListListJsonNode, 'items'>
   )> }
-);
-
-export type AllContentListBlockContentQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type AllContentListBlockContentQuery = (
-  { __typename?: 'Query' }
-  & { allContentfulBlockContentList: (
-    { __typename?: 'ContentfulBlockContentListConnection' }
-    & { nodes: Array<(
-      { __typename?: 'ContentfulBlockContentList' }
-      & { page?: Maybe<Array<Maybe<(
-        { __typename?: 'ContentfulPage' }
-        & Pick<ContentfulPage, 'title'>
-      )>>> }
-      & ContentListFragmentFragment
-    )> }
-  ) }
 );
 
 export type ImageBandFragmentFragment = (
@@ -23305,6 +23340,24 @@ export type AllContentfulCardsTestQuery = (
     & { nodes: Array<(
       { __typename?: 'ContentfulCard' }
       & CardFragmentFragment
+    )> }
+  ) }
+);
+
+export type AllContentfulBlockContentListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type AllContentfulBlockContentListQuery = (
+  { __typename?: 'Query' }
+  & { result: (
+    { __typename?: 'ContentfulBlockContentListConnection' }
+    & { nodes: Array<(
+      { __typename?: 'ContentfulBlockContentList' }
+      & { pageUsage?: Maybe<Array<Maybe<(
+        { __typename?: 'ContentfulPage' }
+        & Pick<ContentfulPage, 'title'>
+      )>>> }
+      & ContentListFragmentFragment
     )> }
   ) }
 );
