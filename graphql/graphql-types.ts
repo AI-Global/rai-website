@@ -23136,6 +23136,14 @@ export type ContentListFragmentFragment = (
   )>, listDescription?: Maybe<(
     { __typename?: 'ContentfulBlockContentListListDescription' }
     & Pick<ContentfulBlockContentListListDescription, 'raw'>
+    & { references?: Maybe<Array<Maybe<(
+      { __typename?: 'ContentfulAsset' }
+      & Pick<ContentfulAsset, 'contentful_id'>
+      & { file?: Maybe<(
+        { __typename?: 'ContentfulAssetFile' }
+        & Pick<ContentfulAssetFile, 'url'>
+      )> }
+    )>>> }
   )>, list?: Maybe<(
     { __typename?: 'contentfulBlockContentListListJsonNode' }
     & Pick<ContentfulBlockContentListListJsonNode, 'items'>

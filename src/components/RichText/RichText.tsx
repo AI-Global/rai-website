@@ -16,7 +16,7 @@ import { Link } from "@/components/Link";
 import { Emphasis } from "@/components/Emphasis";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Image } from "@/components/Image";
-import { ImageFragmentFragment } from "@/graphql/graphql-types";
+import { ContentfulAsset } from "@/graphql/graphql-types";
 import { Divider } from "@/components/Divider";
 import { BlockQuote } from "@/components/BlockQuote";
 
@@ -76,15 +76,38 @@ export function RichText({ size = "base", content }: RichTextProps) {
           return false;
         }
       },
+      [INLINES.ASSET_HYPERLINK]: (node: ReactNode, children: ReactNode) => {
+        const { data } = node as Inline | Block;
+        const asset = getContentfulAsset(data.target.sys.id);
+
+        if (!asset?.file?.url) {
+          return <></>;
+        }
+
+        return (
+          <Link external url={asset.file?.url}>
+            {children}
+          </Link>
+        );
+      },
       [BLOCKS.EMBEDDED_ASSET]: (node: ReactNode) => {
         const { data } = node as Inline | Block;
-        const image = content.references.find(
-          (asset) => asset.contentful_id === data.target.sys.id
-        );
-        return <Image {...(image as ImageFragmentFragment)} />;
+        const image = getContentfulAsset(data.target.sys.id);
+
+        return <Image {...image} />;
       },
     },
   };
 
   return <>{documentToReactComponents(JSON.parse(content.raw), options)}</>;
+
+  function getContentfulAsset(id: string): ContentfulAsset | undefined {
+    const reference = content.references.find(
+      (asset) => asset.contentful_id === id
+    );
+
+    if (!reference) return undefined;
+
+    return reference as ContentfulAsset;
+  }
 }

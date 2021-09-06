@@ -87,6 +87,12 @@ export const ContentListFragment = graphql`
     listTitle
     listDescription {
       raw
+      references {
+        contentful_id
+        file {
+          url
+        }
+      }
     }
     list {
       items
