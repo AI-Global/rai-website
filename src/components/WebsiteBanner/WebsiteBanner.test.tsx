@@ -1,6 +1,7 @@
 import React from "react";
 import * as Gatsby from "gatsby";
 import { render, cleanup } from "@testing-library/react";
+import { dummyContent } from "@/components/RichText/__mocks__/mockRichText";
 import { WebsiteBanner } from ".";
 
 const useStaticQuery = jest.spyOn(Gatsby, "useStaticQuery");
@@ -9,8 +10,8 @@ beforeEach(() => jest.clearAllMocks);
 afterEach(() => cleanup);
 
 const data = {
-  contentfulMicroContent: {
-    value: "Foo",
+  content: {
+    value: dummyContent,
   },
 };
 
@@ -18,7 +19,11 @@ it("renders the banner content", () => {
   useStaticQuery.mockImplementation(() => data);
 
   const { getByText } = render(<WebsiteBanner />);
-  expect(getByText("Foo")).toBeInstanceOf(HTMLParagraphElement);
+  expect(
+    getByText(
+      "A robot may not injure a human being or, through inaction, allow a human being to come to harm"
+    )
+  ).toBeInstanceOf(HTMLParagraphElement);
 });
 
 it("renders with an aria label", () => {

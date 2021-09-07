@@ -1,24 +1,32 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { Banner } from "@/components/Banner";
+import { RichText, RichTextContent } from "../RichText";
 
 export function WebsiteBanner() {
-  const data = useStaticQuery(graphql`
-    query bannerQuery {
-      contentfulMicroContent(key: { eq: "Website Banner" }) {
-        value
+  const { content } = useStaticQuery(graphql`
+    query WebsiteBannerQuery {
+      content: contentfulMicroContent(key: { eq: "Website Banner" }) {
+        value {
+          raw
+          references {
+            contentful_id
+            file {
+              url
+            }
+          }
+        }
       }
     }
   `);
 
-  if (!data?.contentfulMicroContent?.value) {
+  if (!content?.value) {
     return <></>;
   }
 
   return (
-    <Banner
-      title={data.contentfulMicroContent.value}
-      ariaLabel="Important Message"
-    />
+    <Banner ariaLabel="Important Message">
+      <RichText content={content.value as RichTextContent} size="small" />
+    </Banner>
   );
 }
