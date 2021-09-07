@@ -30,13 +30,11 @@ export function Content({
             {buttonLink && (
               <div className={styles.button}>
                 <Button
-                  title={customButtonText ?? (buttonLink?.title as string)}
-                  url={
-                    buttonLink.__typename === "ContentfulPage"
-                      ? `/${buttonLink?.slug}`
-                      : (buttonLink?.url as string)
+                  {...buttonLink}
+                  title={customButtonText ?? buttonLink?.title}
+                  variation={
+                    variation === "Full Width Dark" ? "inverted" : "primary"
                   }
-                  external={buttonLink.__typename === "ContentfulResource"}
                 />
               </div>
             )}
@@ -60,19 +58,15 @@ export const ContentFragment = graphql`
     content {
       raw
     }
-    customButtonText
     buttonLink {
       ... on ContentfulPage {
-        __typename
-        slug
-        title
+        ...ButtonPageFragment
       }
       ... on ContentfulResource {
-        __typename
-        url
-        title
+        ...ButtonResourceFragment
       }
     }
+    customButtonText
     image {
       title
       description

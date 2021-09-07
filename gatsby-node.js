@@ -66,31 +66,6 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
       const blogPages = ["news", "blog"];
 
       /**
-       * Create a list of pages that are "safe", meaning that
-       * they are fully converted to Contentful. Hopefully we
-       * can remove this soon.
-       */
-      const safePages = [
-        ...blogPages,
-        "certification",
-        "about",
-        "calendar",
-        "faq",
-        "fellowship",
-        "tools",
-        "membership",
-      ];
-
-      /**
-       * If the slug is not in the safePages array, we
-       * don't want to create a page. This prevents us
-       * from having half baked Contentful pages.
-       */
-      if (!safePages.includes(node.slug)) {
-        return;
-      }
-
-      /**
        * Set up the component and the context for our blog
        * post pages.
        */
@@ -113,7 +88,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
       }
 
       createPage({
-        path: `/${node.slug.replace(/ /g, "-")}`,
+        path: node.slug === "home" ? "/" : `/${node.slug.replace(/ /g, "-")}`,
         component,
         context,
       });

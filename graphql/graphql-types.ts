@@ -24657,11 +24657,11 @@ export type ContentFragmentFragment = (
     { __typename?: 'ContentfulBlockContentContent' }
     & Pick<ContentfulBlockContentContent, 'raw'>
   )>, buttonLink?: Maybe<(
-    { __typename: 'ContentfulPage' }
-    & Pick<ContentfulPage, 'slug' | 'title'>
+    { __typename?: 'ContentfulPage' }
+    & ButtonPageFragmentFragment
   ) | (
-    { __typename: 'ContentfulResource' }
-    & Pick<ContentfulResource, 'url' | 'title'>
+    { __typename?: 'ContentfulResource' }
+    & ButtonResourceFragmentFragment
   )>, image?: Maybe<(
     { __typename?: 'ContentfulAsset' }
     & Pick<ContentfulAsset, 'title' | 'description' | 'gatsbyImageData'>
@@ -24891,7 +24891,7 @@ export type ButtonPageFragmentFragment = (
 
 export type ButtonResourceFragmentFragment = (
   { __typename: 'ContentfulResource' }
-  & Pick<ContentfulResource, 'title'>
+  & Pick<ContentfulResource, 'title' | 'url'>
   & { media?: Maybe<(
     { __typename?: 'ContentfulAsset' }
     & { file?: Maybe<(

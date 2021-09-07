@@ -10,6 +10,8 @@ import {
 
 import styles from "./Button.module.css";
 
+type ButtonVariation = "primary" | "inverted";
+
 interface BaseButtonProps {
   /**
    * The content of the Button. We use a title prop over
@@ -21,7 +23,7 @@ interface BaseButtonProps {
    * The URL a button will link to.
    */
   readonly url: string;
-  readonly variation?: "primary" | "inverted";
+  readonly variation?: ButtonVariation;
   /**
    * Should the link open in a new window
    */
@@ -32,9 +34,17 @@ interface BaseButtonProps {
   readonly id?: string;
 }
 
+interface ButtonPageProps extends ButtonPageFragmentFragment {
+  variation?: ButtonVariation;
+}
+
+interface ButtonResourceProps extends ButtonResourceFragmentFragment {
+  variation?: ButtonVariation;
+}
+
 export type ButtonProps = XOR<
   BaseButtonProps,
-  XOR<ButtonPageFragmentFragment, ButtonResourceFragmentFragment>
+  XOR<ButtonPageProps, ButtonResourceProps>
 >;
 
 export function Button({
@@ -101,6 +111,7 @@ export const ButtonResourceFragment = graphql`
   fragment ButtonResourceFragment on ContentfulResource {
     __typename
     title
+    url
     media {
       file {
         url
