@@ -1,12 +1,14 @@
 import React from "react";
 import { graphql, PageProps } from "gatsby";
+
+import { BlogTemplateQueryQuery } from "@/graphql/graphql-types";
+
 import { Layout } from "@/components/Layout";
 import { Container } from "@/components/Container";
 import { PageTitle } from "@/components/PageTitle";
 import { FeaturedPost } from "@/components/FeaturedPost";
 import { PostList } from "@/components/PostList";
 import { ContentfulBlocks } from "@/components/ContentfulBlocks";
-import { BlogTemplateQueryQuery } from "@/graphql/graphql-types";
 
 interface BlogProps extends PageProps {
   readonly data: BlogTemplateQueryQuery;

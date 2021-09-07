@@ -1,4 +1,6 @@
 import React from "react";
+import { graphql } from "gatsby";
+
 import {
   Maybe,
   CallToActionFragmentFragment,
@@ -12,19 +14,19 @@ import {
   ListOfCardsFragmentFragment,
   TestimonialSliderFragmentFragment,
 } from "@/graphql/graphql-types";
+
+import { ResourceList } from "@/blocks/ResourceList";
 import { CallToAction } from "@/blocks/CallToAction";
 import { Content } from "@/blocks/Content";
-import { Container } from "@/components/Container";
 import { ContentList } from "@/blocks/ContentList";
 import { ImageBand } from "@/blocks/ImageBand";
 import { Jumbotron } from "@/blocks/Jumbotron";
-import { ResourceList } from "@/blocks/ResourceList";
-
-import { graphql } from "gatsby";
 import { ListOfPeople } from "@/blocks/ListOfPeople";
 import { Members } from "@/blocks/Members";
 import { ListOfCards } from "@/blocks/ListOfCards";
 import { TestimonialSlider } from "@/blocks/TestimonialSlider";
+import { Container } from "@/components/Container";
+
 import styles from "./ContentfulBlocks.module.css";
 
 type BlockType = Maybe<

@@ -1,11 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Layout } from "@/components/Layout";
-import { EmptyPage } from "@/components/EmptyPage";
-import { Text } from "@/components/Text";
-import { Icon } from "@/components/Icon";
-import { ContentfulBlocks } from "@/components/ContentfulBlocks";
+
 import { PageTemplateQueryQuery } from "@/graphql/graphql-types";
+
+import { Layout } from "@/components/Layout";
+import { ContentfulBlocks } from "@/components/ContentfulBlocks";
+import { EmptyPage } from "@/components/EmptyPage";
+import { Icon } from "@/components/Icon";
+import { Text } from "@/components/Text";
 
 interface PageProps {
   data: PageTemplateQueryQuery;

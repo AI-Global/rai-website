@@ -1,1 +1,2 @@
-export { PostContent, PostContentContext } from "./PostContent";
+export { PostContent } from "./PostContent";
+export type { PostContentContext } from "./PostContent";

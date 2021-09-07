@@ -1,17 +1,19 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Layout } from "@/components/Layout";
-import { ContentfulBlocks } from "@/components/ContentfulBlocks";
+
 import { FaqQueryQuery } from "@/graphql/graphql-types";
-import { Faqs } from "@/components/Faqs";
-import { PageTitle } from "@/components/PageTitle";
+
+import { Layout } from "@/components/Layout";
 import { Container } from "@/components/Container";
+import { PageTitle } from "@/components/PageTitle";
+import { Faqs } from "@/components/Faqs";
+import { ContentfulBlocks } from "@/components/ContentfulBlocks";
 
 interface FaqProps {
   data: FaqQueryQuery;
 }
 
-function FAQ({ data }: FaqProps) {
+function Faq({ data }: FaqProps) {
   const { page, whitepaper } = data;
 
   return (
@@ -52,4 +54,5 @@ export const query = graphql`
     }
   }
 `;
-export default FAQ;
+
+export default Faq;

@@ -1,9 +1,9 @@
 import React from "react";
 import { Layout } from "@/components/Layout";
 import { EmptyPage } from "@/components/EmptyPage";
+import { Container } from "@/components/Container";
 import { Text } from "@/components/Text";
 import { Heading } from "@/components/Heading";
-import { Container } from "@/components/Container";
 
 function NotFound() {
   return (

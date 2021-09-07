@@ -1,15 +1,17 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Layout } from "@/components/Layout";
+
 import { PostQueryQuery } from "@/graphql/graphql-types";
+
+import { Layout } from "@/components/Layout";
 import { Container } from "@/components/Container";
 import { PageTitle } from "@/components/PageTitle";
 import { Divider } from "@/components/Divider";
 import { PostMeta } from "@/components/PostMeta";
 import { Image } from "@/components/Image";
 import { PostContent, PostContentContext } from "@/components/PostContent";
-import { ResourceList } from "@/blocks/ResourceList";
 import { Person } from "@/components/Person";
+import { ResourceList } from "@/blocks/ResourceList";
 
 interface PostProps {
   data: PostQueryQuery;

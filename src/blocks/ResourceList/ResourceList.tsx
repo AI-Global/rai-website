@@ -1,16 +1,18 @@
 import React from "react";
-import { Container } from "@/components/Container";
-import { Heading } from "@/components/Heading";
-import { Link } from "@/components/Link";
-import { Caption } from "@/components/Caption";
-
 import { graphql } from "gatsby";
+import { XOR } from "ts-xor";
+
 import {
   ResourceBlogFragmentFragment,
   ResourceListFragmentFragment,
   ResourceResourceFragmentFragment,
 } from "@/graphql/graphql-types";
-import { XOR } from "ts-xor";
+
+import { Container } from "@/components/Container";
+import { Heading } from "@/components/Heading";
+import { Link } from "@/components/Link";
+import { Caption } from "@/components/Caption";
+
 import styles from "./ResourceList.module.css";
 
 interface ResourceListProps {

@@ -1,11 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Layout } from "@/components/Layout";
-import { PageTitle } from "@/components/PageTitle";
-import { ContentfulBlocks } from "@/components/ContentfulBlocks";
+
 import { PageTemplateQueryQuery } from "@/graphql/graphql-types";
+
+import { Layout } from "@/components/Layout";
 import { Container } from "@/components/Container";
+import { PageTitle } from "@/components/PageTitle";
 import { Events } from "@/components/Events";
+import { ContentfulBlocks } from "@/components/ContentfulBlocks";
 
 interface PageProps {
   data: PageTemplateQueryQuery;

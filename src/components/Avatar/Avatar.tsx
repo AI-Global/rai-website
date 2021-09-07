@@ -1,17 +1,14 @@
-/**
- * Disabling camelcase here as contentful_id property
- * that comes directly from gatsby, contentful and gql
- */
-/* eslint-disable camelcase */
 import React from "react";
-import classnames from "classnames";
 import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
-import { Image } from "@/components/Image";
-import { Icon } from "@/components/Icon";
+import { XOR } from "ts-xor";
+import classnames from "classnames";
+
 import { AvatarFragmentFragment } from "@/graphql/graphql-types";
 
-import { XOR } from "ts-xor";
+import { Icon } from "@/components/Icon";
+import { Image } from "@/components/Image";
+
 import styles from "./Avatar.module.css";
 
 interface AvatarWithImageProps extends AvatarFragmentFragment {

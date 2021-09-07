@@ -11,7 +11,7 @@ import { CardFragmentFragment } from "@/graphql/graphql-types";
 import styles from "./Card.module.css";
 import { Emphasis } from "../Emphasis";
 
-export interface CardProps extends CardFragmentFragment {
+interface CardProps extends CardFragmentFragment {
   size?: "base" | "large";
 }
 
