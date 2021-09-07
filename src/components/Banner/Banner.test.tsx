@@ -6,13 +6,13 @@ import { Banner } from ".";
 afterEach(() => cleanup);
 
 it("renders the banner content", () => {
-  const { getByText } = render(<Banner title="Foo" />);
-  expect(getByText("Foo")).toBeInstanceOf(HTMLParagraphElement);
+  const { getByText } = render(<Banner>Foo</Banner>);
+  expect(getByText("Foo")).toBeInstanceOf(HTMLDivElement);
 });
 
 it("renders with an aria label", () => {
   const { getByLabelText } = render(
-    <Banner title="Foo" ariaLabel="Hello World" />
+    <Banner ariaLabel="Hello World">Foo</Banner>
   );
   expect(getByLabelText("Hello World")).toBeInstanceOf(HTMLDivElement);
 });
