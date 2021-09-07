@@ -17,13 +17,17 @@ export function Layout({
   description,
   children,
 }: PropsWithChildren<LayoutProps>) {
-  const data = useStaticQuery(graphql`
+  const { content } = useStaticQuery(graphql`
     query LayoutQuery {
-      contentfulMicroContent(key: { eq: "Website Description" }) {
-        value
+      content: contentfulMicroContent(key: { eq: "Website Description" }) {
+        value {
+          raw
+        }
       }
     }
   `);
+
+  const defaultDesc = findAllByKey(JSON.parse(content?.value.raw), "value");
 
   return (
     <>
@@ -32,7 +36,7 @@ export function Layout({
         <title>RAI | {title || "Responsible AI"}</title>
         <meta
           name="description"
-          content={description ?? data?.contentfulMicroContent?.value}
+          content={description ?? defaultDesc.join(",")}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script
@@ -50,5 +54,24 @@ export function Layout({
         <Footer />
       </div>
     </>
+  );
+}
+
+function findAllByKey(
+  obj: Record<string, unknown> | null,
+  keyToFind: string
+): Array<string | unknown> {
+  // @ts-expect-error Expected error
+  return Object.entries(obj).reduce(
+    (acc, [key, value]) =>
+      // eslint-disable-next-line no-nested-ternary
+      key === keyToFind
+        ? // @ts-expect-error Expected error
+          acc.concat(value)
+        : typeof value === "object"
+        ? // @ts-expect-error Expected error
+          acc.concat(findAllByKey(value, keyToFind))
+        : acc,
+    []
   );
 }

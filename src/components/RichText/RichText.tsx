@@ -23,7 +23,7 @@ import { BlockQuote } from "@/components/BlockQuote";
 export type RichTextContent = RenderRichTextData<ContentfulRichTextGatsbyReference>;
 
 interface RichTextProps {
-  readonly size?: "base" | "large";
+  readonly size?: "base" | "large" | "small";
   readonly content: RichTextContent;
 }
 
