@@ -23214,12 +23214,6 @@ export enum SitePageFieldsEnum {
   pluginCreator___resolve = 'pluginCreator___resolve',
   pluginCreator___name = 'pluginCreator___name',
   pluginCreator___version = 'pluginCreator___version',
-  pluginCreator___pluginOptions___displayName = 'pluginCreator___pluginOptions___displayName',
-  pluginCreator___pluginOptions___fileName = 'pluginCreator___pluginOptions___fileName',
-  pluginCreator___pluginOptions___minify = 'pluginCreator___pluginOptions___minify',
-  pluginCreator___pluginOptions___namespace = 'pluginCreator___pluginOptions___namespace',
-  pluginCreator___pluginOptions___transpileTemplateLiterals = 'pluginCreator___pluginOptions___transpileTemplateLiterals',
-  pluginCreator___pluginOptions___pure = 'pluginCreator___pluginOptions___pure',
   pluginCreator___pluginOptions___output = 'pluginCreator___pluginOptions___output',
   pluginCreator___pluginOptions___createLinkInHead = 'pluginCreator___pluginOptions___createLinkInHead',
   pluginCreator___pluginOptions___base64Width = 'pluginCreator___pluginOptions___base64Width',
@@ -23447,12 +23441,6 @@ export enum SitePluginFieldsEnum {
   resolve = 'resolve',
   name = 'name',
   version = 'version',
-  pluginOptions___displayName = 'pluginOptions___displayName',
-  pluginOptions___fileName = 'pluginOptions___fileName',
-  pluginOptions___minify = 'pluginOptions___minify',
-  pluginOptions___namespace = 'pluginOptions___namespace',
-  pluginOptions___transpileTemplateLiterals = 'pluginOptions___transpileTemplateLiterals',
-  pluginOptions___pure = 'pluginOptions___pure',
   pluginOptions___output = 'pluginOptions___output',
   pluginOptions___createLinkInHead = 'pluginOptions___createLinkInHead',
   pluginOptions___base64Width = 'pluginOptions___base64Width',
@@ -23611,12 +23599,6 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 
 export type SitePluginPluginOptions = {
   __typename?: 'SitePluginPluginOptions';
-  displayName?: Maybe<Scalars['Boolean']>;
-  fileName?: Maybe<Scalars['Boolean']>;
-  minify?: Maybe<Scalars['Boolean']>;
-  namespace?: Maybe<Scalars['String']>;
-  transpileTemplateLiterals?: Maybe<Scalars['Boolean']>;
-  pure?: Maybe<Scalars['Boolean']>;
   output?: Maybe<Scalars['String']>;
   createLinkInHead?: Maybe<Scalars['Boolean']>;
   base64Width?: Maybe<Scalars['Int']>;
@@ -23675,12 +23657,6 @@ export type SitePluginPluginOptionsCssLoaderOptionsModulesFilterInput = {
 };
 
 export type SitePluginPluginOptionsFilterInput = {
-  displayName?: Maybe<BooleanQueryOperatorInput>;
-  fileName?: Maybe<BooleanQueryOperatorInput>;
-  minify?: Maybe<BooleanQueryOperatorInput>;
-  namespace?: Maybe<StringQueryOperatorInput>;
-  transpileTemplateLiterals?: Maybe<BooleanQueryOperatorInput>;
-  pure?: Maybe<BooleanQueryOperatorInput>;
   output?: Maybe<StringQueryOperatorInput>;
   createLinkInHead?: Maybe<BooleanQueryOperatorInput>;
   base64Width?: Maybe<IntQueryOperatorInput>;
