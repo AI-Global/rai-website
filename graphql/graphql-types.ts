@@ -15306,6 +15306,7 @@ export type ContentfulMicroContent = ContentfulReference & ContentfulEntry & Nod
   node_locale: Scalars['String'];
   key?: Maybe<Scalars['String']>;
   value?: Maybe<Scalars['String']>;
+  newValue?: Maybe<ContentfulMicroContentNewValue>;
   spaceId?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
@@ -15366,6 +15367,7 @@ export enum ContentfulMicroContentFieldsEnum {
   node_locale = 'node_locale',
   key = 'key',
   value = 'value',
+  newValue___raw = 'newValue___raw',
   spaceId = 'spaceId',
   createdAt = 'createdAt',
   updatedAt = 'updatedAt',
@@ -15467,6 +15469,7 @@ export type ContentfulMicroContentFilterInput = {
   node_locale?: Maybe<StringQueryOperatorInput>;
   key?: Maybe<StringQueryOperatorInput>;
   value?: Maybe<StringQueryOperatorInput>;
+  newValue?: Maybe<ContentfulMicroContentNewValueFilterInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
@@ -15484,6 +15487,15 @@ export type ContentfulMicroContentGroupConnection = {
   pageInfo: PageInfo;
   field: Scalars['String'];
   fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulMicroContentNewValue = {
+  __typename?: 'ContentfulMicroContentNewValue';
+  raw?: Maybe<Scalars['String']>;
+};
+
+export type ContentfulMicroContentNewValueFilterInput = {
+  raw?: Maybe<StringQueryOperatorInput>;
 };
 
 export type ContentfulMicroContentSortInput = {
@@ -21949,6 +21961,7 @@ export type QueryContentfulMicroContentArgs = {
   node_locale?: Maybe<StringQueryOperatorInput>;
   key?: Maybe<StringQueryOperatorInput>;
   value?: Maybe<StringQueryOperatorInput>;
+  newValue?: Maybe<ContentfulMicroContentNewValueFilterInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
@@ -25092,9 +25105,13 @@ export type LayoutQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type LayoutQueryQuery = (
   { __typename?: 'Query' }
-  & { contentfulMicroContent?: Maybe<(
+  & { content?: Maybe<(
     { __typename?: 'ContentfulMicroContent' }
     & Pick<ContentfulMicroContent, 'value'>
+    & { newValue?: Maybe<(
+      { __typename?: 'ContentfulMicroContentNewValue' }
+      & Pick<ContentfulMicroContentNewValue, 'raw'>
+    )> }
   )> }
 );
 

@@ -46,7 +46,7 @@ export function Slider({ slides }: SliderProps) {
         {...defaultProps}
       >
         {slides?.map((slide) => (
-          <SwiperSlide>{slide}</SwiperSlide>
+          <SwiperSlide key={Math.random()}>{slide}</SwiperSlide>
         ))}
       </Swiper>
 

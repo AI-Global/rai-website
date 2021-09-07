@@ -35,7 +35,7 @@ export function ResourceList({ data }: ResourceListProps) {
 
       <Container className={styles.posts}>
         {data.resources?.map((resource) => (
-          <Resource data={resource} />
+          <Resource data={resource} key={resource.id} />
         ))}
       </Container>
     </div>

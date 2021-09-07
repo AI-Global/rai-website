@@ -57,8 +57,8 @@ export function ContentfulBlocks({ blocks }: BlockProps) {
         switch (block?.__typename) {
           case "ContentfulBlockResourceList":
             return (
-              <div className={styles.noSpace}>
-                <ResourceList data={block} key={block.id} />
+              <div className={styles.noSpace} key={block.id}>
+                <ResourceList data={block} />
               </div>
             );
           case "ContentfulBlockCallToAction":
@@ -66,13 +66,14 @@ export function ContentfulBlocks({ blocks }: BlockProps) {
           case "ContentfulBlockContent":
             return (
               <div
+                key={block.id}
                 className={
                   block?.variation === "Full Width Dark"
                     ? styles.noSpaceAtAll
                     : ""
                 }
               >
-                <Content data={block} key={block.id} />
+                <Content data={block} />
               </div>
             );
           case "ContentfulBlockContentList":
@@ -81,8 +82,8 @@ export function ContentfulBlocks({ blocks }: BlockProps) {
             return <ImageBand data={block} key={block.id} />;
           case "ContentfulBlockJumbotron":
             return (
-              <div className={styles.noSpace}>
-                <Jumbotron {...block} key={block.id} />
+              <div className={styles.noSpace} key={block.id}>
+                <Jumbotron {...block} />
               </div>
             );
           case "ContentfulBlockListOfPeople":
@@ -95,7 +96,7 @@ export function ContentfulBlocks({ blocks }: BlockProps) {
             return <TestimonialSlider {...block} key={block.id} />;
           default:
             return (
-              <div className={styles.spacer}>
+              <div className={styles.spacer} key={block}>
                 <UnknownBlock block={block} />
               </div>
             );
