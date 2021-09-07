@@ -5,18 +5,19 @@ import { ContentListFragmentFragment } from "@/graphql/graphql-types";
 import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
 import { RichText, RichTextContent } from "@/components/RichText";
-import { ContentfulButton } from "@/components/ContentfulButton";
 
+import { Button } from "@/components/Button";
 import styles from "./ContentList.module.css";
 
 export function ContentList({
   title,
   content,
-  button,
   listTitle,
   list,
   listDescription,
   highlight,
+  button,
+  customButtonText,
 }: ContentListFragmentFragment) {
   const wrapperClass = classnames(styles.wrapper, {
     [styles.full]: highlight === "Full",
@@ -31,10 +32,8 @@ export function ContentList({
           <div className={styles.content}>
             <Heading as="h3">{title}</Heading>
             <RichText content={content as RichTextContent} />
-            {button?.action?.enabled && (
-              <div className={styles.button}>
-                <ContentfulButton action={button?.action} />
-              </div>
+            {button && (
+              <Button {...button} title={customButtonText ?? button?.title} />
             )}
           </div>
 
@@ -77,13 +76,14 @@ export const ContentListFragment = graphql`
       raw
     }
     button {
-      action {
-        enabled
-        entrySlug
-        externalUrl
-        title
+      ... on ContentfulPage {
+        ...ButtonPageFragment
+      }
+      ... on ContentfulResource {
+        ...ButtonResourceFragment
       }
     }
+    customButtonText
     listTitle
     listDescription {
       raw

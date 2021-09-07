@@ -3,7 +3,10 @@ import classnames from "classnames";
 import { graphql, Link } from "gatsby";
 import { XOR } from "ts-xor";
 
-import { ButtonPageFragmentFragment } from "@/graphql/graphql-types";
+import {
+  ButtonPageFragmentFragment,
+  ButtonResourceFragmentFragment,
+} from "@/graphql/graphql-types";
 
 import styles from "./Button.module.css";
 
@@ -29,7 +32,10 @@ interface BaseButtonProps {
   readonly id?: string;
 }
 
-export type ButtonProps = XOR<BaseButtonProps, ButtonPageFragmentFragment>;
+export type ButtonProps = XOR<
+  BaseButtonProps,
+  XOR<ButtonPageFragmentFragment, ButtonResourceFragmentFragment>
+>;
 
 export function Button({
   __typename,
@@ -39,10 +45,13 @@ export function Button({
   variation = "primary",
   external,
   id,
+  media,
 }: ButtonProps) {
   const buttonClasses = classnames(styles.button, styles[variation], {
     [styles.kindful]: id?.includes("kindful"),
   });
+
+  const isExternal = external || __typename === "ContentfulResource";
 
   const baseButtonProps = {
     className: buttonClasses,
@@ -51,7 +60,7 @@ export function Button({
 
   const externalButtonProps = {
     ...baseButtonProps,
-    href: url,
+    href: getExternalUrl(),
     target: "_blank",
     rel: "noopener noreferrer",
   };
@@ -61,11 +70,23 @@ export function Button({
     to: __typename === "ContentfulPage" ? `/${slug}` : `${url}`,
   };
 
-  if (external) {
+  if (isExternal) {
     return <a {...externalButtonProps}>{title}</a>;
   }
 
   return <Link {...internalButtonProps}>{title}</Link>;
+
+  function getExternalUrl() {
+    let href = url;
+
+    if (__typename === "ContentfulResource") {
+      if (media) {
+        href = media.file?.url;
+      }
+    }
+
+    return href;
+  }
 }
 
 export const ButtonPageFragment = graphql`
@@ -73,5 +94,17 @@ export const ButtonPageFragment = graphql`
     __typename
     title
     slug
+  }
+`;
+
+export const ButtonResourceFragment = graphql`
+  fragment ButtonResourceFragment on ContentfulResource {
+    __typename
+    title
+    media {
+      file {
+        url
+      }
+    }
   }
 `;
