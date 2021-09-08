@@ -21,7 +21,7 @@ export function Logo({ variation = "default", size = "base" }: LogoProps) {
   return (
     <svg
       className={logoClass}
-      width={sizes[size] || sizes.base}
+      width={sizes[size]}
       viewBox="0 0 250 56"
       xmlns="http://www.w3.org/2000/svg"
     >

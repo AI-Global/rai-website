@@ -27,3 +27,8 @@ it("renders a small, base and large icon", () => {
   expect(cpu.getAttribute("height")).toBe("24");
   expect(file.getAttribute("height")).toBe("32");
 });
+
+it("rends a custom icon", () => {
+  const { getByTestId } = render(<Icon icon="Fellowship" />);
+  expect(getByTestId("icon-Fellowship")).toBeInstanceOf(SVGElement);
+});

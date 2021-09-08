@@ -24,3 +24,12 @@ it("renders nothing if not enabled", () => {
 
   expect(queryByText("Foo Button")).toBeNull();
 });
+
+it("renders an external link", () => {
+  const action = { ...mockAction, external: false, entrySlug: "//assets/foo" };
+  const { getByText } = render(<ContentfulButton action={action} />);
+
+  const button = getByText("Foo Button");
+
+  expect(button.getAttribute("target")).toBe("_blank");
+});
