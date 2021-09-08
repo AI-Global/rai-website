@@ -6185,10 +6185,10 @@ export enum ContentfulBlockListOfPeopleFieldsEnum {
   people___blog_post___author___name = 'people___blog_post___author___name',
   people___blog_post___author___userRole = 'people___blog_post___author___userRole',
   people___blog_post___author___blog_post = 'people___blog_post___author___blog_post',
+  people___blog_post___author___block__list_of_people = 'people___blog_post___author___block__list_of_people',
   people___blog_post___author___spaceId = 'people___blog_post___author___spaceId',
   people___blog_post___author___createdAt = 'people___blog_post___author___createdAt',
   people___blog_post___author___updatedAt = 'people___blog_post___author___updatedAt',
-  people___blog_post___author___block__list_of_people = 'people___blog_post___author___block__list_of_people',
   people___blog_post___author___children = 'people___blog_post___author___children',
   people___blog_post___featuredImage___contentful_id = 'people___blog_post___featuredImage___contentful_id',
   people___blog_post___featuredImage___id = 'people___blog_post___featuredImage___id',
@@ -6252,11 +6252,6 @@ export enum ContentfulBlockListOfPeopleFieldsEnum {
   people___blog_post___internal___mediaType = 'people___blog_post___internal___mediaType',
   people___blog_post___internal___owner = 'people___blog_post___internal___owner',
   people___blog_post___internal___type = 'people___blog_post___internal___type',
-  people___spaceId = 'people___spaceId',
-  people___createdAt = 'people___createdAt',
-  people___updatedAt = 'people___updatedAt',
-  people___sys___type = 'people___sys___type',
-  people___sys___revision = 'people___sys___revision',
   people___block__list_of_people = 'people___block__list_of_people',
   people___block__list_of_people___contentful_id = 'people___block__list_of_people___contentful_id',
   people___block__list_of_people___id = 'people___block__list_of_people___id',
@@ -6270,10 +6265,10 @@ export enum ContentfulBlockListOfPeopleFieldsEnum {
   people___block__list_of_people___people___name = 'people___block__list_of_people___people___name',
   people___block__list_of_people___people___userRole = 'people___block__list_of_people___people___userRole',
   people___block__list_of_people___people___blog_post = 'people___block__list_of_people___people___blog_post',
+  people___block__list_of_people___people___block__list_of_people = 'people___block__list_of_people___people___block__list_of_people',
   people___block__list_of_people___people___spaceId = 'people___block__list_of_people___people___spaceId',
   people___block__list_of_people___people___createdAt = 'people___block__list_of_people___people___createdAt',
   people___block__list_of_people___people___updatedAt = 'people___block__list_of_people___people___updatedAt',
-  people___block__list_of_people___people___block__list_of_people = 'people___block__list_of_people___people___block__list_of_people',
   people___block__list_of_people___people___children = 'people___block__list_of_people___people___children',
   people___block__list_of_people___page = 'people___block__list_of_people___page',
   people___block__list_of_people___page___contentful_id = 'people___block__list_of_people___page___contentful_id',
@@ -6312,6 +6307,11 @@ export enum ContentfulBlockListOfPeopleFieldsEnum {
   people___block__list_of_people___internal___mediaType = 'people___block__list_of_people___internal___mediaType',
   people___block__list_of_people___internal___owner = 'people___block__list_of_people___internal___owner',
   people___block__list_of_people___internal___type = 'people___block__list_of_people___internal___type',
+  people___spaceId = 'people___spaceId',
+  people___createdAt = 'people___createdAt',
+  people___updatedAt = 'people___updatedAt',
+  people___sys___type = 'people___sys___type',
+  people___sys___revision = 'people___sys___revision',
   people___parent___id = 'people___parent___id',
   people___parent___parent___id = 'people___parent___parent___id',
   people___parent___parent___children = 'people___parent___parent___children',
@@ -9371,11 +9371,6 @@ export enum ContentfulBlockResourceListFieldsEnum {
   blog_post___author___blog_post___block__resource_list = 'blog_post___author___blog_post___block__resource_list',
   blog_post___author___blog_post___childrenContentfulBlogPostExcerptTextNode = 'blog_post___author___blog_post___childrenContentfulBlogPostExcerptTextNode',
   blog_post___author___blog_post___children = 'blog_post___author___blog_post___children',
-  blog_post___author___spaceId = 'blog_post___author___spaceId',
-  blog_post___author___createdAt = 'blog_post___author___createdAt',
-  blog_post___author___updatedAt = 'blog_post___author___updatedAt',
-  blog_post___author___sys___type = 'blog_post___author___sys___type',
-  blog_post___author___sys___revision = 'blog_post___author___sys___revision',
   blog_post___author___block__list_of_people = 'blog_post___author___block__list_of_people',
   blog_post___author___block__list_of_people___contentful_id = 'blog_post___author___block__list_of_people___contentful_id',
   blog_post___author___block__list_of_people___id = 'blog_post___author___block__list_of_people___id',
@@ -9388,6 +9383,11 @@ export enum ContentfulBlockResourceListFieldsEnum {
   blog_post___author___block__list_of_people___createdAt = 'blog_post___author___block__list_of_people___createdAt',
   blog_post___author___block__list_of_people___updatedAt = 'blog_post___author___block__list_of_people___updatedAt',
   blog_post___author___block__list_of_people___children = 'blog_post___author___block__list_of_people___children',
+  blog_post___author___spaceId = 'blog_post___author___spaceId',
+  blog_post___author___createdAt = 'blog_post___author___createdAt',
+  blog_post___author___updatedAt = 'blog_post___author___updatedAt',
+  blog_post___author___sys___type = 'blog_post___author___sys___type',
+  blog_post___author___sys___revision = 'blog_post___author___sys___revision',
   blog_post___author___parent___id = 'blog_post___author___parent___id',
   blog_post___author___parent___children = 'blog_post___author___parent___children',
   blog_post___author___children = 'blog_post___author___children',
@@ -11413,10 +11413,10 @@ export enum ContentfulBlogPostFieldsEnum {
   author___blog_post___author___name = 'author___blog_post___author___name',
   author___blog_post___author___userRole = 'author___blog_post___author___userRole',
   author___blog_post___author___blog_post = 'author___blog_post___author___blog_post',
+  author___blog_post___author___block__list_of_people = 'author___blog_post___author___block__list_of_people',
   author___blog_post___author___spaceId = 'author___blog_post___author___spaceId',
   author___blog_post___author___createdAt = 'author___blog_post___author___createdAt',
   author___blog_post___author___updatedAt = 'author___blog_post___author___updatedAt',
-  author___blog_post___author___block__list_of_people = 'author___blog_post___author___block__list_of_people',
   author___blog_post___author___children = 'author___blog_post___author___children',
   author___blog_post___featuredImage___contentful_id = 'author___blog_post___featuredImage___contentful_id',
   author___blog_post___featuredImage___id = 'author___blog_post___featuredImage___id',
@@ -11480,11 +11480,6 @@ export enum ContentfulBlogPostFieldsEnum {
   author___blog_post___internal___mediaType = 'author___blog_post___internal___mediaType',
   author___blog_post___internal___owner = 'author___blog_post___internal___owner',
   author___blog_post___internal___type = 'author___blog_post___internal___type',
-  author___spaceId = 'author___spaceId',
-  author___createdAt = 'author___createdAt',
-  author___updatedAt = 'author___updatedAt',
-  author___sys___type = 'author___sys___type',
-  author___sys___revision = 'author___sys___revision',
   author___block__list_of_people = 'author___block__list_of_people',
   author___block__list_of_people___contentful_id = 'author___block__list_of_people___contentful_id',
   author___block__list_of_people___id = 'author___block__list_of_people___id',
@@ -11498,10 +11493,10 @@ export enum ContentfulBlogPostFieldsEnum {
   author___block__list_of_people___people___name = 'author___block__list_of_people___people___name',
   author___block__list_of_people___people___userRole = 'author___block__list_of_people___people___userRole',
   author___block__list_of_people___people___blog_post = 'author___block__list_of_people___people___blog_post',
+  author___block__list_of_people___people___block__list_of_people = 'author___block__list_of_people___people___block__list_of_people',
   author___block__list_of_people___people___spaceId = 'author___block__list_of_people___people___spaceId',
   author___block__list_of_people___people___createdAt = 'author___block__list_of_people___people___createdAt',
   author___block__list_of_people___people___updatedAt = 'author___block__list_of_people___people___updatedAt',
-  author___block__list_of_people___people___block__list_of_people = 'author___block__list_of_people___people___block__list_of_people',
   author___block__list_of_people___people___children = 'author___block__list_of_people___people___children',
   author___block__list_of_people___page = 'author___block__list_of_people___page',
   author___block__list_of_people___page___contentful_id = 'author___block__list_of_people___page___contentful_id',
@@ -11540,6 +11535,11 @@ export enum ContentfulBlogPostFieldsEnum {
   author___block__list_of_people___internal___mediaType = 'author___block__list_of_people___internal___mediaType',
   author___block__list_of_people___internal___owner = 'author___block__list_of_people___internal___owner',
   author___block__list_of_people___internal___type = 'author___block__list_of_people___internal___type',
+  author___spaceId = 'author___spaceId',
+  author___createdAt = 'author___createdAt',
+  author___updatedAt = 'author___updatedAt',
+  author___sys___type = 'author___sys___type',
+  author___sys___revision = 'author___sys___revision',
   author___parent___id = 'author___parent___id',
   author___parent___parent___id = 'author___parent___parent___id',
   author___parent___parent___children = 'author___parent___parent___children',
@@ -11827,10 +11827,10 @@ export enum ContentfulBlogPostFieldsEnum {
   resources___blog_post___author___name = 'resources___blog_post___author___name',
   resources___blog_post___author___userRole = 'resources___blog_post___author___userRole',
   resources___blog_post___author___blog_post = 'resources___blog_post___author___blog_post',
+  resources___blog_post___author___block__list_of_people = 'resources___blog_post___author___block__list_of_people',
   resources___blog_post___author___spaceId = 'resources___blog_post___author___spaceId',
   resources___blog_post___author___createdAt = 'resources___blog_post___author___createdAt',
   resources___blog_post___author___updatedAt = 'resources___blog_post___author___updatedAt',
-  resources___blog_post___author___block__list_of_people = 'resources___blog_post___author___block__list_of_people',
   resources___blog_post___author___children = 'resources___blog_post___author___children',
   resources___blog_post___featuredImage___contentful_id = 'resources___blog_post___featuredImage___contentful_id',
   resources___blog_post___featuredImage___id = 'resources___blog_post___featuredImage___id',
@@ -12170,10 +12170,10 @@ export enum ContentfulBlogPostFieldsEnum {
   block__resource_list___blog_post___author___name = 'block__resource_list___blog_post___author___name',
   block__resource_list___blog_post___author___userRole = 'block__resource_list___blog_post___author___userRole',
   block__resource_list___blog_post___author___blog_post = 'block__resource_list___blog_post___author___blog_post',
+  block__resource_list___blog_post___author___block__list_of_people = 'block__resource_list___blog_post___author___block__list_of_people',
   block__resource_list___blog_post___author___spaceId = 'block__resource_list___blog_post___author___spaceId',
   block__resource_list___blog_post___author___createdAt = 'block__resource_list___blog_post___author___createdAt',
   block__resource_list___blog_post___author___updatedAt = 'block__resource_list___blog_post___author___updatedAt',
-  block__resource_list___blog_post___author___block__list_of_people = 'block__resource_list___blog_post___author___block__list_of_people',
   block__resource_list___blog_post___author___children = 'block__resource_list___blog_post___author___children',
   block__resource_list___blog_post___featuredImage___contentful_id = 'block__resource_list___blog_post___featuredImage___contentful_id',
   block__resource_list___blog_post___featuredImage___id = 'block__resource_list___blog_post___featuredImage___id',
@@ -17093,10 +17093,10 @@ export enum ContentfulPageFieldsEnum {
   block__resource_list___blog_post___author___name = 'block__resource_list___blog_post___author___name',
   block__resource_list___blog_post___author___userRole = 'block__resource_list___blog_post___author___userRole',
   block__resource_list___blog_post___author___blog_post = 'block__resource_list___blog_post___author___blog_post',
+  block__resource_list___blog_post___author___block__list_of_people = 'block__resource_list___blog_post___author___block__list_of_people',
   block__resource_list___blog_post___author___spaceId = 'block__resource_list___blog_post___author___spaceId',
   block__resource_list___blog_post___author___createdAt = 'block__resource_list___blog_post___author___createdAt',
   block__resource_list___blog_post___author___updatedAt = 'block__resource_list___blog_post___author___updatedAt',
-  block__resource_list___blog_post___author___block__list_of_people = 'block__resource_list___blog_post___author___block__list_of_people',
   block__resource_list___blog_post___author___children = 'block__resource_list___blog_post___author___children',
   block__resource_list___blog_post___featuredImage___contentful_id = 'block__resource_list___blog_post___featuredImage___contentful_id',
   block__resource_list___blog_post___featuredImage___id = 'block__resource_list___blog_post___featuredImage___id',
@@ -17484,11 +17484,11 @@ export type ContentfulPeople = ContentfulReference & ContentfulEntry & Node & {
   biography?: Maybe<ContentfulPeopleBiography>;
   photo?: Maybe<ContentfulAsset>;
   blog_post?: Maybe<Array<Maybe<ContentfulBlogPost>>>;
+  block__list_of_people?: Maybe<Array<Maybe<ContentfulBlockListOfPeople>>>;
   spaceId?: Maybe<Scalars['String']>;
   createdAt?: Maybe<Scalars['Date']>;
   updatedAt?: Maybe<Scalars['Date']>;
   sys?: Maybe<ContentfulPeopleSys>;
-  block__list_of_people?: Maybe<Array<Maybe<ContentfulBlockListOfPeople>>>;
   parent?: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
@@ -17685,11 +17685,6 @@ export enum ContentfulPeopleFieldsEnum {
   blog_post___author___blog_post___block__resource_list = 'blog_post___author___blog_post___block__resource_list',
   blog_post___author___blog_post___childrenContentfulBlogPostExcerptTextNode = 'blog_post___author___blog_post___childrenContentfulBlogPostExcerptTextNode',
   blog_post___author___blog_post___children = 'blog_post___author___blog_post___children',
-  blog_post___author___spaceId = 'blog_post___author___spaceId',
-  blog_post___author___createdAt = 'blog_post___author___createdAt',
-  blog_post___author___updatedAt = 'blog_post___author___updatedAt',
-  blog_post___author___sys___type = 'blog_post___author___sys___type',
-  blog_post___author___sys___revision = 'blog_post___author___sys___revision',
   blog_post___author___block__list_of_people = 'blog_post___author___block__list_of_people',
   blog_post___author___block__list_of_people___contentful_id = 'blog_post___author___block__list_of_people___contentful_id',
   blog_post___author___block__list_of_people___id = 'blog_post___author___block__list_of_people___id',
@@ -17702,6 +17697,11 @@ export enum ContentfulPeopleFieldsEnum {
   blog_post___author___block__list_of_people___createdAt = 'blog_post___author___block__list_of_people___createdAt',
   blog_post___author___block__list_of_people___updatedAt = 'blog_post___author___block__list_of_people___updatedAt',
   blog_post___author___block__list_of_people___children = 'blog_post___author___block__list_of_people___children',
+  blog_post___author___spaceId = 'blog_post___author___spaceId',
+  blog_post___author___createdAt = 'blog_post___author___createdAt',
+  blog_post___author___updatedAt = 'blog_post___author___updatedAt',
+  blog_post___author___sys___type = 'blog_post___author___sys___type',
+  blog_post___author___sys___revision = 'blog_post___author___sys___revision',
   blog_post___author___parent___id = 'blog_post___author___parent___id',
   blog_post___author___parent___children = 'blog_post___author___parent___children',
   blog_post___author___children = 'blog_post___author___children',
@@ -18012,14 +18012,6 @@ export enum ContentfulPeopleFieldsEnum {
   blog_post___internal___mediaType = 'blog_post___internal___mediaType',
   blog_post___internal___owner = 'blog_post___internal___owner',
   blog_post___internal___type = 'blog_post___internal___type',
-  spaceId = 'spaceId',
-  createdAt = 'createdAt',
-  updatedAt = 'updatedAt',
-  sys___type = 'sys___type',
-  sys___revision = 'sys___revision',
-  sys___contentType___sys___type = 'sys___contentType___sys___type',
-  sys___contentType___sys___linkType = 'sys___contentType___sys___linkType',
-  sys___contentType___sys___id = 'sys___contentType___sys___id',
   block__list_of_people = 'block__list_of_people',
   block__list_of_people___contentful_id = 'block__list_of_people___contentful_id',
   block__list_of_people___id = 'block__list_of_people___id',
@@ -18060,11 +18052,6 @@ export enum ContentfulPeopleFieldsEnum {
   block__list_of_people___people___blog_post___block__resource_list = 'block__list_of_people___people___blog_post___block__resource_list',
   block__list_of_people___people___blog_post___childrenContentfulBlogPostExcerptTextNode = 'block__list_of_people___people___blog_post___childrenContentfulBlogPostExcerptTextNode',
   block__list_of_people___people___blog_post___children = 'block__list_of_people___people___blog_post___children',
-  block__list_of_people___people___spaceId = 'block__list_of_people___people___spaceId',
-  block__list_of_people___people___createdAt = 'block__list_of_people___people___createdAt',
-  block__list_of_people___people___updatedAt = 'block__list_of_people___people___updatedAt',
-  block__list_of_people___people___sys___type = 'block__list_of_people___people___sys___type',
-  block__list_of_people___people___sys___revision = 'block__list_of_people___people___sys___revision',
   block__list_of_people___people___block__list_of_people = 'block__list_of_people___people___block__list_of_people',
   block__list_of_people___people___block__list_of_people___contentful_id = 'block__list_of_people___people___block__list_of_people___contentful_id',
   block__list_of_people___people___block__list_of_people___id = 'block__list_of_people___people___block__list_of_people___id',
@@ -18077,6 +18064,11 @@ export enum ContentfulPeopleFieldsEnum {
   block__list_of_people___people___block__list_of_people___createdAt = 'block__list_of_people___people___block__list_of_people___createdAt',
   block__list_of_people___people___block__list_of_people___updatedAt = 'block__list_of_people___people___block__list_of_people___updatedAt',
   block__list_of_people___people___block__list_of_people___children = 'block__list_of_people___people___block__list_of_people___children',
+  block__list_of_people___people___spaceId = 'block__list_of_people___people___spaceId',
+  block__list_of_people___people___createdAt = 'block__list_of_people___people___createdAt',
+  block__list_of_people___people___updatedAt = 'block__list_of_people___people___updatedAt',
+  block__list_of_people___people___sys___type = 'block__list_of_people___people___sys___type',
+  block__list_of_people___people___sys___revision = 'block__list_of_people___people___sys___revision',
   block__list_of_people___people___parent___id = 'block__list_of_people___people___parent___id',
   block__list_of_people___people___parent___children = 'block__list_of_people___people___parent___children',
   block__list_of_people___people___children = 'block__list_of_people___people___children',
@@ -18237,6 +18229,14 @@ export enum ContentfulPeopleFieldsEnum {
   block__list_of_people___internal___mediaType = 'block__list_of_people___internal___mediaType',
   block__list_of_people___internal___owner = 'block__list_of_people___internal___owner',
   block__list_of_people___internal___type = 'block__list_of_people___internal___type',
+  spaceId = 'spaceId',
+  createdAt = 'createdAt',
+  updatedAt = 'updatedAt',
+  sys___type = 'sys___type',
+  sys___revision = 'sys___revision',
+  sys___contentType___sys___type = 'sys___contentType___sys___type',
+  sys___contentType___sys___linkType = 'sys___contentType___sys___linkType',
+  sys___contentType___sys___id = 'sys___contentType___sys___id',
   parent___id = 'parent___id',
   parent___parent___id = 'parent___parent___id',
   parent___parent___parent___id = 'parent___parent___parent___id',
@@ -18333,11 +18333,11 @@ export type ContentfulPeopleFilterInput = {
   biography?: Maybe<ContentfulPeopleBiographyFilterInput>;
   photo?: Maybe<ContentfulAssetFilterInput>;
   blog_post?: Maybe<ContentfulBlogPostFilterListInput>;
+  block__list_of_people?: Maybe<ContentfulBlockListOfPeopleFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
   sys?: Maybe<ContentfulPeopleSysFilterInput>;
-  block__list_of_people?: Maybe<ContentfulBlockListOfPeopleFilterListInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
@@ -19472,10 +19472,10 @@ export enum ContentfulResourceFieldsEnum {
   block__resource_list___blog_post___author___name = 'block__resource_list___blog_post___author___name',
   block__resource_list___blog_post___author___userRole = 'block__resource_list___blog_post___author___userRole',
   block__resource_list___blog_post___author___blog_post = 'block__resource_list___blog_post___author___blog_post',
+  block__resource_list___blog_post___author___block__list_of_people = 'block__resource_list___blog_post___author___block__list_of_people',
   block__resource_list___blog_post___author___spaceId = 'block__resource_list___blog_post___author___spaceId',
   block__resource_list___blog_post___author___createdAt = 'block__resource_list___blog_post___author___createdAt',
   block__resource_list___blog_post___author___updatedAt = 'block__resource_list___blog_post___author___updatedAt',
-  block__resource_list___blog_post___author___block__list_of_people = 'block__resource_list___blog_post___author___block__list_of_people',
   block__resource_list___blog_post___author___children = 'block__resource_list___blog_post___author___children',
   block__resource_list___blog_post___featuredImage___contentful_id = 'block__resource_list___blog_post___featuredImage___contentful_id',
   block__resource_list___blog_post___featuredImage___id = 'block__resource_list___blog_post___featuredImage___id',
@@ -22337,11 +22337,11 @@ export type QueryContentfulPeopleArgs = {
   biography?: Maybe<ContentfulPeopleBiographyFilterInput>;
   photo?: Maybe<ContentfulAssetFilterInput>;
   blog_post?: Maybe<ContentfulBlogPostFilterListInput>;
+  block__list_of_people?: Maybe<ContentfulBlockListOfPeopleFilterListInput>;
   spaceId?: Maybe<StringQueryOperatorInput>;
   createdAt?: Maybe<DateQueryOperatorInput>;
   updatedAt?: Maybe<DateQueryOperatorInput>;
   sys?: Maybe<ContentfulPeopleSysFilterInput>;
-  block__list_of_people?: Maybe<ContentfulBlockListOfPeopleFilterListInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;

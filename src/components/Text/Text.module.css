@@ -1,6 +1,7 @@
 .text {
   font-family: var(--font-family--base);
   margin: var(--space--base) 0;
+  white-space: pre-wrap;
 }
 
 .text:only-child {
