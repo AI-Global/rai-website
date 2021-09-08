@@ -1,13 +1,16 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { AnimatePresence, motion } from "framer-motion";
 import classnames from "classnames";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
+import { JumbotronFragmentFragment } from "@/graphql/graphql-types";
+
 import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
 import { RichText, RichTextContent } from "@/components/RichText";
+import { MailerLite } from "@/components/MailerLite";
 import { Button } from "@/components/Button";
-import { JumbotronFragmentFragment } from "@/graphql/graphql-types";
 
 import styles from "./Jumbotron.module.css";
 
@@ -39,6 +42,8 @@ export function Jumbotron({
     [styles.imageOnLeft]: imageOnLeft === true,
   });
 
+  const isMailerLiteButton = getIsMailerLiteButton();
+
   return (
     <div className={wrapperClass}>
       <Container>
@@ -47,7 +52,16 @@ export function Jumbotron({
             <Heading>{title}</Heading>
             {content && <RichText content={content as RichTextContent} />}
             {button && (
-              <Button {...button} title={customButtonText ?? button.title} />
+              <>
+                {isMailerLiteButton ? (
+                  <MailerLite />
+                ) : (
+                  <Button
+                    {...button}
+                    title={customButtonText ?? button.title}
+                  />
+                )}
+              </>
             )}
           </div>
 
@@ -75,6 +89,14 @@ export function Jumbotron({
       )}
     </div>
   );
+
+  function getIsMailerLiteButton() {
+    return (
+      button &&
+      button.__typename === "ContentfulResource" &&
+      button?.url === "#mailerlite-form"
+    );
+  }
 }
 
 export const JumbotronFragment = graphql`
@@ -86,7 +108,12 @@ export const JumbotronFragment = graphql`
       raw
     }
     button {
-      ...ButtonPageFragment
+      ... on ContentfulPage {
+        ...ButtonPageFragment
+      }
+      ... on ContentfulResource {
+        ...ButtonResourceFragment
+      }
     }
     customButtonText
     image {

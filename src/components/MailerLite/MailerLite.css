@@ -1,0 +1,8 @@
+.ml-form-embedWrapper.embedForm {
+  max-width: 100% !important;
+  background: none !important;
+}
+
+.ml-form-embedBody.ml-form-embedBodyDefault {
+  padding: 0 !important;
+}

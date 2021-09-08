@@ -45,6 +45,7 @@ export function Layout({
           data-lookup-type="jquery-selector"
           data-lookup-value="#kindful-donate-btn-d1727a32-6c93-4808-a281-897960739db5"
         />
+        <script src={withPrefix("mailerlite.js")} />
       </Helmet>
 
       <div className={styles.layout}>
