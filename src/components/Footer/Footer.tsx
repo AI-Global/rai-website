@@ -1,42 +1,25 @@
 import React from "react";
 import classnames from "classnames";
-import { Link } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import { Breakpoints, useResizeObserver } from "@/hooks/useResizeObserver";
 import { Container } from "@/components/Container";
 import { Logo } from "@/components/Logo";
 import { Icon } from "@/components/Icon";
+import { FooterNavigationItemFragment } from "@/graphql/graphql-types";
 
 import styles from "./Footer.module.css";
 
-const menuItems = [
-  {
-    title: "FAQ",
-    url: "/faq",
-  },
-  {
-    title: "RAI Certification",
-    url: "/certification",
-  },
-  {
-    title: "Programs and Tools",
-    url: "/tools",
-  },
-  {
-    title: "News",
-    url: "/news",
-  },
-  {
-    title: "About RAI",
-    url: "/about",
-  },
-  {
-    title: "Become a Member",
-    url: "/membership",
-    highlight: true,
-  },
-];
-
 export function Footer() {
+  const { menu } = useStaticQuery(graphql`
+    query FooterNavigationQuery {
+      menu: contentfulNavigation(title: { eq: "Footer Navigation" }) {
+        items {
+          ...FooterNavigationItem
+        }
+      }
+    }
+  `);
+
   const { ref, width } = useResizeObserver();
   const isLarge = width >= Breakpoints.large;
 
@@ -48,14 +31,14 @@ export function Footer() {
         </Link>
         <nav className={styles.nav} aria-label="Footer Navigation">
           <ul className={styles.list}>
-            {menuItems.map((item) => {
+            {menu.items.map((item: FooterNavigationItemFragment) => {
               const linkClass = classnames(styles.link, {
                 [styles.highlight]: item.highlight,
               });
 
               return (
                 <li className={styles.item} key={item.title}>
-                  <Link to={item.url} className={linkClass}>
+                  <Link to={`/${item?.link?.slug}`} className={linkClass}>
                     {item.title}
                   </Link>
                 </li>
@@ -117,3 +100,13 @@ export function Footer() {
     </footer>
   );
 }
+
+export const FooterNavigationItem = graphql`
+  fragment FooterNavigationItem on ContentfulNavigationItem {
+    title
+    highlight
+    link {
+      slug
+    }
+  }
+`;

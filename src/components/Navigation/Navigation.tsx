@@ -1,49 +1,26 @@
 import React, { useState } from "react";
 import classnames from "classnames";
-import { Link } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import { Container } from "@/components/Container";
 import { Logo } from "@/components/Logo";
 import { Icon } from "@/components/Icon";
 import { Breakpoints, useResizeObserver } from "@/hooks/useResizeObserver";
 import { AnimatePresence, motion } from "framer-motion";
 
+import { NavigationItemFragment } from "@/graphql/graphql-types";
 import styles from "./Navigation.module.css";
 
-const menuItems = [
-  {
-    title: "RAI Certification",
-    url: "/certification",
-  },
-  {
-    title: "Programs and Tools",
-    url: "/tools",
-  },
-  {
-    title: "News",
-    url: "/news",
-    items: [
-      {
-        title: "Blog",
-        url: "/blog",
-      },
-      {
-        title: "Events Calendar",
-        url: "/calendar",
-      },
-    ],
-  },
-  {
-    title: "About RAI",
-    url: "/about",
-  },
-  {
-    title: "Become a Member",
-    url: "/membership",
-    highlight: true,
-  },
-];
-
 export function Navigation() {
+  const { menu } = useStaticQuery(graphql`
+    query MainMenuQuery {
+      menu: contentfulNavigation(title: { eq: "Main Navigation" }) {
+        items {
+          ...NavigationItem
+        }
+      }
+    }
+  `);
+
   const { ref, width } = useResizeObserver();
   const isLarge = width >= Breakpoints.large;
 
@@ -55,14 +32,22 @@ export function Navigation() {
         </Link>
 
         <nav className={isLarge ? styles.large : undefined}>
-          {isLarge ? <Menu items={menuItems} /> : <MobileMenu />}
+          {isLarge ? (
+            <Menu items={menu.items} />
+          ) : (
+            <MobileMenu items={menu.items} />
+          )}
         </nav>
       </Container>
     </header>
   );
 }
 
-function MobileMenu() {
+interface MobileMenuProps {
+  items: NavigationItemFragment[];
+}
+
+function MobileMenu({ items }: MobileMenuProps) {
   const [open, setOpen] = useState<boolean>(false);
   const closeButtonClass = classnames(styles.button, styles.buttonOpen);
 
@@ -86,7 +71,7 @@ function MobileMenu() {
             transition={{ ease: "easeInOut", duration: 0.2 }}
             className={styles.mobileContainer}
           >
-            <Menu items={menuItems} />
+            <Menu items={items} />
             <button
               type="button"
               aria-label="Close mobile navigation"
@@ -106,18 +91,8 @@ function MobileMenu() {
   }
 }
 
-interface MenuLinkProps {
-  readonly title: string;
-  readonly url: string;
-}
-
-interface MenuItemProps extends MenuLinkProps {
-  readonly highlight?: boolean;
-  readonly items?: MenuLinkProps[];
-}
-
 interface MenuProps {
-  readonly items: MenuItemProps[];
+  readonly items: NavigationItemFragment[];
 }
 function Menu({ items }: MenuProps) {
   if (!items) {
@@ -133,16 +108,19 @@ function Menu({ items }: MenuProps) {
 
         return (
           <li className={styles.item} key={item.title}>
-            <Link to={item.url} className={linkClass}>
+            <Link to={`/${item?.link?.slug}`} className={linkClass}>
               {item.title}
             </Link>
 
-            {item.items && (
+            {item.subLinks && (
               <ul className={styles.subList}>
-                {item.items.map((subItem) => {
+                {item.subLinks.map((subItem) => {
                   return (
                     <li className={styles.subItem} key={subItem.title}>
-                      <Link to={subItem.url} className={styles.subLink}>
+                      <Link
+                        to={`/${subItem?.link?.slug}`}
+                        className={styles.subLink}
+                      >
                         {subItem.title}
                       </Link>
                     </li>
@@ -156,3 +134,19 @@ function Menu({ items }: MenuProps) {
     </ul>
   );
 }
+
+export const NavigationItem = graphql`
+  fragment NavigationItem on ContentfulNavigationItem {
+    title
+    highlight
+    link {
+      slug
+    }
+    subLinks {
+      title
+      link {
+        slug
+      }
+    }
+  }
+`;
