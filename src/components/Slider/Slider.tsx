@@ -51,8 +51,16 @@ export function Slider({ slides }: SliderProps) {
       </Swiper>
 
       <div className={styles.buttons}>
-        <SliderButton onClick={() => navigate("prev")} icon="ChevronLeft" />
-        <SliderButton onClick={() => navigate("next")} icon="ChevronRight" />
+        <SliderButton
+          onClick={() => navigate("prev")}
+          icon="ChevronLeft"
+          ariaLabel="Previous slide."
+        />
+        <SliderButton
+          onClick={() => navigate("next")}
+          icon="ChevronRight"
+          ariaLabel="Next slide."
+        />
       </div>
     </>
   );
@@ -82,12 +90,18 @@ export function Slider({ slides }: SliderProps) {
 
 interface SliderButtonProps {
   readonly icon: IconType;
+  readonly ariaLabel: string;
   onClick(): void;
 }
 
-function SliderButton({ onClick, icon }: SliderButtonProps) {
+function SliderButton({ onClick, icon, ariaLabel }: SliderButtonProps) {
   return (
-    <button type="button" onClick={onClick} className={styles.button}>
+    <button
+      type="button"
+      onClick={onClick}
+      className={styles.button}
+      aria-label={ariaLabel}
+    >
       <Icon icon={icon} size="large" />
     </button>
   );
