@@ -50,8 +50,13 @@ export function Layout({
 
       <div className={styles.layout}>
         <WebsiteBanner />
+        <a href="#main" className={styles.skip}>
+          Skip to content
+        </a>
         <Navigation />
-        <main className={styles.main}>{children}</main>
+        <main className={styles.main} id="main">
+          {children}
+        </main>
         <Footer />
       </div>
     </>

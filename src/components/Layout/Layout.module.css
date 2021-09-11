@@ -9,3 +9,21 @@
   flex-direction: column;
   flex: 1;
 }
+
+.skip {
+  position: absolute;
+  top: var(--space--base);
+  left: var(--space--base);
+  padding: var(--space--xsmall) var(--space--base);
+  background: var(--color--ghost);
+  font-size: var(--font-size--small);
+  text-decoration: none;
+  border-radius: 3px;
+  transform: translateX(-150%);
+  transition: transform 300ms;
+  color: var(--color--carbon);
+}
+
+.skip:focus {
+  transform: translateX(0);
+}
