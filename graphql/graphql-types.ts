@@ -28878,15 +28878,6 @@ export type PostFragmentFragment = (
   )> }
 );
 
-export type PostAuthorFragmentFragment = (
-  { __typename?: 'ContentfulAuthor' }
-  & Pick<ContentfulAuthor, 'name'>
-  & { biography?: Maybe<(
-    { __typename?: 'contentfulAuthorBiographyTextNode' }
-    & Pick<ContentfulAuthorBiographyTextNode, 'biography'>
-  )> }
-);
-
 export type PostContentFragmentFragment = (
   { __typename?: 'ContentfulBlogPost' }
   & { content?: Maybe<(

@@ -3,10 +3,20 @@
 @import './spacing.css';
 @import './fonts.css';
 
-/* 
- * TODO: This reset file can be cleaned up in the future. 
+/*
+ * TODO: This reset file can be cleaned up in the future.
 */
 @import './reset.css';
+
+html {
+  box-sizing: border-box;
+}
+
+html *,
+html *::before,
+html *::after {
+  box-sizing: inherit;
+}
 
 ::selection {
   background: var(--color--warning);
@@ -22,5 +32,12 @@
   vertical-align: bottom;
 }
 
-
-
+body {
+  background: var(--color--blanco);
+  font-family: var(--font-family--base);
+  color: var(--color--carbon);
+  font-style: normal;
+  font-size: var(--font-size--base);
+  line-height: 1.6;
+  margin: 0;
+}
