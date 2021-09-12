@@ -3,11 +3,6 @@
 @import './spacing.css';
 @import './fonts.css';
 
-/*
- * TODO: This reset file can be cleaned up in the future.
-*/
-@import './reset.css';
-
 html {
   box-sizing: border-box;
 }
