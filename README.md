@@ -73,3 +73,26 @@ To run the linter, use:
 ```
 npm run lint
 ```
+
+### Fragment Colocation
+
+The majority of your components will need data directly from Contentful. When this is the case you will want to use Gatsbys style of [fragment colocation](https://www.gatsbyjs.com/docs/recipes/querying-data/#graphql-query-fragments). This allows you to define your component props through the GraphQL api.
+
+```tsx
+fragment ExampleFragment on ExampleType {
+  title
+  subtitle
+  slug
+  contnet {
+    raw
+  }
+}
+
+query ExampleQuery {
+  allExampleTypes {
+    nodes {
+      ...ExampleFragment
+    }
+  }
+}
+```
