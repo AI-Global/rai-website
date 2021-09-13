@@ -58,7 +58,7 @@ export function ContentfulBlocks({ blocks }: BlockProps) {
           case "ContentfulBlockResourceList":
             return (
               <div className={styles.noSpace} key={block.id}>
-                <ResourceList data={block} />
+                <ResourceList {...block} />
               </div>
             );
           case "ContentfulBlockCallToAction":

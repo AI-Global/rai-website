@@ -1,0 +1,51 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
+import { ResourceList } from "@/blocks/ResourceList";
+import {
+  ContentType,
+  useAllContentfulResourceList,
+} from "@/components/ContentType";
+
+<Meta title="Content Types/Block: Resource List" />
+
+# Block: Resource List
+
+`Resource List` is a block that allows for a list of resources to be displayed in a grid type layout.
+
+## Usage
+
+```tsx
+import { ResourceList } from "@/blocks/ResourceList";
+```
+
+## Fragment
+
+The `ResourceList` component exposes a `GraphQL` fragment `ResourceListFragment`.
+
+```graphql
+query MyContentfulQuery {
+  query
+  MyQuery {
+    ...ResourceListFragment
+  }
+}
+```
+
+Each type of Resource (`ContentfulBlogPost` or `ContentfulResource`) also exports its own fragment.
+
+```graphql
+query MyContentfulQuery {
+  query
+  MyQuery {
+    ... on ContentfulBlogPost {
+      ...ResourceBlogFragment
+    }
+    ... on ContentfulResource {
+      ...ResourceResourceFragment
+    }
+  }
+}
+```
+
+## Content usages
+
+<ContentType query={useAllContentfulResourceList} component={ResourceList} />

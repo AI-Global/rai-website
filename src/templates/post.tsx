@@ -43,7 +43,7 @@ function Post({ data }: PostProps) {
           )}
         </Container>
       </div>
-      {post?.resources && <ResourceList data={post?.resources} />}
+      {post?.resources && <ResourceList {...post?.resources} />}
     </Layout>
   );
 }

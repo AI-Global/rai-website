@@ -28487,28 +28487,6 @@ export type MemberFragmentFragment = (
   )>>> }
 );
 
-export type AllResourceListBlocksQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type AllResourceListBlocksQuery = (
-  { __typename?: 'Query' }
-  & { allContentfulBlockResourceList: (
-    { __typename?: 'ContentfulBlockResourceListConnection' }
-    & { nodes: Array<(
-      { __typename?: 'ContentfulBlockResourceList' }
-      & Pick<ContentfulBlockResourceList, 'title'>
-      & { page?: Maybe<Array<Maybe<(
-        { __typename?: 'ContentfulPage' }
-        & Pick<ContentfulPage, 'title'>
-      )>>>, blog_post?: Maybe<Array<Maybe<(
-        { __typename?: 'ContentfulBlogPost' }
-        & Pick<ContentfulBlogPost, 'title'>
-      )>>> }
-      & ResourceListFragmentFragment
-    )> }
-  ) }
-);
-
 export type ResourceResourceFragmentFragment = (
   { __typename: 'ContentfulResource' }
   & Pick<ContentfulResource, 'id' | 'title' | 'url' | 'publicationDate'>
@@ -28671,6 +28649,20 @@ export type AllContentfulMembershipLevelsQuery = (
     & { nodes: Array<(
       { __typename?: 'ContentfulMembershipLevels' }
       & MembershipLevelFragmentFragment
+    )> }
+  ) }
+);
+
+export type AllContentfulResourceListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type AllContentfulResourceListQuery = (
+  { __typename?: 'Query' }
+  & { result: (
+    { __typename?: 'ContentfulBlockResourceListConnection' }
+    & { nodes: Array<(
+      { __typename?: 'ContentfulBlockResourceList' }
+      & ResourceListFragmentFragment
     )> }
   ) }
 );

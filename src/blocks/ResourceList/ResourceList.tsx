@@ -15,58 +15,59 @@ import { Caption } from "@/components/Caption";
 
 import styles from "./ResourceList.module.css";
 
-interface ResourceListProps {
-  readonly data: ResourceListFragmentFragment;
-}
-
-export function ResourceList({ data }: ResourceListProps) {
+export function ResourceList({
+  title,
+  headingLink,
+  customHeadingLinkText,
+  resources,
+}: ResourceListFragmentFragment) {
   return (
     <div className={styles.wrapper}>
       <Container className={styles.heading}>
-        {data.title && <Heading>{data.title}</Heading>}
-        {data.headingLink && (
+        {title && <Heading>{title}</Heading>}
+        {headingLink && (
           <div className={styles.headingLink}>
-            <Link url={`/${data.headingLink.slug}` ?? ""} icon="ArrowRight">
-              {data.customHeadingLinkText ?? data.headingLink.title}
+            <Link url={`/${headingLink?.slug}` ?? ""} icon="ArrowRight">
+              {customHeadingLinkText ?? headingLink?.title}
             </Link>
           </div>
         )}
       </Container>
 
       <Container className={styles.posts}>
-        {data.resources?.map((resource) => (
-          <Resource data={resource} key={resource.id} />
+        {resources?.map((resource) => (
+          <Resource key={resource.id} {...resource} />
         ))}
       </Container>
     </div>
   );
 }
 
-interface ResourceProps {
-  readonly data: XOR<
-    ResourceResourceFragmentFragment,
-    ResourceBlogFragmentFragment
-  >;
-}
-
-function Resource({ data }: ResourceProps) {
-  const publication = data.published ?? data.publicationDate;
-  const category = data.category?.toLowerCase();
+function Resource({
+  __typename,
+  slug,
+  publicationDate,
+  published,
+  category,
+  url,
+  title,
+}: XOR<ResourceResourceFragmentFragment, ResourceBlogFragmentFragment>) {
+  const publication = published ?? publicationDate;
   const linkProps = {
     href:
-      data.__typename === "ContentfulResource"
-        ? data.url
-        : `/${category}/${data.slug}`,
-    ...(data.__typename === "ContentfulResource" && { target: "_blank" }),
-    ...(data.__typename === "ContentfulResource" && { rel: "noreferrer" }),
+      __typename === "ContentfulResource"
+        ? url
+        : `/${category?.toLowerCase()}/${slug}`,
+    ...(__typename === "ContentfulResource" && { target: "_blank" }),
+    ...(__typename === "ContentfulResource" && { rel: "noreferrer" }),
   };
 
   return (
     <div className={styles.post}>
       <a className={styles.link} {...linkProps}>
-        {data.title}
+        {title}
       </a>
-      {publication && <Caption title="April 1st, 2022" />}
+      {publication && <Caption title={publication} />}
     </div>
   );
 }
@@ -77,7 +78,7 @@ export const ResourceResourceFragment = graphql`
     id
     title
     url
-    publicationDate
+    publicationDate(formatString: "MMMM D, YYYY")
   }
 `;
 
@@ -87,7 +88,7 @@ export const ResourceBlogFragment = graphql`
     id
     title
     slug
-    published
+    published(formatString: "MMMM D, YYYY")
     category
   }
 `;
