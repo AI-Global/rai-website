@@ -1,0 +1,35 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
+import { CallToAction } from "@/blocks/CallToAction";
+import {
+  ContentType,
+  useAllContentfulCallToAction,
+} from "@/components/ContentType";
+
+<Meta title="Content Types/Block: Call To Action" />
+
+# Block: Call To Action
+
+`CallToAction` is an isolated piece of content that is meant to highlight a specific action.
+
+## Usage
+
+```tsx
+import { CallToAction } from "@/blocks/CallToAction";
+```
+
+## Fragment
+
+The `CallToAction` component exposes a `GraphQL` fragment `CallToActionFragment`.
+
+```graphql
+query MyContentfulQuery {
+  query
+  MyQuery {
+    ...CallToActionFragment
+  }
+}
+```
+
+## Content usages
+
+<ContentType query={useAllContentfulCallToAction} component={CallToAction} />

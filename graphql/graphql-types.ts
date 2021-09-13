@@ -28561,6 +28561,20 @@ export type CardFragmentFragment = (
   )> }
 );
 
+export type AllContentfulCallToActionQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type AllContentfulCallToActionQuery = (
+  { __typename?: 'Query' }
+  & { result: (
+    { __typename?: 'ContentfulBlockCallToActionConnection' }
+    & { nodes: Array<(
+      { __typename?: 'ContentfulBlockCallToAction' }
+      & CallToActionFragmentFragment
+    )> }
+  ) }
+);
+
 export type AllContentfulCardsTestQueryVariables = Exact<{ [key: string]: never; }>;
 
 

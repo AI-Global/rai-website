@@ -8,13 +8,11 @@ import { graphql } from "gatsby";
 
 import styles from "./CallToAction.module.css";
 
-interface CallToActionProps {
-  readonly data: CallToActionFragmentFragment;
-}
-
 export function CallToAction({
-  data: { title, content, button },
-}: CallToActionProps) {
+  title,
+  content,
+  button,
+}: CallToActionFragmentFragment) {
   return (
     <Container>
       <div className={styles.cta}>

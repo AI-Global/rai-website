@@ -62,7 +62,7 @@ export function ContentfulBlocks({ blocks }: BlockProps) {
               </div>
             );
           case "ContentfulBlockCallToAction":
-            return <CallToAction data={block} key={block.id} />;
+            return <CallToAction key={block.id} {...block} />;
           case "ContentfulBlockContent":
             return (
               <div

@@ -8,3 +8,4 @@ export { useAllContentfulMembers } from "./useAllContentfulMembers";
 export { useAllContentfulJumbotron } from "./useAllContentfulJumbotron";
 export { useAllContentfulContentList } from "./useAllContentfulContentList";
 export { useAllContentfulResourceList } from "./useAllContentfulResourceList";
+export { useAllContentfulCallToAction } from "./useAllContentfulCallToAction";
