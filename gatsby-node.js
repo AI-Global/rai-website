@@ -34,7 +34,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
       };
 
       createPage({
-        path: `/${getCategory()}/${node.slug.replace(/ /g, "-")}`,
+        path: `/${getCategory()}/${node.slug.toLowerCase().replace(/ /g, "-")}`,
         component: path.resolve(`./src/templates/post.tsx`),
         context: {
           slug: node.slug,
@@ -88,7 +88,10 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
       }
 
       createPage({
-        path: node.slug === "home" ? "/" : `/${node.slug.replace(/ /g, "-")}`,
+        path:
+          node.slug === "home"
+            ? "/"
+            : `/${node.slug.toLowerCase().replace(/ /g, "-")}`,
         component,
         context,
       });
@@ -104,8 +107,6 @@ exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
     "@/components": path.resolve(__dirname, "src/components"),
     "@/hooks": path.resolve(__dirname, "src/hooks"),
     "@/blocks": path.resolve(__dirname, "src/blocks"),
-    components: path.resolve(__dirname, "src/components"),
-    styles: path.resolve(__dirname, "src/styles"),
   };
 
   actions.replaceWebpackConfig(config);
