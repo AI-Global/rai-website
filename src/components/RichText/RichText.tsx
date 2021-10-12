@@ -16,7 +16,7 @@ import { Link } from "@/components/Link";
 import { Emphasis } from "@/components/Emphasis";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Image } from "@/components/Image";
-import { ContentfulAsset } from "@/graphql/graphql-types";
+import { ContentfulAsset, ContentfulPage } from "@/graphql/graphql-types";
 import { Divider } from "@/components/Divider";
 import { BlockQuote } from "@/components/BlockQuote";
 
@@ -76,9 +76,15 @@ export function RichText({ size = "base", content }: RichTextProps) {
           return false;
         }
       },
+      [INLINES.ENTRY_HYPERLINK]: (node: ReactNode, children: ReactNode) => {
+        const { data } = node as Inline | Block;
+        const entry = getContentfulAsset(data.target.sys.id) as ContentfulPage;
+
+        return <Link url={`/${entry?.slug}` ?? ""}>{children}</Link>;
+      },
       [INLINES.ASSET_HYPERLINK]: (node: ReactNode, children: ReactNode) => {
         const { data } = node as Inline | Block;
-        const asset = getContentfulAsset(data.target.sys.id);
+        const asset = getContentfulAsset(data.target.sys.id) as ContentfulAsset;
 
         if (!asset?.file?.url) {
           return <></>;
@@ -92,7 +98,7 @@ export function RichText({ size = "base", content }: RichTextProps) {
       },
       [BLOCKS.EMBEDDED_ASSET]: (node: ReactNode) => {
         const { data } = node as Inline | Block;
-        const image = getContentfulAsset(data.target.sys.id);
+        const image = getContentfulAsset(data.target.sys.id) as ContentfulAsset;
 
         return <Image {...image} />;
       },
@@ -101,13 +107,15 @@ export function RichText({ size = "base", content }: RichTextProps) {
 
   return <>{documentToReactComponents(JSON.parse(content.raw), options)}</>;
 
-  function getContentfulAsset(id: string): ContentfulAsset | undefined {
+  function getContentfulAsset(
+    id: string
+  ): ContentfulAsset | ContentfulPage | undefined {
     const reference = content.references.find(
       (asset) => asset.contentful_id === id
     );
 
     if (!reference) return undefined;
 
-    return reference as ContentfulAsset;
+    return reference as ContentfulAsset | ContentfulPage;
   }
 }

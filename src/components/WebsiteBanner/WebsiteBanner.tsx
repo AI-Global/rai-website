@@ -11,9 +11,7 @@ export function WebsiteBanner() {
           raw
           references {
             contentful_id
-            file {
-              url
-            }
+            slug
           }
         }
       }
