@@ -25,7 +25,7 @@ export function TestimonialSlider({
       {slides && (
         <Slider
           slides={slides.map((slide) => (
-            <Testimonial {...slide} />
+            <Testimonial key={slide.title} {...slide} />
           ))}
         />
       )}

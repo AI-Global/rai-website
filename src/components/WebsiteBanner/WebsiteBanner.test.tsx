@@ -10,8 +10,13 @@ beforeEach(() => jest.clearAllMocks);
 afterEach(() => cleanup);
 
 const data = {
-  content: {
-    value: dummyContent,
+  microContent: {
+    nodes: [
+      {
+        key: "Website Banner",
+        value: dummyContent,
+      },
+    ],
   },
 };
 
@@ -34,7 +39,11 @@ it("renders with an aria label", () => {
 });
 
 it("returns nothing when the data returns empty", () => {
-  useStaticQuery.mockImplementation(() => jest.fn());
+  useStaticQuery.mockImplementation(() => ({
+    microContent: {
+      nodes: [],
+    },
+  }));
 
   const { container } = render(<WebsiteBanner />);
   expect(container).toMatchInlineSnapshot(`<div />`);
