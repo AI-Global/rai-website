@@ -25,17 +25,8 @@ export function Slider({ slides }: SliderProps) {
     autoplay: {
       delay: 7000,
     },
-    slidesPerView: 1,
-    breakpoints: {
-      /**
-       * Swiper is mobile first, so this is when the window width
-       * is >= the breakpoint number.
-       */
-      1024: {
-        slidesPerView: 2,
-        spaceBetween: 40,
-      },
-    },
+    slidesPerView: 2,
+    spaceBetween: 40,
   };
 
   return (
@@ -46,7 +37,7 @@ export function Slider({ slides }: SliderProps) {
         {...defaultProps}
       >
         {slides?.map((slide) => (
-          <SwiperSlide key={Math.random()}>{slide}</SwiperSlide>
+          <SwiperSlide key={slide?.toString()}>{slide}</SwiperSlide>
         ))}
       </Swiper>
 
