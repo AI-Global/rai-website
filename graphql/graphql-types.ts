@@ -156,6 +156,8 @@ export type ContentfulAssetConnectionGroupArgs = {
   field: ContentfulAssetFieldsEnum;
 };
 
+export type ContentfulAssetContentfulPageUnion = ContentfulAsset | ContentfulPage;
+
 export type ContentfulAssetEdge = {
   __typename?: 'ContentfulAssetEdge';
   next?: Maybe<ContentfulAsset>;
@@ -17563,135 +17565,6 @@ export enum ContentfulMicroContentFieldsEnum {
   node_locale = 'node_locale',
   key = 'key',
   value___raw = 'value___raw',
-  value___references = 'value___references',
-  value___references___contentful_id = 'value___references___contentful_id',
-  value___references___id = 'value___references___id',
-  value___references___node_locale = 'value___references___node_locale',
-  value___references___title = 'value___references___title',
-  value___references___subtitle = 'value___references___subtitle',
-  value___references___slug = 'value___references___slug',
-  value___references___spaceId = 'value___references___spaceId',
-  value___references___createdAt = 'value___references___createdAt',
-  value___references___updatedAt = 'value___references___updatedAt',
-  value___references___sys___type = 'value___references___sys___type',
-  value___references___sys___revision = 'value___references___sys___revision',
-  value___references___block__call_to_action = 'value___references___block__call_to_action',
-  value___references___block__call_to_action___contentful_id = 'value___references___block__call_to_action___contentful_id',
-  value___references___block__call_to_action___id = 'value___references___block__call_to_action___id',
-  value___references___block__call_to_action___node_locale = 'value___references___block__call_to_action___node_locale',
-  value___references___block__call_to_action___title = 'value___references___block__call_to_action___title',
-  value___references___block__call_to_action___customButtonText = 'value___references___block__call_to_action___customButtonText',
-  value___references___block__call_to_action___page = 'value___references___block__call_to_action___page',
-  value___references___block__call_to_action___spaceId = 'value___references___block__call_to_action___spaceId',
-  value___references___block__call_to_action___createdAt = 'value___references___block__call_to_action___createdAt',
-  value___references___block__call_to_action___updatedAt = 'value___references___block__call_to_action___updatedAt',
-  value___references___block__call_to_action___children = 'value___references___block__call_to_action___children',
-  value___references___block__jumbotron = 'value___references___block__jumbotron',
-  value___references___block__jumbotron___contentful_id = 'value___references___block__jumbotron___contentful_id',
-  value___references___block__jumbotron___id = 'value___references___block__jumbotron___id',
-  value___references___block__jumbotron___node_locale = 'value___references___block__jumbotron___node_locale',
-  value___references___block__jumbotron___title = 'value___references___block__jumbotron___title',
-  value___references___block__jumbotron___customButtonText = 'value___references___block__jumbotron___customButtonText',
-  value___references___block__jumbotron___imageAlignment = 'value___references___block__jumbotron___imageAlignment',
-  value___references___block__jumbotron___backgroundColor = 'value___references___block__jumbotron___backgroundColor',
-  value___references___block__jumbotron___imageOnLeft = 'value___references___block__jumbotron___imageOnLeft',
-  value___references___block__jumbotron___page = 'value___references___block__jumbotron___page',
-  value___references___block__jumbotron___spaceId = 'value___references___block__jumbotron___spaceId',
-  value___references___block__jumbotron___createdAt = 'value___references___block__jumbotron___createdAt',
-  value___references___block__jumbotron___updatedAt = 'value___references___block__jumbotron___updatedAt',
-  value___references___block__jumbotron___children = 'value___references___block__jumbotron___children',
-  value___references___block__members = 'value___references___block__members',
-  value___references___block__members___contentful_id = 'value___references___block__members___contentful_id',
-  value___references___block__members___id = 'value___references___block__members___id',
-  value___references___block__members___node_locale = 'value___references___block__members___node_locale',
-  value___references___block__members___title = 'value___references___block__members___title',
-  value___references___block__members___showHeadings = 'value___references___block__members___showHeadings',
-  value___references___block__members___members = 'value___references___block__members___members',
-  value___references___block__members___page = 'value___references___block__members___page',
-  value___references___block__members___spaceId = 'value___references___block__members___spaceId',
-  value___references___block__members___createdAt = 'value___references___block__members___createdAt',
-  value___references___block__members___updatedAt = 'value___references___block__members___updatedAt',
-  value___references___block__members___customHeaderLinkText = 'value___references___block__members___customHeaderLinkText',
-  value___references___block__members___customFooterLinkText = 'value___references___block__members___customFooterLinkText',
-  value___references___block__members___children = 'value___references___block__members___children',
-  value___references___navigation_item = 'value___references___navigation_item',
-  value___references___navigation_item___contentful_id = 'value___references___navigation_item___contentful_id',
-  value___references___navigation_item___id = 'value___references___navigation_item___id',
-  value___references___navigation_item___node_locale = 'value___references___navigation_item___node_locale',
-  value___references___navigation_item___title = 'value___references___navigation_item___title',
-  value___references___navigation_item___subLinks = 'value___references___navigation_item___subLinks',
-  value___references___navigation_item___navigation = 'value___references___navigation_item___navigation',
-  value___references___navigation_item___spaceId = 'value___references___navigation_item___spaceId',
-  value___references___navigation_item___createdAt = 'value___references___navigation_item___createdAt',
-  value___references___navigation_item___updatedAt = 'value___references___navigation_item___updatedAt',
-  value___references___navigation_item___highlight = 'value___references___navigation_item___highlight',
-  value___references___navigation_item___navigation_item = 'value___references___navigation_item___navigation_item',
-  value___references___navigation_item___children = 'value___references___navigation_item___children',
-  value___references___block__content_list = 'value___references___block__content_list',
-  value___references___block__content_list___contentful_id = 'value___references___block__content_list___contentful_id',
-  value___references___block__content_list___id = 'value___references___block__content_list___id',
-  value___references___block__content_list___node_locale = 'value___references___block__content_list___node_locale',
-  value___references___block__content_list___title = 'value___references___block__content_list___title',
-  value___references___block__content_list___highlight = 'value___references___block__content_list___highlight',
-  value___references___block__content_list___page = 'value___references___block__content_list___page',
-  value___references___block__content_list___spaceId = 'value___references___block__content_list___spaceId',
-  value___references___block__content_list___createdAt = 'value___references___block__content_list___createdAt',
-  value___references___block__content_list___updatedAt = 'value___references___block__content_list___updatedAt',
-  value___references___block__content_list___customButtonText = 'value___references___block__content_list___customButtonText',
-  value___references___block__content_list___listTitle = 'value___references___block__content_list___listTitle',
-  value___references___block__content_list___childrenContentfulBlockContentListListJsonNode = 'value___references___block__content_list___childrenContentfulBlockContentListListJsonNode',
-  value___references___block__content_list___children = 'value___references___block__content_list___children',
-  value___references___block__content = 'value___references___block__content',
-  value___references___block__content___contentful_id = 'value___references___block__content___contentful_id',
-  value___references___block__content___id = 'value___references___block__content___id',
-  value___references___block__content___node_locale = 'value___references___block__content___node_locale',
-  value___references___block__content___blockTitle = 'value___references___block__content___blockTitle',
-  value___references___block__content___variation = 'value___references___block__content___variation',
-  value___references___block__content___customButtonText = 'value___references___block__content___customButtonText',
-  value___references___block__content___page = 'value___references___block__content___page',
-  value___references___block__content___spaceId = 'value___references___block__content___spaceId',
-  value___references___block__content___createdAt = 'value___references___block__content___createdAt',
-  value___references___block__content___updatedAt = 'value___references___block__content___updatedAt',
-  value___references___block__content___children = 'value___references___block__content___children',
-  value___references___card = 'value___references___card',
-  value___references___card___contentful_id = 'value___references___card___contentful_id',
-  value___references___card___id = 'value___references___card___id',
-  value___references___card___node_locale = 'value___references___card___node_locale',
-  value___references___card___title = 'value___references___card___title',
-  value___references___card___customLinkTitle = 'value___references___card___customLinkTitle',
-  value___references___card___icon = 'value___references___card___icon',
-  value___references___card___block__list_of_cards = 'value___references___card___block__list_of_cards',
-  value___references___card___spaceId = 'value___references___card___spaceId',
-  value___references___card___createdAt = 'value___references___card___createdAt',
-  value___references___card___updatedAt = 'value___references___card___updatedAt',
-  value___references___card___children = 'value___references___card___children',
-  value___references___block__resource_list = 'value___references___block__resource_list',
-  value___references___block__resource_list___contentful_id = 'value___references___block__resource_list___contentful_id',
-  value___references___block__resource_list___id = 'value___references___block__resource_list___id',
-  value___references___block__resource_list___node_locale = 'value___references___block__resource_list___node_locale',
-  value___references___block__resource_list___title = 'value___references___block__resource_list___title',
-  value___references___block__resource_list___customHeadingLinkText = 'value___references___block__resource_list___customHeadingLinkText',
-  value___references___block__resource_list___blog_post = 'value___references___block__resource_list___blog_post',
-  value___references___block__resource_list___page = 'value___references___block__resource_list___page',
-  value___references___block__resource_list___spaceId = 'value___references___block__resource_list___spaceId',
-  value___references___block__resource_list___createdAt = 'value___references___block__resource_list___createdAt',
-  value___references___block__resource_list___updatedAt = 'value___references___block__resource_list___updatedAt',
-  value___references___block__resource_list___children = 'value___references___block__resource_list___children',
-  value___references___seoTitle = 'value___references___seoTitle',
-  value___references___seoDescription = 'value___references___seoDescription',
-  value___references___parent___id = 'value___references___parent___id',
-  value___references___parent___children = 'value___references___parent___children',
-  value___references___children = 'value___references___children',
-  value___references___children___id = 'value___references___children___id',
-  value___references___children___children = 'value___references___children___children',
-  value___references___internal___content = 'value___references___internal___content',
-  value___references___internal___contentDigest = 'value___references___internal___contentDigest',
-  value___references___internal___description = 'value___references___internal___description',
-  value___references___internal___fieldOwners = 'value___references___internal___fieldOwners',
-  value___references___internal___ignoreType = 'value___references___internal___ignoreType',
-  value___references___internal___mediaType = 'value___references___internal___mediaType',
-  value___references___internal___owner = 'value___references___internal___owner',
-  value___references___internal___type = 'value___references___internal___type',
   spaceId = 'spaceId',
   createdAt = 'createdAt',
   updatedAt = 'updatedAt',
@@ -17855,12 +17728,11 @@ export type ContentfulMicroContentSysFilterInput = {
 export type ContentfulMicroContentValue = {
   __typename?: 'ContentfulMicroContentValue';
   raw?: Maybe<Scalars['String']>;
-  references?: Maybe<Array<Maybe<ContentfulPage>>>;
+  references?: Maybe<Array<Maybe<ContentfulAssetContentfulPageUnion>>>;
 };
 
 export type ContentfulMicroContentValueFilterInput = {
   raw?: Maybe<StringQueryOperatorInput>;
-  references?: Maybe<ContentfulPageFilterListInput>;
 };
 
 export type ContentfulNavigation = ContentfulReference & ContentfulEntry & Node & {
@@ -30941,24 +30813,6 @@ export type TestimonialFragmentFragment = (
   )> }
 );
 
-export type WebsiteBannerQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type WebsiteBannerQueryQuery = (
-  { __typename?: 'Query' }
-  & { content?: Maybe<(
-    { __typename?: 'ContentfulMicroContent' }
-    & { value?: Maybe<(
-      { __typename?: 'ContentfulMicroContentValue' }
-      & Pick<ContentfulMicroContentValue, 'raw'>
-      & { references?: Maybe<Array<Maybe<(
-        { __typename?: 'ContentfulPage' }
-        & Pick<ContentfulPage, 'contentful_id' | 'slug'>
-      )>>> }
-    )> }
-  )> }
-);
-
 export type AllContentfulAssetsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -30969,6 +30823,31 @@ export type AllContentfulAssetsQuery = (
     & { nodes: Array<(
       { __typename?: 'ContentfulAsset' }
       & Pick<ContentfulAsset, 'title' | 'description' | 'gatsbyImageData' | 'contentful_id'>
+    )> }
+  ) }
+);
+
+export type AllContentfulMicroContentQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type AllContentfulMicroContentQueryQuery = (
+  { __typename?: 'Query' }
+  & { microContent: (
+    { __typename?: 'ContentfulMicroContentConnection' }
+    & { nodes: Array<(
+      { __typename?: 'ContentfulMicroContent' }
+      & Pick<ContentfulMicroContent, 'key'>
+      & { value?: Maybe<(
+        { __typename?: 'ContentfulMicroContentValue' }
+        & Pick<ContentfulMicroContentValue, 'raw'>
+        & { references?: Maybe<Array<Maybe<(
+          { __typename?: 'ContentfulAsset' }
+          & Pick<ContentfulAsset, 'id' | 'contentful_id' | 'title'>
+        ) | (
+          { __typename?: 'ContentfulPage' }
+          & Pick<ContentfulPage, 'id' | 'contentful_id' | 'slug' | 'title'>
+        )>>> }
+      )> }
     )> }
   ) }
 );
