@@ -35,7 +35,7 @@ const plugins = [
     resolve: "gatsby-plugin-hubspot",
     options: {
       trackingCode: process.env.HUBSPOT_TRACKING_ID,
-      respectDNT: true,
+      respectDNT: false,
       productionOnly: false,
     },
   },
