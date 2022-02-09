@@ -6,3 +6,5 @@ public
 storybook-static
 
 .env
+
+.DS_Store

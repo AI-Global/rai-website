@@ -32,6 +32,14 @@ const plugins = [
     },
   },
   {
+    resolve: "gatsby-plugin-hubspot",
+    options: {
+      trackingCode: process.env.HUBSPOT_TRACKING_ID,
+      respectDNT: true,
+      productionOnly: false,
+    },
+  },
+  {
     resolve: `gatsby-plugin-manifest`,
     options: {
       icon: `src/images/icon.png`,
