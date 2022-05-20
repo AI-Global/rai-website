@@ -11,7 +11,7 @@ function NotFound() {
       <EmptyPage>
         <Container size="small">
           <Text size="large">🤖</Text>
-          <Heading>Page not found</Heading>
+          <Heading>Page not found.</Heading>
           <Text>
             It seems the page you are looking for can not be found. Please check
             the URL and try again.
