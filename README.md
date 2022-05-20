@@ -1,4 +1,4 @@
-# 🤖 Responsible AI Website
+# 🤖 Responsible AI Website 
 
 This is the repository for the [Responsible AI Website](https://www.responsible.ai/).
 
