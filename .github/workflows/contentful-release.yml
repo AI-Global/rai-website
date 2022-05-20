@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: "Create Empty Commit"
         run: |
-          git commit --allow-empty -m "Trigger Heroku deploy Contentful change"
+          git commit --author="Walter One <walter@example.org>" --allow-empty -m "Trigger Heroku deploy Contentful change"
       - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
