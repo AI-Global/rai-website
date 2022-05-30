@@ -30,12 +30,14 @@ function Blog({ data }: BlogProps) {
           <PageTitle title={page?.title} />
         </Container>
       )}
-      <FeaturedPost
-        data={featuredPost}
-        caption="Featured Article"
-        linkText="Read Article"
-        slugPrefix={featuredPost?.category?.toLocaleLowerCase() ?? "news"}
-      />
+      {featuredPost && (
+        <FeaturedPost
+          data={featuredPost}
+          caption="Featured Article"
+          linkText="Read Article"
+          slugPrefix={featuredPost?.category?.toLocaleLowerCase() ?? "news"}
+        />
+      )}
       <PostList
         posts={posts.filter((_, index) => index !== featuredPostIndex)}
       />
