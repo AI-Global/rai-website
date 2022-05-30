@@ -112,7 +112,7 @@ function Menu({ items }: MenuProps) {
               {item.title}
             </Link>
 
-            {item.subLinks && (
+            {/* {item.subLinks && (
               <ul className={styles.subList}>
                 {item.subLinks.map((subItem) => {
                   return (
@@ -127,7 +127,7 @@ function Menu({ items }: MenuProps) {
                   );
                 })}
               </ul>
-            )}
+            )} */}
           </li>
         );
       })}
@@ -142,11 +142,13 @@ export const NavigationItem = graphql`
     link {
       slug
     }
-    subLinks {
-      title
-      link {
-        slug
-      }
-    }
+    # Note: Hide these since gatsby-source-contentful can't see them since they
+    # are un-used.
+    # subLinks {
+    #   title
+    #   link {
+    #     slug
+    #   }
+    # }
   }
 `;

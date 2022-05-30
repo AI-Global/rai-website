@@ -34,7 +34,7 @@ function Blog({ data }: BlogProps) {
         data={featuredPost}
         caption="Featured Article"
         linkText="Read Article"
-        slugPrefix="blog"
+        slugPrefix={featuredPost.category?.toLocaleLowerCase() ?? "news"}
       />
       <PostList
         posts={posts.filter((_, index) => index !== featuredPostIndex)}
@@ -57,6 +57,7 @@ export const query = graphql`
       nodes {
         id
         featured
+        category
         ...PostFragment
         ...FeaturedPostFragment
       }
