@@ -7,6 +7,7 @@ import { Logo } from "@/components/Logo";
 import { Icon } from "@/components/Icon";
 import { FooterNavigationItemFragment } from "@/graphql/graphql-types";
 
+import { Text } from "@/components/Text";
 import styles from "./Footer.module.css";
 
 export function Footer() {
@@ -96,6 +97,14 @@ export function Footer() {
             </li>
           </ul>
         </nav>
+      </Container>
+      <Container className={styles.address}>
+        <div>
+          <Text size="small">
+            Responsible AI Institute, 11501 Century Oaks Terrace, 3125, Austin,
+            Texas 78758, United States
+          </Text>
+        </div>
       </Container>
     </footer>
   );

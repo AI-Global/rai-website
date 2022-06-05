@@ -117,7 +117,7 @@
 
 @media (min-width: 1024px) {
   .social .link {
-    margin: 0 var(--space--base) 0 0; 
+    margin: 0 var(--space--base) 0 0;
   }
 }
 
@@ -125,5 +125,21 @@
   box-shadow: none;
 }
 
+.address {
+  color: var(--color--blanco);
+  text-align: center;
+}
 
+.address > div {
+  margin: var(--space--small) 0 0 0;
+}
 
+@media (min-width: 1024px) {
+  .address {
+    text-align: end;
+  }
+
+  .address > div {
+      margin: var(--space--small) var(--space--base) 0 0;
+    }
+}

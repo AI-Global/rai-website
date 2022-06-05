@@ -7,6 +7,7 @@ declare const styles: {
   readonly "link": string;
   readonly "highlight": string;
   readonly "social": string;
+  readonly "address": string;
 };
 export = styles;
 
