@@ -18,7 +18,7 @@ interface SliderProps {
 }
 
 export function Slider({ slides }: SliderProps) {
-  const swiperRef = useRef<MutableRefObject<Swiper>>(null);
+  const swiperRef = useRef<MutableRefObject<typeof Swiper>>(null);
   const defaultProps = {
     modules: [Autoplay],
     loop: true,
