@@ -13,5 +13,8 @@ module.exports = {
     "^@/blocks(.*)$": "<rootDir>/src/blocks$1",
     "^@/hooks(.*)$": "<rootDir>/src/hooks$1",
     "^@/graphql(.*)$": "<rootDir>/graphql$1",
+    "^gatsby-page-utils/(.*)$": `gatsby-page-utils/dist/$1`,
   },
+  testPathIgnorePatterns: [`node_modules`, `\\.cache`, `<rootDir>.*/public`],
+  transformIgnorePatterns: [`node_modules/(?!(gatsby|gatsby-script)/)`],
 };
