@@ -20,7 +20,8 @@ import { ContentfulAsset, ContentfulPage } from "@/graphql/graphql-types";
 import { Divider } from "@/components/Divider";
 import { BlockQuote } from "@/components/BlockQuote";
 
-export type RichTextContent = RenderRichTextData<ContentfulRichTextGatsbyReference>;
+export type RichTextContent =
+  RenderRichTextData<ContentfulRichTextGatsbyReference>;
 
 interface RichTextProps {
   readonly size?: "base" | "large" | "small";

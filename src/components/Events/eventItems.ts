@@ -4,8 +4,7 @@ export const events = [
     events: [
       {
         name: "Gartner Data & Analytics Summit",
-        url:
-          "https://www.gartner.com/en/conferences/na/data-analytics-us/register",
+        url: "https://www.gartner.com/en/conferences/na/data-analytics-us/register",
         date: "May 4 - 6, 2021 (Online)",
       },
       {
@@ -15,8 +14,7 @@ export const events = [
       },
       {
         name: "Machine Learning Week",
-        url:
-          "https://www.predictiveanalyticsworld.com/machinelearningweek/registration/",
+        url: "https://www.predictiveanalyticsworld.com/machinelearningweek/registration/",
         date: "May 24 - 28, 2021 (Online)",
       },
     ],
@@ -46,21 +44,17 @@ export const events = [
     events: [
       {
         name: "VB Transform",
-        url:
-          "https://www.eventbrite.com/e/venturebeat-transform-2021-tickets-132121305381?aff=website",
+        url: "https://www.eventbrite.com/e/venturebeat-transform-2021-tickets-132121305381?aff=website",
         date: "July 12 - 16, 2021 (Online)",
       },
       {
-        name:
-          "Intelligent Automation for Banking, Financial Services and Insurance Online Event",
-        url:
-          "https://www.intelligentautomation.network/events-intelligentautomationbfsi/",
+        name: "Intelligent Automation for Banking, Financial Services and Insurance Online Event",
+        url: "https://www.intelligentautomation.network/events-intelligentautomationbfsi/",
         date: "July 14 - 15, 2021 (Online)",
       },
       {
         name: "AI World Conference and Expo",
-        url:
-          "https://www.clocate.com/conference/ai-world-conference-and-expo/77702/",
+        url: "https://www.clocate.com/conference/ai-world-conference-and-expo/77702/",
         date: "July 14, 2021 (Online)",
       },
       {

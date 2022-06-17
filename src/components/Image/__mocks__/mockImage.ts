@@ -11,8 +11,7 @@ export const mockImage = {
         },
       ],
       fallback: {
-        src:
-          "//images.ctfassets.net/rz1q59puyoaw/7GDSSUgdGoG1l2HEfVSrxz/0b8303fcaa1f283b1acd8f38be624dfb/rai-badge-full.png?w=337&h=338&q=50&fm=png",
+        src: "//images.ctfassets.net/rz1q59puyoaw/7GDSSUgdGoG1l2HEfVSrxz/0b8303fcaa1f283b1acd8f38be624dfb/rai-badge-full.png?w=337&h=338&q=50&fm=png",
         srcSet:
           "//images.ctfassets.net/rz1q59puyoaw/7GDSSUgdGoG1l2HEfVSrxz/0b8303fcaa1f283b1acd8f38be624dfb/rai-badge-full.png?w=84&h=84&q=50&fm=png 84w,\n//images.ctfassets.net/rz1q59puyoaw/7GDSSUgdGoG1l2HEfVSrxz/0b8303fcaa1f283b1acd8f38be624dfb/rai-badge-full.png?w=169&h=170&q=50&fm=png 169w,\n//images.ctfassets.net/rz1q59puyoaw/7GDSSUgdGoG1l2HEfVSrxz/0b8303fcaa1f283b1acd8f38be624dfb/rai-badge-full.png?w=337&h=338&q=50&fm=png 337w",
         sizes: "(min-width: 337px) 337px, 100vw",
