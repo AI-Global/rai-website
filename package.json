@@ -34,6 +34,8 @@
     "generate:types": "gatsby build --die-on-codegen"
   },
   "dependencies": {
+    "@parcel/core": "^2.6.2",
+    "@parcel/namer-default": "^2.5.0",
     "@contentful/rich-text-react-renderer": "^15.0.0",
     "@contentful/rich-text-types": "^14.1.2",
     "@testing-library/jest-dom": "^5.12.0",
