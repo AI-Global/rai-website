@@ -50,7 +50,6 @@ export type ButtonProps = XOR<
 export function Button({
   __typename,
   title,
-  slug,
   url,
   variation = "primary",
   external,
@@ -77,7 +76,7 @@ export function Button({
 
   const internalButtonProps = {
     ...baseButtonProps,
-    to: __typename === "ContentfulPage" ? `/${slug}` : `${url}`,
+    to: `${url}`,
   };
 
   if (isExternal) {
@@ -103,7 +102,6 @@ export const ButtonPageFragment = graphql`
   fragment ButtonPageFragment on ContentfulPage {
     __typename
     title
-    slug
   }
 `;
 
